@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>faq — navan · the natural toothbrush pets love</title>
+<meta name="description" content="answers about navan's single-ingredient dental chews, the navan protocol, ingredients, safety, and sourcing." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* NAVAN — FAQ PAGE. Inherits project standard stylesheet. */
+
+:root {
+  --sand: #EBDECB; --sand-soft: #F3EBDD; --cream: #FEF9F5; --white: #FFFFFF;
+  --taupe: #BFA694; --charcoal: #6A625A; --charcoal-h: #59524C; --ink: #514C45;
+  --muted: #7A736A; --duck: #95A77D; --rabbit: #8FC8D4; --beef: #CA8575;
+  --sec: #738063; --sec-h: #8EA18F; --disabled: #E8DDD2;
+
+  --font: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --t-caps: 0.118em; --t-lower: 0.042em; --t-micro: 0.22em;
+  --max: 1400px; --content: 1240px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--sec); outline-offset: 3px; border-radius: 4px; }
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--taupe);
+  display: inline-block;
+}
+.caps  { text-transform: uppercase; letter-spacing: var(--t-caps); font-weight: 300; }
+.lower { text-transform: lowercase; letter-spacing: var(--t-lower); font-weight: 400; }
+.display { font-weight: 300; line-height: 0.95; letter-spacing: -0.015em; }
+.italic { font-style: italic; font-weight: 300; }
+
+.d-xxl { font-size: clamp(56px, 10vw, 180px); }
+.d-lg  { font-size: clamp(36px, 5vw, 80px); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 36px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary   { background: var(--charcoal); color: var(--cream); }
+.btn-primary:hover { background: var(--charcoal-h); }
+.btn-secondary { background: transparent; color: var(--sec); border-color: var(--sec); }
+.btn-secondary:hover { color: var(--sec-h); border-color: var(--sec-h); }
+
+.wrap { max-width: var(--content); margin: 0 auto; padding: 0 40px; }
+@media (max-width: 720px) { .wrap { padding: 0 24px; } }
+
+/* ANNOUNCEMENT */
+.announce {
+  background: var(--ink);
+  color: var(--sand);
+  overflow: hidden;
+  padding: 12px 0;
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+}
+.announce-track {
+  display: flex;
+  gap: 60px;
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+.announce-track span { display: inline-flex; align-items: center; gap: 60px; white-space: nowrap; }
+.announce-track span::after { content: '◦'; color: var(--taupe); }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* HEADER */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(254, 249, 245, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .4s var(--ease), background .4s var(--ease);
+}
+.header.scrolled {
+  border-bottom-color: var(--disabled);
+  background: rgba(254, 249, 245, 0.96);
+}
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 22px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 40px;
+}
+.logo {
+  font-size: 28px;
+  color: var(--charcoal);
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+}
+.nav { display: flex; gap: 40px; justify-self: center; }
+.nav a {
+  font-size: 13px;
+  letter-spacing: var(--t-lower);
+  color: var(--ink);
+  position: relative;
+  padding: 6px 0;
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: var(--charcoal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.nav a:hover::after,
+.nav a[aria-current="page"]::after { transform: scaleX(1); }
+.nav a[aria-current="page"] { color: var(--charcoal); }
+
+.header-actions { display: flex; gap: 20px; justify-self: end; align-items: center; }
+.icon-btn {
+  width: 40px; height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: color .3s var(--ease);
+}
+.icon-btn:hover { color: var(--charcoal); }
+.icon-btn svg { width: 18px; height: 18px; }
+.cart-count {
+  position: absolute;
+  top: 4px; right: 4px;
+  background: var(--charcoal);
+  color: var(--cream);
+  border-radius: 999px;
+  font-size: 9px;
+  padding: 2px 6px;
+  letter-spacing: 0;
+}
+.hamburger { display: none; }
+.hamburger-icon { position: relative; width: 18px; height: 12px; }
+.hamburger-icon span {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform .4s var(--ease), opacity .3s var(--ease), top .4s var(--ease);
+}
+.hamburger-icon span:nth-child(1) { top: 0; }
+.hamburger-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger-icon span:nth-child(3) { top: 100%; transform: translateY(-100%); }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(3) { top: 50%; transform: translateY(-50%) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(420px, 100%);
+  background: var(--cream);
+  z-index: 60;
+  transform: translateX(100%);
+  transition: transform .5s var(--ease);
+  display: flex;
+  flex-direction: column;
+  padding: 100px 40px 40px;
+  box-shadow: -20px 0 60px -20px rgba(81,76,69,0.2);
+  visibility: hidden;
+}
+.mobile-menu[aria-hidden="false"] {
+  transform: translateX(0);
+  visibility: visible;
+}
+.mobile-menu-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(81,76,69,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 55;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s var(--ease), visibility .4s var(--ease);
+}
+.mobile-menu-scrim.active {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-nav { display: flex; flex-direction: column; gap: 4px; margin-bottom: 48px; }
+.mobile-nav a {
+  font-size: 28px;
+  color: var(--ink);
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+  font-weight: 300;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--disabled);
+  transition: color .3s var(--ease), padding-left .3s var(--ease);
+}
+.mobile-nav a:hover { color: var(--charcoal); padding-left: 8px; }
+.mobile-menu-foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--disabled);
+}
+.mobile-menu-foot a {
+  font-size: 12px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .hamburger { display: inline-flex; justify-self: start; }
+  .header-inner { padding: 18px 24px; }
+}
+
+/* ===================================================================
+   FAQ PAGE — UNIQUE SECTIONS
+   =================================================================== */
+
+/* HERO — editorial masthead + large search */
+.faq-hero {
+  padding: 80px 40px 100px;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+.faq-hero-top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--taupe);
+}
+.faq-hero-crumb {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.faq-hero-crumb span { color: var(--ink); }
+.faq-hero-meta {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  justify-self: end;
+  display: flex;
+  gap: 24px;
+}
+.faq-hero-meta b { color: var(--ink); font-weight: 500; }
+.faq-hero-headline {
+  margin: 0;
+  color: var(--ink);
+  max-width: 16ch;
+}
+.faq-hero-headline em { color: var(--taupe); font-style: italic; font-weight: 300; }
+.faq-hero-foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  padding-top: 40px;
+  border-top: 1px solid var(--taupe);
+}
+.faq-hero-lead {
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+}
+
+/* Search */
+.faq-search {
+  justify-self: end;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+.faq-search-input {
+  width: 100%;
+  height: 56px;
+  padding: 0 56px 0 28px;
+  border-radius: 999px;
+  border: 1px solid var(--disabled);
+  background: var(--white);
+  font-family: var(--font);
+  font-size: 14px;
+  letter-spacing: var(--t-lower);
+  color: var(--ink);
+  outline: none;
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.faq-search-input::placeholder {
+  color: var(--muted);
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+}
+.faq-search-input:focus {
+  border-color: var(--sec);
+  box-shadow: 0 0 0 4px rgba(115,128,99,0.12);
+}
+/* Hide browser-native search clear (we render our own) */
+.faq-search-input::-webkit-search-cancel-button,
+.faq-search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.faq-search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; height: 20px;
+  color: var(--muted);
+  pointer-events: none;
+}
+.faq-search-clear {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: var(--disabled);
+  color: var(--ink);
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  transition: background .3s var(--ease);
+}
+.faq-search-clear:hover { background: var(--taupe); }
+.faq-search.has-value .faq-search-icon { display: none; }
+.faq-search.has-value .faq-search-clear { display: inline-flex; }
+
+@media (max-width: 900px) {
+  .faq-hero { padding: 40px 24px 60px; gap: 40px; }
+  .faq-hero-top { grid-template-columns: 1fr; gap: 16px; }
+  .faq-hero-meta { justify-self: start; }
+  .faq-hero-foot { grid-template-columns: 1fr; gap: 32px; }
+  .faq-search { justify-self: start; max-width: none; }
+}
+
+/* FILTER BAR (sticky under header) */
+.faq-filter-bar {
+  position: sticky;
+  top: 84px; /* below the header */
+  z-index: 40;
+  background: rgba(254, 249, 245, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--disabled);
+  border-bottom: 1px solid var(--disabled);
+  padding: 20px 0;
+}
+.faq-filter-inner {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.faq-filter-label {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.faq-filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.faq-filter-pills::-webkit-scrollbar { display: none; }
+.faq-pill {
+  border: 1px solid var(--disabled);
+  background: transparent;
+  color: var(--ink);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+}
+.faq-pill:hover { border-color: var(--taupe); }
+.faq-pill.active {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+@media(max-width: 767px){
+   /* Header Mobile Changes */
+  .header-inner {
+    gap: 20px;
+    padding: 10px 20px;
+  }
+  .header-actions{
+    gap: 15px;
+  }
+  .mobile-menu {
+      width: min(350px, 100%);
+  }
+}
+@media (max-width: 720px) {
+  .faq-filter-inner { padding: 0 24px; }
+  .faq-filter-label { display: none; }
+  .faq-filter-pills { flex-wrap: nowrap; }
+}
+
+/* FAQ LIST */
+.faq-body {
+  padding: 80px 0 120px;
+}
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.faq-sidebar {
+  position: sticky;
+  top: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-sidebar-label {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  padding-top: 16px;
+  border-top: 1px solid var(--taupe);
+}
+.faq-sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.faq-sidebar-link {
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px 0;
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+  font-family: var(--font);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--disabled);
+  transition: color .3s var(--ease), padding-left .3s var(--ease);
+}
+.faq-sidebar-link:hover { color: var(--ink); padding-left: 4px; }
+.faq-sidebar-link .count {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  color: var(--taupe);
+}
+
+.faq-groups { display: flex; flex-direction: column; gap: 80px; }
+.faq-group { scroll-margin-top: 180px; }
+.faq-group-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--taupe);
+  margin-bottom: 8px;
+}
+.faq-group-num {
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.faq-group-title {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 300;
+  color: var(--ink);
+  text-transform: lowercase;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.faq-group-title em { color: var(--taupe); font-style: italic; }
+.faq-group-count {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--disabled);
+}
+.faq-item[data-hidden="true"] { display: none; }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 32px 48px 32px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: color .3s var(--ease);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--charcoal); }
+.faq-q {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.4;
+  letter-spacing: var(--t-lower);
+  text-transform: lowercase;
+  flex: 1;
+  margin: 0;
+}
+.faq-toggle {
+  position: relative;
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+}
+.faq-toggle::before,
+.faq-toggle::after {
+  content: '';
+  position: absolute;
+  background: var(--ink);
+  top: 50%;
+  left: 50%;
+  transition: transform .4s var(--ease), background .3s var(--ease);
+}
+.faq-toggle::before { width: 14px; height: 1px; transform: translate(-50%, -50%); }
+.faq-toggle::after  { width: 1px; height: 14px; transform: translate(-50%, -50%); }
+.faq-item[open] .faq-toggle::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.faq-item[open] .faq-q { color: var(--charcoal); }
+
+.faq-a {
+  padding: 0 48px 32px 0;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+}
+.faq-a p { margin: 0 0 16px; }
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-a a {
+  color: var(--sec);
+  border-bottom: 1px solid var(--sec);
+  transition: color .3s var(--ease), border-color .3s var(--ease);
+}
+.faq-a a:hover { color: var(--sec-h); border-color: var(--sec-h); }
+
+/* Smooth expand using grid-rows trick — works with native details */
+.faq-item {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows .45s var(--ease);
+}
+.faq-item > summary { grid-row: 1; }
+.faq-item > .faq-a-wrap {
+  grid-row: 2;
+  overflow: hidden;
+}
+.faq-item[open] { grid-template-rows: auto 1fr; }
+
+.faq-empty {
+  padding: 80px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+  display: none;
+}
+.faq-empty.show { display: block; }
+.faq-empty strong { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .faq-body { padding: 48px 0 80px; }
+  .faq-layout { grid-template-columns: 1fr; gap: 40px; }
+  .faq-sidebar { position: static; }
+  .faq-filter-bar { top: 68px; }
+  .faq-group-head { grid-template-columns: auto 1fr; }
+  .faq-group-count { grid-column: 2; grid-row: 2; }
+  .faq-item summary { padding: 24px 40px 24px 0; }
+  .faq-a { padding: 0 40px 24px 0; }
+}
+
+/* CTA */
+.faq-cta {
+  background: var(--ink);
+  color: var(--sand);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+.faq-cta::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: var(--taupe);
+  filter: blur(100px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+.faq-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; right: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: var(--duck);
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+.faq-cta-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.faq-cta-eyebrow {
+  color: var(--taupe);
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.faq-cta-eyebrow::before { background: var(--taupe); }
+.faq-cta-title {
+  color: var(--sand);
+  margin: 0 0 40px;
+}
+.faq-cta-title em { color: var(--taupe); font-style: italic; }
+.faq-cta-body {
+  color: var(--taupe);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 44ch;
+  margin: 0 auto 48px;
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+}
+.faq-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.faq-cta .btn-secondary { color: var(--sand); border-color: var(--sand); }
+.faq-cta .btn-secondary:hover { color: var(--cream); border-color: var(--cream); }
+@media (max-width: 720px) {
+  .faq-cta { padding: 80px 0; }
+}
+
+/* FOOTER */
+.footer {
+  background: var(--cream);
+  color: var(--ink);
+  padding: 100px 0 40px;
+  border-top: 1px solid var(--disabled);
+}
+.footer-top {
+  padding-bottom: 80px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--disabled);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 80px;
+}
+.footer-wordmark {
+  font-size: clamp(80px, 12vw, 180px);
+  line-height: 0.9;
+  color: var(--ink);
+  text-transform: lowercase;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.footer-tag {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+  max-width: 28ch;
+  line-height: 1.6;
+}
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.footer-col h5 {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 20px;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.footer-col a {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+  transition: color .3s var(--ease);
+}
+.footer-col a:hover { color: var(--ink); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+}
+.footer-bottom-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-bottom-links a:hover { color: var(--ink); }
+@media (max-width: 900px) {
+  .footer { padding: 60px 0 32px; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; margin-bottom: 32px; }
+  .footer-nav { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  .faq-item { transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  <div class="announce-track">
+    <span>complimentary shipping over $60</span>
+    <span>launching soon — join the list</span>
+    <span>single-ingredient · naturally</span>
+    <span>the natural toothbrush pets love</span>
+    <span>complimentary shipping over $60</span>
+    <span>launching soon — join the list</span>
+    <span>single-ingredient · naturally</span>
+    <span>the natural toothbrush pets love</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <a href="#" class="logo"><img src="https://navanpet.com/cdn/shop/files/navan_logo.png?v=1770933252&width=100" alt="Navan Pet Logo"></a>
+    <nav class="nav" aria-label="primary">
+      <a href="navan-collection.html">SHOP</a>
+      <a href="navan-faq_Version_2.html" aria-current="page">FAQ</a>
+      <a href="navan-about.html" >ABOUT</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="navan-cart.html" class="icon-btn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu-scrim" id="menu-scrim" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="mobile navigation">
+  <nav class="mobile-nav" aria-label="mobile primary">
+     <a href="navan-collection.html"  data-menu-close>SHOP</a>
+      <a href="navan-faq_Version_2.html"  data-menu-close>FAQ</a>
+      <a href="navan-about.html"  data-menu-close>ABOUT</a>
+      <a href="#"  data-menu-close>Blog</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="navan-cart.html" data-menu-close>cart</a>
+    <a href="navan-faq_Version_2.html" data-menu-close>faq</a>
+    <a href="navan-privacy.html" data-menu-close>privacy</a>
+    <a href="navan-terms.html" data-menu-close>terms</a>
+  </div>
+</aside>
+
+<main>
+
+  <!-- HERO -->
+  <section class="faq-hero" aria-labelledby="faq-h">
+    <div class="faq-hero-top">
+      <div class="faq-hero-crumb lower"><span>help</span> · frequently asked</div>
+      <div></div>
+      <div class="faq-hero-meta">
+        <span><b>14</b> questions</span>
+        <span><b>4</b> categories</span>
+      </div>
+    </div>
+
+    <h1 id="faq-h" class="faq-hero-headline display d-xxl lower reveal">
+      questions,<br/><em class="italic">answered.</em>
+    </h1>
+
+    <div class="faq-hero-foot">
+      <p class="faq-hero-lead reveal reveal-delay-1">
+        everything you might want to know about navan, our single-ingredient chews, and the daily dental protocol. can't find what you're looking for? we're one message away.
+      </p>
+      <div class="faq-search reveal reveal-delay-2" id="faq-search">
+        <label for="faq-search-input" class="visually-hidden" style="position:absolute; left:-9999px;">search the faq</label>
+        <input type="search" id="faq-search-input" class="faq-search-input" placeholder="search questions…" autocomplete="off" />
+        <svg class="faq-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        <button type="button" class="faq-search-clear" id="faq-search-clear" aria-label="clear search">×</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="faq-filter-bar" role="tablist" aria-label="faq categories">
+    <div class="faq-filter-inner">
+      <span class="faq-filter-label">browse by</span>
+      <div class="faq-filter-pills">
+        <button class="faq-pill active" data-filter="all" role="tab" aria-selected="true">all</button>
+        <button class="faq-pill" data-filter="brand" role="tab" aria-selected="false">about navan</button>
+        <button class="faq-pill" data-filter="protocol" role="tab" aria-selected="false">the protocol</button>
+        <button class="faq-pill" data-filter="ingredients" role="tab" aria-selected="false">ingredients</button>
+        <button class="faq-pill" data-filter="usage" role="tab" aria-selected="false">usage & safety</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ BODY -->
+  <section class="faq-body">
+    <div class="wrap">
+      <div class="faq-layout">
+
+        <!-- Sidebar nav (desktop) -->
+        <aside class="faq-sidebar">
+          <div class="faq-sidebar-label">contents</div>
+          <nav class="faq-sidebar-nav" aria-label="faq sections">
+            <button class="faq-sidebar-link" data-jump="group-brand">about navan <span class="count">03</span></button>
+            <button class="faq-sidebar-link" data-jump="group-protocol">the protocol <span class="count">03</span></button>
+            <button class="faq-sidebar-link" data-jump="group-ingredients">ingredients <span class="count">03</span></button>
+            <button class="faq-sidebar-link" data-jump="group-usage">usage & safety <span class="count">05</span></button>
+          </nav>
+        </aside>
+
+        <!-- Groups -->
+        <div class="faq-groups" id="faq-groups">
+
+          <!-- GROUP 1: ABOUT NAVAN -->
+          <section class="faq-group" id="group-brand" data-group="brand">
+            <div class="faq-group-head">
+              <div class="faq-group-num">01</div>
+              <h2 class="faq-group-title">about <em>navan</em></h2>
+              <div class="faq-group-count">03 questions</div>
+            </div>
+
+            <details class="faq-item" data-group="brand" data-q="what is navan longevity-focused dog dental brand protocol">
+              <summary>
+                <h3 class="faq-q">what is navan?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>navan is a longevity-focused dog dental brand built around a simple, daily protocol: single-ingredient chews that support oral health through natural chewing, clean design, and consistency — extending intentional wellness to dogs the same way modern health brands do for humans.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="brand" data-q="what does navan mean natural approach vitality nourishment">
+              <summary>
+                <h3 class="faq-q">what does 'navan' mean?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p><em class="italic">natural approach to vitality &amp; nourishment.</em></p>
+                <p>a name that sounds like a place you'd go — because clean living should feel like one.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="brand" data-q="who is navan designed for longevity-minded pet parents">
+              <summary>
+                <h3 class="faq-q">who is navan designed for?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>the navan chew protocol is designed for longevity-minded pet parents who value consistency, ingredient transparency, and simple daily habits for their dogs.</p>
+              </div></div>
+            </details>
+          </section>
+
+          <!-- GROUP 2: THE PROTOCOL -->
+          <section class="faq-group" id="group-protocol" data-group="protocol">
+            <div class="faq-group-head">
+              <div class="faq-group-num">02</div>
+              <h2 class="faq-group-title">the <em>protocol</em></h2>
+              <div class="faq-group-count">03 questions</div>
+            </div>
+
+            <details class="faq-item" data-group="protocol" data-q="how does navan dental protocol work consistency mechanics">
+              <summary>
+                <h3 class="faq-q">how does the navan dental protocol work?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>the navan dental protocol is based on consistency and mechanics. extended chewing and natural texture help support plaque reduction over time, without relying on chemical additives or starch-based fillers.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="protocol" data-q="are navan chews considered dental chews traditional molded">
+              <summary>
+                <h3 class="faq-q">are navan chews considered dental chews?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>navan chews are not traditional molded dental treats. they are part of a natural dental protocol that relies on chewing action rather than synthetic ingredients or processed forms.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="protocol" data-q="what is the navan protocol consistency-based approach dental care">
+              <summary>
+                <h3 class="faq-q">what is the navan protocol?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>the navan protocol is a consistency-based approach to dog dental care using single-ingredient chews to support oral hygiene through natural chewing action — without starches, fillers, or chemical additives.</p>
+                <p><a href="navan-homepage_Version_2.html#protocol">see the 25 · 50 · 75 day timeline</a></p>
+              </div></div>
+            </details>
+          </section>
+
+          <!-- GROUP 3: INGREDIENTS -->
+          <section class="faq-group" id="group-ingredients" data-group="ingredients">
+            <div class="faq-group-head">
+              <div class="faq-group-num">03</div>
+              <h2 class="faq-group-title">the <em>ingredients</em></h2>
+              <div class="faq-group-count">03 questions</div>
+            </div>
+
+            <details class="faq-item" data-group="ingredients" data-q="what ingredients used navan chew protocol single animal no starches glycerin fillers">
+              <summary>
+                <h3 class="faq-q">what ingredients are used in the navan chew protocol?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>each navan chew is made from a single, clearly identified animal ingredient, with no starches, glycerin, fillers, or artificial additives.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="ingredients" data-q="do navan chews contain glycerin starch no filler ingredients">
+              <summary>
+                <h3 class="faq-q">do navan chews contain glycerin or starch?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>no. navan chews do not contain glycerin, starches, or filler ingredients commonly used in many conventional dental treats.</p>
+                <p>the navan chew protocol keeps ingredients simple and aligned with long-term dental and health habits.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="ingredients" data-q="where are navan chews sourced made simple sourcing minimal processing">
+              <summary>
+                <h3 class="faq-q">where are navan chews sourced and made?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>navan prioritizes simple sourcing and minimal processing. specific sourcing details are provided transparently on each product page.</p>
+              </div></div>
+            </details>
+          </section>
+
+          <!-- GROUP 4: USAGE & SAFETY -->
+          <section class="faq-group" id="group-usage" data-group="usage">
+            <div class="faq-group-head">
+              <div class="faq-group-num">04</div>
+              <h2 class="faq-group-title">usage <em>&amp; safety</em></h2>
+              <div class="faq-group-count">05 questions</div>
+            </div>
+
+            <details class="faq-item" data-group="usage" data-q="are navan chews safe for dogs supervised chewing size chewing style">
+              <summary>
+                <h3 class="faq-q">are navan chews safe for dogs?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>navan chews are designed for supervised chewing and should be selected based on your dog's size and chewing style. like all chews, they should be given under supervision.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="usage" data-q="can navan chews replace brushing vet dental care complement">
+              <summary>
+                <h3 class="faq-q">can navan chews replace brushing or vet dental care?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>no. navan chews are intended to support everyday dental habits and complement regular veterinary dental care — not replace professional cleanings or brushing.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="usage" data-q="how often should i give my dog a navan chew daily several times per week">
+              <summary>
+                <h3 class="faq-q">how often should i give my dog a navan chew?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>many pet parents incorporate navan chews into their dog's routine daily or several times per week. frequency should be adjusted based on your dog's size, diet, and chewing habits.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="usage" data-q="are navan chews suitable for puppies senior dogs size texture chewing ability">
+              <summary>
+                <h3 class="faq-q">are navan chews suitable for puppies or senior dogs?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>chew suitability depends on size, texture, and individual chewing ability. pet parents should choose appropriately sized chews and consult their veterinarian if unsure.</p>
+              </div></div>
+            </details>
+
+            <details class="faq-item" data-group="usage" data-q="supervision chewing safety guidelines">
+              <summary>
+                <h3 class="faq-q">what's your general guidance on supervision?</h3>
+                <span class="faq-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-a-wrap"><div class="faq-a">
+                <p>always supervise your dog while they chew. remove any piece small enough to be swallowed whole, and rotate chews to match your dog's current size and jaw strength.</p>
+                <p>if you notice unusual behavior, digestive issues, or have questions about your dog's specific needs, consult your veterinarian.</p>
+              </div></div>
+            </details>
+          </section>
+
+        </div><!-- /.faq-groups -->
+
+        <div class="faq-empty" id="faq-empty">
+          <p><strong>no matches found.</strong></p>
+          <p>try different words — or reach out and we'll answer directly.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="faq-cta">
+    <div class="faq-cta-inner">
+      <span class="eyebrow faq-cta-eyebrow">still curious</span>
+      <h2 class="faq-cta-title display d-lg lower">
+        we're one <em class="italic">message away.</em>
+      </h2>
+      <p class="faq-cta-body">
+        can't find the answer you need? drop us a line — a real person will get back to you.
+      </p>
+      <div class="faq-cta-buttons">
+        <a href="mailto:hello@navanpet.com" class="btn btn-primary" style="background: var(--sand); color: var(--ink);">email us</a>
+        <a href="navan-bundles.html" class="btn btn-secondary">shop the protocol</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand">
+        <h2 class="footer-wordmark">navan</h2>
+        <p class="footer-tag">clean living for your dog. a natural approach to vitality &amp; nourishment.</p>
+      </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>shop</h5>
+          <ul>
+            <li><a href="navan-product.html">core protocol</a></li>
+            <li><a href="navan-bundles.html">View Bundles</a></li>
+            <li><a href="navan-collection.html">all chews</a></li>
+            <li><a href="#">subscribe &amp; save</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>learn</h5>
+          <ul>
+            <li><a href="navan-homepage_Version_2.html#protocol">the protocol</a></li>
+            <li><a href="#">ingredients</a></li>
+            <li><a href="#">journal</a></li>
+            <li><a href="navan-faq_Version_2.html">faq</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>company</h5>
+          <ul>
+            <li><a href="navan-about.html">about</a></li>
+            <li><a href="#">nation</a></li>
+            <li><a href="#">press</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>support</h5>
+          <ul>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">account</a></li>
+            <li><a href="navan-faq_Version_2.html">help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 navan · the natural toothbrush pets love</div>
+      <div class="footer-bottom-links">
+        <a href="navan-privacy.html">privacy</a>
+        <a href="navan-terms.html">terms</a>
+        <a href="#">accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Mobile menu
+  (function() {
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobile-menu');
+    const scrim = document.getElementById('menu-scrim');
+    if (!btn || !menu || !scrim) return;
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+      menu.setAttribute('aria-hidden', String(!open));
+      scrim.setAttribute('aria-hidden', String(!open));
+      scrim.classList.toggle('active', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) {
+        const firstLink = menu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
+    };
+    const toggle = () => setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    const close = () => setOpen(false);
+    btn.addEventListener('click', toggle);
+    scrim.addEventListener('click', close);
+    menu.querySelectorAll('[data-menu-close]').forEach(link => link.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+        close();
+        btn.focus();
+      }
+    });
+    const mq = window.matchMedia('(min-width: 901px)');
+    mq.addEventListener('change', (e) => { if (e.matches) close(); });
+  })();
+
+  // FAQ search + category filter + sidebar jump
+  (function() {
+    const searchWrap = document.getElementById('faq-search');
+    const input  = document.getElementById('faq-search-input');
+    const clear  = document.getElementById('faq-search-clear');
+    const pills  = document.querySelectorAll('.faq-pill');
+    const items  = document.querySelectorAll('.faq-item');
+    const groups = document.querySelectorAll('.faq-group');
+    const empty  = document.getElementById('faq-empty');
+    const jumps  = document.querySelectorAll('[data-jump]');
+
+    let currentFilter = 'all';
+    let currentQuery  = '';
+
+    const normalize = (s) => (s || '').toLowerCase().trim();
+
+    const applyFilters = () => {
+      let visibleCount = 0;
+      items.forEach(item => {
+        const matchesCategory = currentFilter === 'all' || item.dataset.group === currentFilter;
+        const haystack = normalize(item.dataset.q + ' ' + item.textContent);
+        const matchesQuery = currentQuery === '' || haystack.includes(currentQuery);
+        const visible = matchesCategory && matchesQuery;
+        item.dataset.hidden = visible ? 'false' : 'true';
+        if (visible) visibleCount++;
+      });
+      // Hide whole groups that have no visible items
+      groups.forEach(group => {
+        const hasVisible = group.querySelector('.faq-item[data-hidden="false"]');
+        group.style.display = hasVisible ? '' : 'none';
+      });
+      empty.classList.toggle('show', visibleCount === 0);
+    };
+
+    // Search input
+    input.addEventListener('input', (e) => {
+      currentQuery = normalize(e.target.value);
+      searchWrap.classList.toggle('has-value', currentQuery.length > 0);
+      applyFilters();
+    });
+
+    // Clear search
+    clear.addEventListener('click', () => {
+      input.value = '';
+      currentQuery = '';
+      searchWrap.classList.remove('has-value');
+      applyFilters();
+      input.focus();
+    });
+
+    // Category pills
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('active');
+          p.setAttribute('aria-selected', 'false');
+        });
+        pill.classList.add('active');
+        pill.setAttribute('aria-selected', 'true');
+        currentFilter = pill.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    // Sidebar jump links
+    jumps.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.jump);
+        if (!target) return;
+        // Clear search and reset filter so the jumped group is fully visible
+        input.value = '';
+        currentQuery = '';
+        searchWrap.classList.remove('has-value');
+        pills.forEach(p => {
+          const isAll = p.dataset.filter === 'all';
+          p.classList.toggle('active', isAll);
+          p.setAttribute('aria-selected', isAll ? 'true' : 'false');
+        });
+        currentFilter = 'all';
+        applyFilters();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>terms of service — navan · the natural toothbrush pets love</title>
+<meta name="description" content="navan terms of service. the rules governing your use of navanpet.com and purchase of navan products." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* NAVAN — LEGAL PAGES. Identical stylesheet to privacy policy. */
+:root {
+  --sand:#EBDECB; --sand-soft:#F3EBDD; --cream:#FEF9F5; --white:#FFFFFF;
+  --taupe:#BFA694; --charcoal:#6A625A; --charcoal-h:#59524C; --ink:#514C45;
+  --muted:#7A736A; --duck:#95A77D; --rabbit:#8FC8D4;
+  --sec:#738063; --sec-h:#8EA18F; --disabled:#E8DDD2;
+  --font:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  --t-caps:0.118em; --t-lower:0.042em; --t-micro:0.22em;
+  --max:1400px; --content:1240px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:120px;}
+body{margin:0;font-family:var(--font);font-weight:400;color:var(--ink);background:var(--cream);line-height:1.6;letter-spacing:0.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;} a{color:inherit;text-decoration:none;} button{font-family:inherit;}
+:focus-visible{outline:2px solid var(--sec);outline-offset:3px;border-radius:4px;}
+.eyebrow{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--taupe);display:inline-block;}
+.lower{text-transform:lowercase;letter-spacing:var(--t-lower);}
+.display{font-weight:300;line-height:0.95;letter-spacing:-0.015em;}
+.d-xxl{font-size:clamp(56px,10vw,180px);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 36px;border-radius:999px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:background-color .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease);}
+.btn-primary{background:var(--charcoal);color:var(--cream);}
+.btn-primary:hover{background:var(--charcoal-h);}
+.wrap{max-width:var(--content);margin:0 auto;padding:0 40px;}
+@media(max-width:720px){.wrap{padding:0 24px;}}
+.announce{background:var(--ink);color:var(--sand);overflow:hidden;padding:12px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;}
+.announce-track{display:flex;gap:60px;animation:marquee 40s linear infinite;width:max-content;}
+.announce-track span{display:inline-flex;align-items:center;gap:60px;white-space:nowrap;}
+.announce-track span::after{content:'◦';color:var(--taupe);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.header{position:sticky;top:0;z-index:50;background:rgba(254,249,245,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .4s var(--ease),background .4s var(--ease);}
+.header.scrolled{border-bottom-color:var(--disabled);background:rgba(254,249,245,0.96);}
+.header-inner{max-width:var(--max);margin:0 auto;padding:22px 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px;}
+.logo{font-size:28px;color:var(--charcoal);font-weight:400;text-transform:lowercase;letter-spacing:-0.02em;}
+.nav{display:flex;gap:40px;justify-self:center;}
+.nav a{font-size:13px;letter-spacing:var(--t-lower);color:var(--ink);position:relative;padding:6px 0;}
+.nav a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--charcoal);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
+.nav a:hover::after{transform:scaleX(1);}
+.header-actions{display:flex;gap:20px;justify-self:end;align-items:center;}
+.icon-btn{width:40px;height:40px;background:transparent;border:none;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;position:relative;transition:color .3s var(--ease);}
+.icon-btn:hover{color:var(--charcoal);}
+.icon-btn svg{width:18px;height:18px;}
+.cart-count{position:absolute;top:4px;right:4px;background:var(--charcoal);color:var(--cream);border-radius:999px;font-size:9px;padding:2px 6px;}
+.hamburger{display:none;}
+.hamburger-icon{position:relative;width:18px;height:12px;}
+.hamburger-icon span{position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s var(--ease),top .4s var(--ease);}
+.hamburger-icon span:nth-child(1){top:0;}
+.hamburger-icon span:nth-child(2){top:50%;transform:translateY(-50%);}
+.hamburger-icon span:nth-child(3){top:100%;transform:translateY(-100%);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(3){top:50%;transform:translateY(-50%) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--cream);z-index:60;transform:translateX(100%);transition:transform .5s var(--ease);display:flex;flex-direction:column;padding:100px 40px 40px;box-shadow:-20px 0 60px -20px rgba(81,76,69,0.2);visibility:hidden;}
+.mobile-menu[aria-hidden="false"]{transform:translateX(0);visibility:visible;}
+.mobile-menu-scrim{position:fixed;inset:0;background:rgba(81,76,69,0.4);backdrop-filter:blur(4px);z-index:55;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s var(--ease);}
+.mobile-menu-scrim.active{opacity:1;visibility:visible;}
+.mobile-nav{display:flex;flex-direction:column;gap:4px;margin-bottom:48px;}
+.mobile-nav a{font-size:28px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);font-weight:300;padding:14px 0;border-bottom:1px solid var(--disabled);transition:color .3s var(--ease),padding-left .3s var(--ease);}
+.mobile-nav a:hover{color:var(--charcoal);padding-left:8px;}
+.mobile-menu-foot{margin-top:auto;display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--disabled);}
+.mobile-menu-foot a{font-size:12px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+body.menu-open{overflow:hidden;}
+@media(max-width:900px){.nav{display:none;}.hamburger{display:inline-flex;justify-self:start;}.header-inner{padding:18px 24px;}}
+.breadcrumb{border-bottom:1px solid var(--disabled);padding:16px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.breadcrumb-inner{max-width:var(--max);margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:16px;}
+.breadcrumb-inner a{transition:color .3s var(--ease);}
+.breadcrumb-inner a:hover{color:var(--ink);}
+.breadcrumb-sep{color:var(--taupe);}
+.breadcrumb-current{color:var(--ink);}
+@media(max-width: 767px){
+   /* Header Mobile Changes */
+  .header-inner {
+    gap: 20px;
+    padding: 10px 20px;
+  }
+  .header-actions{
+    gap: 15px;
+  }
+  .mobile-menu {
+      width: min(350px, 100%);
+  }
+}
+@media(max-width:720px){.breadcrumb-inner{padding:0 24px;}}
+.legal-hero{padding:72px 40px 80px;max-width:var(--max);margin:0 auto;}
+.legal-hero-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-bottom:40px;border-bottom:1px solid var(--taupe);}
+.legal-hero-title{margin:0;color:var(--ink);}
+.legal-hero-title em{color:var(--taupe);font-style:italic;font-weight:300;}
+.legal-hero-right{display:flex;flex-direction:column;gap:12px;justify-self:end;align-items:flex-end;text-align:right;}
+.legal-hero-meta{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.legal-hero-meta b{color:var(--ink);font-weight:500;}
+.legal-sibling{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--sec);border-bottom:1px solid var(--sec);padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease);}
+.legal-sibling:hover{color:var(--sec-h);border-color:var(--sec-h);}
+@media(max-width:900px){.legal-hero{padding:40px 24px 60px;}.legal-hero-top{grid-template-columns:1fr;gap:24px;}.legal-hero-right{justify-self:start;align-items:flex-start;text-align:left;}}
+.legal-body{padding:0 0 120px;}
+.legal-layout{max-width:var(--max);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start;}
+.legal-toc{position:sticky;top:120px;display:flex;flex-direction:column;gap:0;}
+.legal-toc-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;padding-bottom:16px;border-bottom:1px solid var(--taupe);margin-bottom:4px;}
+.legal-toc-link{display:block;font-size:13px;letter-spacing:var(--t-lower);text-transform:lowercase;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--disabled);transition:color .3s var(--ease),padding-left .3s var(--ease);cursor:pointer;}
+.legal-toc-link:hover{color:var(--ink);padding-left:4px;}
+.legal-toc-link.active{color:var(--charcoal);font-weight:500;}
+.legal-content{padding-top:4px;}
+.legal-section{scroll-margin-top:120px;padding-bottom:64px;border-bottom:1px solid var(--disabled);margin-bottom:64px;}
+.legal-section:last-child{border-bottom:none;margin-bottom:0;}
+.legal-section-num{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:16px;display:block;}
+.legal-section-title{font-size:clamp(22px,2.4vw,32px);font-weight:300;letter-spacing:-0.005em;color:var(--ink);text-transform:lowercase;margin:0 0 28px;line-height:1.2;}
+.legal-section-title em{color:var(--taupe);font-style:italic;}
+.legal-content p{font-size:15px;line-height:1.8;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);margin:0 0 20px;max-width:68ch;}
+.legal-content p:last-child{margin-bottom:0;}
+.legal-content strong{font-weight:500;color:var(--ink);}
+.legal-content a{color:var(--sec);border-bottom:1px solid var(--sec);transition:color .3s,border-color .3s;}
+.legal-content a:hover{color:var(--sec-h);border-color:var(--sec-h);}
+.legal-list{margin:0 0 20px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.legal-list li{font-size:15px;line-height:1.7;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);padding-left:20px;position:relative;max-width:68ch;}
+.legal-list li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--taupe);}
+.legal-highlight{background:var(--sand-soft);border-left:3px solid var(--duck);border-radius:0 12px 12px 0;padding:20px 24px;margin:0 0 20px;}
+.legal-highlight p{color:var(--muted) !important;font-size:14px !important;margin:0 !important;}
+.legal-contact{background:var(--sand);border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:80px;}
+.legal-contact-text{display:flex;flex-direction:column;gap:8px;}
+.legal-contact-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+.legal-contact-body{font-size:15px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);}
+@media(max-width:900px){
+  .legal-layout{grid-template-columns:1fr;gap:0;padding:0 24px;}
+  .legal-toc{position:static;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:0;padding:20px 0;border-bottom:1px solid var(--disabled);margin-bottom:40px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .legal-toc::-webkit-scrollbar{display:none;}
+  .legal-toc-label{display:none;}
+  .legal-toc-link{border-bottom:none;border-right:1px solid var(--disabled);padding:8px 16px;white-space:nowrap;flex-shrink:0;}
+  .legal-toc-link:last-child{border-right:none;}
+  .legal-body{padding:0 0 80px;}
+}
+.footer{background:var(--cream);color:var(--ink);padding:100px 0 40px;border-top:1px solid var(--disabled);}
+.footer-top{padding-bottom:80px;margin-bottom:40px;border-bottom:1px solid var(--disabled);display:grid;grid-template-columns:2fr 3fr;gap:80px;}
+.footer-wordmark{font-size:clamp(80px,12vw,180px);line-height:0.9;color:var(--ink);text-transform:lowercase;font-weight:300;letter-spacing:-0.03em;margin:0;}
+.footer-tag{margin-top:24px;color:var(--muted);font-size:14px;text-transform:lowercase;letter-spacing:var(--t-lower);max-width:28ch;line-height:1.6;}
+.footer-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;}
+.footer-col h5{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);margin:0 0 20px;font-weight:500;}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+.footer-col a{font-size:13px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);transition:color .3s var(--ease);}
+.footer-col a:hover{color:var(--ink);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;font-size:11px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.footer-bottom-links{display:flex;gap:32px;flex-wrap:wrap;}
+.footer-bottom-links a:hover{color:var(--ink);}
+@media(max-width:900px){.footer{padding:60px 0 32px;}.footer-top{grid-template-columns:1fr;gap:40px;padding-bottom:48px;margin-bottom:32px;}.footer-nav{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <div class="announce-track">
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+  </div>
+</div>
+
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <a href="#" class="logo"><img src="https://navanpet.com/cdn/shop/files/navan_logo.png?v=1770933252&width=100" alt="Navan Pet Logo"></a>
+    <nav class="nav" aria-label="primary">
+      <a href="navan-collection.html"  aria-current="page">SHOP</a>
+      <a href="navan-faq_Version_2.html">FAQ</a>
+      <a href="navan-about.html" >ABOUT</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="navan-cart.html" class="icon-btn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu-scrim" id="menu-scrim" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="mobile navigation">
+  <nav class="mobile-nav" aria-label="mobile primary">
+     <a href="navan-collection.html"  data-menu-close>SHOP</a>
+      <a href="navan-faq_Version_2.html"  data-menu-close>FAQ</a>
+      <a href="navan-about.html"  data-menu-close>ABOUT</a>
+      <a href="#"  data-menu-close>Blog</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="navan-cart.html" data-menu-close>cart</a>
+    <a href="navan-faq_Version_2.html" data-menu-close>faq</a>
+    <a href="navan-privacy.html" data-menu-close>privacy</a>
+    <a href="navan-terms.html" data-menu-close>terms</a>
+  </div>
+</aside>
+
+<main>
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="navan-homepage_Version_2.html" class="lower">home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current lower" aria-current="page">terms of service</span>
+    </div>
+  </nav>
+
+  <div class="legal-hero">
+    <div class="legal-hero-top">
+      <div>
+        <span class="eyebrow" style="margin-bottom:16px;display:inline-flex;">legal</span>
+        <h1 class="legal-hero-title display d-xxl lower">terms of <em>service.</em></h1>
+      </div>
+      <div class="legal-hero-right">
+        <div class="legal-hero-meta"><b>last updated</b> january 1, 2025</div>
+        <div class="legal-hero-meta"><b>version</b> 1.0</div>
+        <a href="navan-privacy.html" class="legal-sibling">view privacy policy →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-body">
+    <div class="legal-layout">
+
+      <!-- TOC SIDEBAR -->
+      <nav class="legal-toc" aria-label="terms of service sections" id="legal-toc">
+        <div class="legal-toc-label">contents</div>
+        <a class="legal-toc-link active" href="#tos-overview">overview</a>
+        <a class="legal-toc-link" href="#tos-use">use of site</a>
+        <a class="legal-toc-link" href="#tos-products">products &amp; pricing</a>
+        <a class="legal-toc-link" href="#tos-subscriptions">subscriptions</a>
+        <a class="legal-toc-link" href="#tos-orders">orders &amp; payment</a>
+        <a class="legal-toc-link" href="#tos-shipping">shipping</a>
+        <a class="legal-toc-link" href="#tos-returns">returns &amp; refunds</a>
+        <a class="legal-toc-link" href="#tos-prohibited">prohibited uses</a>
+        <a class="legal-toc-link" href="#tos-ip">intellectual property</a>
+        <a class="legal-toc-link" href="#tos-disclaimer">disclaimers</a>
+        <a class="legal-toc-link" href="#tos-liability">limitation of liability</a>
+        <a class="legal-toc-link" href="#tos-governing">governing law</a>
+        <a class="legal-toc-link" href="#tos-changes">changes</a>
+        <a class="legal-toc-link" href="#tos-contact">contact</a>
+      </nav>
+
+      <!-- CONTENT -->
+      <article class="legal-content">
+
+        <section class="legal-section" id="tos-overview">
+          <span class="legal-section-num">01</span>
+          <h3 class="legal-section-title">overview</h3>
+          <p>these terms of service ("terms") govern your access to and use of the navan website located at navanpet.com (the "site") and any products purchased through the site. by accessing the site or making a purchase, you agree to be bound by these terms. if you do not agree, do not use the site.</p>
+          <div class="legal-highlight">
+            <p><strong>the short version:</strong> use our site fairly, pay for what you order, take care with our chews as directed, and treat the brand with respect. if something goes wrong, contact us first — we want to make it right.</p>
+          </div>
+          <p>we reserve the right to update these terms at any time. your continued use of the site constitutes acceptance of any updated terms. the current version will always be posted at navanpet.com/terms.</p>
+          <p>navan is operated by navan pet inc. ("navan", "we", "us", or "our"), a company organised under the laws of the united states.</p>
+        </section>
+
+        <section class="legal-section" id="tos-use">
+          <span class="legal-section-num">02</span>
+          <h3 class="legal-section-title">use of <em>site</em></h3>
+          <p>you may use our site for lawful purposes only. you agree to use the site in accordance with all applicable laws and regulations. by using this site, you confirm that you are at least 18 years old, or are using the site under the supervision of a parent or legal guardian.</p>
+          <p>you are responsible for maintaining the confidentiality of any account credentials and for all activity under your account. notify us immediately at <a href="mailto:hello@navanpet.com">hello@navanpet.com</a> of any unauthorised use.</p>
+          <p>we reserve the right to terminate access to our site for any user who violates these terms, in our sole discretion and without notice.</p>
+        </section>
+
+        <section class="legal-section" id="tos-products">
+          <span class="legal-section-num">03</span>
+          <h3 class="legal-section-title">products <em>&amp; pricing</em></h3>
+          <p>all products are subject to availability. we reserve the right to discontinue any product at any time. product descriptions, images, and specifications are provided for informational purposes and may be updated without notice.</p>
+          <p>prices are listed in us dollars and are subject to change without prior notice. we reserve the right to refuse or cancel any order if a pricing error is identified, whether or not the order has been confirmed and your payment processed.</p>
+          <p>navan chews are single-ingredient animal-based products intended for dogs under supervision. they are designed to support oral hygiene through natural chewing action and are not intended to diagnose, treat, cure, or prevent any disease or medical condition in animals. always consult your veterinarian for advice specific to your dog's health.</p>
+          <p>navan chews are intended to complement — not replace — regular veterinary dental care.</p>
+        </section>
+
+        <section class="legal-section" id="tos-subscriptions">
+          <span class="legal-section-num">04</span>
+          <h3 class="legal-section-title"><em>subscriptions</em></h3>
+          <p>we offer subscribe &amp; save plans that deliver products on a recurring basis at a discounted price. by enrolling in a subscription, you authorise us to charge your selected payment method automatically on your chosen delivery cadence until you cancel.</p>
+          <ul class="legal-list">
+            <li><strong>cancellation:</strong> you may cancel, pause, or skip a subscription at any time through your account portal or by contacting us at <a href="mailto:hello@navanpet.com">hello@navanpet.com</a>. cancellations must be made at least 24 hours before your next scheduled charge to avoid being billed for that delivery</li>
+            <li><strong>pricing:</strong> subscription pricing may change with 30 days' notice. if we change your subscription price, we will notify you by email and you may cancel before the new price takes effect</li>
+            <li><strong>failed payments:</strong> if a payment fails, we will attempt to retry the charge. if retries are unsuccessful, your subscription may be paused or cancelled. you are responsible for maintaining valid payment information</li>
+            <li><strong>free shipping:</strong> active subscribers receive free shipping on all subscription orders, subject to minimum order thresholds as noted at checkout</li>
+          </ul>
+        </section>
+
+        <section class="legal-section" id="tos-orders">
+          <span class="legal-section-num">05</span>
+          <h3 class="legal-section-title">orders <em>&amp; payment</em></h3>
+          <p>by placing an order, you make an offer to purchase the selected products at the displayed price. we reserve the right to accept or decline any order.</p>
+          <p>we accept major credit and debit cards and other payment methods displayed at checkout. all payment information is processed securely through pci-compliant payment processors. we do not store full card numbers.</p>
+          <p>applicable sales taxes will be calculated and displayed at checkout based on your shipping address and the laws of the applicable jurisdiction.</p>
+          <p>once an order is placed, you will receive an order confirmation email. orders are processed as quickly as possible. if there is an issue with your order, we will contact you using the email address provided at checkout.</p>
+        </section>
+
+        <section class="legal-section" id="tos-shipping">
+          <span class="legal-section-num">06</span>
+          <h3 class="legal-section-title">shipping</h3>
+          <p>we currently ship within the contiguous united states. shipping options, carriers, and timelines are displayed at checkout. estimated delivery times are provided as guidance only and are not guaranteed.</p>
+          <ul class="legal-list">
+            <li>free standard shipping is available on orders over $60 (before tax) or for active subscribers</li>
+            <li>orders placed on weekends or public holidays are processed on the next business day</li>
+            <li>title and risk of loss for products pass to you upon handover to the carrier</li>
+            <li>we are not responsible for delays caused by the carrier, weather, or other circumstances outside our control</li>
+          </ul>
+          <p>if your order has not arrived within the estimated timeframe, please contact us at <a href="mailto:hello@navanpet.com">hello@navanpet.com</a> and we will investigate promptly.</p>
+        </section>
+
+        <section class="legal-section" id="tos-returns">
+          <span class="legal-section-num">07</span>
+          <h3 class="legal-section-title">returns <em>&amp; refunds</em></h3>
+          <p>we stand behind our products. if you are not satisfied, please contact us within 30 days of delivery.</p>
+          <ul class="legal-list">
+            <li><strong>unopened products:</strong> eligible for a full refund within 30 days of purchase</li>
+            <li><strong>opened products:</strong> if you are dissatisfied for any reason, please contact us. we will review on a case-by-case basis and may offer a replacement, store credit, or refund at our discretion</li>
+            <li><strong>damaged or incorrect items:</strong> if your order arrives damaged or incorrect, contact us within 7 days of delivery with photos and we will resolve it promptly</li>
+            <li><strong>subscription orders:</strong> you are responsible for cancelling a subscription before the next charge date. we cannot refund charges that have already processed unless the product is damaged or defective</li>
+          </ul>
+          <p>to initiate a return or report an issue, email <a href="mailto:hello@navanpet.com">hello@navanpet.com</a> with your order number. we will provide instructions. return shipping costs are the customer's responsibility unless the return is due to our error.</p>
+          <p>refunds are issued to the original payment method within 5–10 business days of receiving and processing your return.</p>
+        </section>
+
+        <section class="legal-section" id="tos-prohibited">
+          <span class="legal-section-num">08</span>
+          <h3 class="legal-section-title">prohibited <em>uses</em></h3>
+          <p>you agree not to use our site to:</p>
+          <ul class="legal-list">
+            <li>violate any applicable law or regulation</li>
+            <li>transmit any unsolicited or unauthorised advertising or promotional material</li>
+            <li>impersonate or attempt to impersonate navan, a navan employee, or any other person</li>
+            <li>engage in any conduct that restricts or inhibits anyone's use or enjoyment of the site</li>
+            <li>attempt to gain unauthorised access to any part of the site or its related systems</li>
+            <li>use any automated means (bots, scrapers, crawlers) to access the site without our express written permission</li>
+            <li>introduce viruses, trojans, or other malicious or technologically harmful material</li>
+            <li>reverse engineer or attempt to extract the source code of our software</li>
+          </ul>
+        </section>
+
+        <section class="legal-section" id="tos-ip">
+          <span class="legal-section-num">09</span>
+          <h3 class="legal-section-title">intellectual <em>property</em></h3>
+          <p>all content on this site — including text, images, graphics, logos, product names, the navan wordmark, and the overall design — is the property of navan pet inc. or its licensors and is protected by applicable intellectual property laws.</p>
+          <p>you may not reproduce, distribute, modify, create derivative works from, publicly display, or commercially exploit any content from this site without our prior written consent.</p>
+          <p>if you believe content on our site infringes your intellectual property rights, please contact us at <a href="mailto:legal@navanpet.com">legal@navanpet.com</a> with details of your claim.</p>
+        </section>
+
+        <section class="legal-section" id="tos-disclaimer">
+          <span class="legal-section-num">10</span>
+          <h3 class="legal-section-title"><em>disclaimers</em></h3>
+          <p>the site and its content are provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+          <p>we do not warrant that the site will be uninterrupted, error-free, or free of viruses or other harmful components. we do not warrant the accuracy, completeness, or usefulness of information provided on the site.</p>
+          <p><strong>important — animal product safety:</strong> navan chews are intended for supervised use only. always supervise your dog while chewing. remove any piece that becomes small enough to swallow whole. select appropriately sized chews for your dog's size and chewing style. if your dog has any health conditions, consult your veterinarian before introducing any new chew product. navan is not liable for any injury, illness, or adverse reaction that results from unsupervised use or failure to follow product guidance.</p>
+        </section>
+
+        <section class="legal-section" id="tos-liability">
+          <span class="legal-section-num">11</span>
+          <h3 class="legal-section-title">limitation of <em>liability</em></h3>
+          <p>to the fullest extent permitted by applicable law, navan, its officers, directors, employees, agents, and suppliers will not be liable for any indirect, incidental, special, consequential, or punitive damages — including but not limited to loss of profits, loss of data, or business interruption — arising from:</p>
+          <ul class="legal-list">
+            <li>your use of, or inability to use, the site or any products purchased through the site</li>
+            <li>any content obtained from the site</li>
+            <li>unauthorised access to or alteration of your transmissions or data</li>
+          </ul>
+          <p>in no event shall navan's total liability to you for all claims arising from your use of the site or any products exceed the amount you paid to navan in the 12 months preceding the claim.</p>
+          <p>some jurisdictions do not allow certain exclusions or limitations of liability, so the above limitations may not apply to you in full.</p>
+        </section>
+
+        <section class="legal-section" id="tos-governing">
+          <span class="legal-section-num">12</span>
+          <h3 class="legal-section-title">governing <em>law</em></h3>
+          <p>these terms are governed by and construed in accordance with the laws of the state of tennessee, united states, without regard to its conflict of law provisions.</p>
+          <p>any dispute arising from these terms or your use of the site will be resolved through binding arbitration in accordance with the american arbitration association's consumer arbitration rules, unless you opt out of arbitration within 30 days of first agreeing to these terms by emailing <a href="mailto:legal@navanpet.com">legal@navanpet.com</a>.</p>
+          <p>if arbitration is not applicable or you have validly opted out, you consent to the exclusive jurisdiction of the state and federal courts located in nashville, tennessee.</p>
+          <p>notwithstanding the above, either party may seek injunctive or other equitable relief in any court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
+        </section>
+
+        <section class="legal-section" id="tos-changes">
+          <span class="legal-section-num">13</span>
+          <h3 class="legal-section-title">changes to these <em>terms</em></h3>
+          <p>we may update these terms of service at any time. when we do, we will update the "last updated" date at the top of this page. if we make material changes, we will notify you by email or by posting a prominent notice on the site prior to the change taking effect.</p>
+          <p>your continued use of the site after any changes constitutes your acceptance of the updated terms. if you do not agree with the updated terms, you must stop using the site.</p>
+        </section>
+
+        <section class="legal-section" id="tos-contact">
+          <span class="legal-section-num">14</span>
+          <h3 class="legal-section-title">contact <em>us</em></h3>
+          <p>if you have questions about these terms, please contact us:</p>
+          <ul class="legal-list">
+            <li>general enquiries: <a href="mailto:hello@navanpet.com">hello@navanpet.com</a></li>
+            <li>legal matters: <a href="mailto:legal@navanpet.com">legal@navanpet.com</a></li>
+            <li>returns &amp; orders: <a href="mailto:hello@navanpet.com">hello@navanpet.com</a></li>
+            <li>website: <a href="https://navanpet.com">navanpet.com</a></li>
+          </ul>
+        </section>
+
+        <div class="legal-contact">
+          <div class="legal-contact-text">
+            <span class="legal-contact-label">also review</span>
+            <span class="legal-contact-body">our privacy policy explains how we collect and use your personal information.</span>
+          </div>
+          <a href="navan-privacy.html" class="btn btn-primary">view privacy policy</a>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 class="footer-wordmark">navan</h2>
+        <p class="footer-tag">clean living for your dog. a natural approach to vitality &amp; nourishment.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>shop</h5>
+          <ul>
+            <li><a href="navan-product.html">core protocol</a></li>
+            <li><a href="navan-bundles.html">View Bundles</a></li>
+            <li><a href="navan-collection.html">all chews</a></li>
+            <li><a href="#">subscribe &amp; save</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>learn</h5>
+          <ul>
+            <li><a href="navan-homepage_Version_2.html#protocol">the protocol</a></li>
+            <li><a href="#">ingredients</a></li>
+            <li><a href="#">journal</a></li>
+            <li><a href="navan-faq_Version_2.html">faq</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>company</h5>
+          <ul>
+            <li><a href="navan-about.html">about</a></li>
+            <li><a href="#">nation</a></li>
+            <li><a href="#">press</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>support</h5>
+          <ul>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">account</a></li>
+            <li><a href="navan-faq_Version_2.html">help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 navan · the natural toothbrush pets love</div>
+      <div class="footer-bottom-links">
+        <a href="navan-privacy.html">privacy</a>
+        <a href="navan-terms.html">terms</a>
+        <a href="#">accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+
+  (function() {
+    const sections = document.querySelectorAll('.legal-section[id]');
+    const links    = document.querySelectorAll('.legal-toc-link');
+    if (!sections.length || !links.length) return;
+    const linkMap = {};
+    links.forEach(l => { linkMap[l.getAttribute('href').replace('#','')] = l; });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const link = linkMap[e.target.id];
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+    sections.forEach(s => obs.observe(s));
+  })();
+
+  (function() {
+    const btn   = document.getElementById('hamburger');
+    const menu  = document.getElementById('mobile-menu');
+    const scrim = document.getElementById('menu-scrim');
+    if (!btn || !menu || !scrim) return;
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+      menu.setAttribute('aria-hidden', String(!open));
+      scrim.setAttribute('aria-hidden', String(!open));
+      scrim.classList.toggle('active', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) { const f = menu.querySelector('a'); if (f) f.focus(); }
+    };
+    const toggle = () => setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    const close  = () => setOpen(false);
+    btn.addEventListener('click', toggle);
+    scrim.addEventListener('click', close);
+    menu.querySelectorAll('[data-menu-close]').forEach(l => l.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { close(); btn.focus(); } });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) close(); });
+  })();
+</script>
+</body>
+</html>

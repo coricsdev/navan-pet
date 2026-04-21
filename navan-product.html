@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>30-day core protocol — navan · the natural toothbrush pets love</title>
+<meta name="description" content="built for daily chewing. single-ingredient dental chews designed for small to medium dogs. rabbit ears, rabbit stick, duck neck. no glycerin, no starch, no fillers." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* NAVAN — PRODUCT PAGE. Inherits project standard stylesheet. */
+
+:root {
+  --sand: #EBDECB; --sand-soft: #F3EBDD; --cream: #FEF9F5; --white: #FFFFFF;
+  --taupe: #BFA694; --charcoal: #6A625A; --charcoal-h: #59524C; --ink: #514C45;
+  --muted: #7A736A; --duck: #95A77D; --rabbit: #8FC8D4; --beef: #CA8575;
+  --sec: #738063; --sec-h: #8EA18F; --disabled: #E8DDD2;
+  --font: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --t-caps: 0.118em; --t-lower: 0.042em; --t-micro: 0.22em;
+  --max: 1400px; --content: 1240px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--sec); outline-offset: 3px; border-radius: 4px; }
+
+/* Type */
+.eyebrow {
+  font-size: 11px; letter-spacing: var(--t-micro); text-transform: uppercase;
+  color: var(--muted); font-weight: 500; display: inline-flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--taupe); display: inline-block; }
+.eyebrow.no-rule::before { display: none; }
+.caps  { text-transform: uppercase; letter-spacing: var(--t-caps); font-weight: 300; }
+.lower { text-transform: lowercase; letter-spacing: var(--t-lower); }
+.display { font-weight: 300; line-height: 0.95; letter-spacing: -0.015em; }
+.italic { font-style: italic; font-weight: 300; }
+.d-xl  { font-size: clamp(44px, 7vw, 120px); }
+.d-lg  { font-size: clamp(36px, 5vw, 80px); }
+.d-md  { font-size: clamp(28px, 3.2vw, 48px); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 52px; padding: 0 36px; border-radius: 999px; font-size: 11px;
+  letter-spacing: var(--t-micro); text-transform: uppercase; font-weight: 500;
+  cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+  transition: background-color .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
+}
+.btn-primary   { background: var(--charcoal); color: var(--cream); }
+.btn-primary:hover { background: var(--charcoal-h); }
+.btn-secondary { background: transparent; color: var(--sec); border-color: var(--sec); }
+.btn-secondary:hover { color: var(--sec-h); border-color: var(--sec-h); }
+.btn-full { width: 100%; justify-content: center; }
+.btn-atc {
+  height: 60px; font-size: 12px;
+  background: var(--ink); color: var(--cream);
+  letter-spacing: var(--t-micro);
+}
+.btn-atc:hover { background: var(--charcoal-h); }
+
+.btn-ghost {
+  background: transparent; padding: 0; height: auto;
+  color: var(--ink); letter-spacing: var(--t-lower); text-transform: lowercase;
+  font-size: 14px; font-weight: 400; border: 0; position: relative;
+}
+.btn-ghost::after { content: '→'; margin-left: 10px; display: inline-block; transition: transform .4s var(--ease); }
+.btn-ghost:hover::after { transform: translateX(6px); }
+
+.wrap { max-width: var(--content); margin: 0 auto; padding: 0 40px; }
+@media(max-width: 767px){
+   /* Header Mobile Changes */
+  .header-inner {
+    gap: 20px;
+    padding: 10px 20px;
+  }
+  .header-actions{
+    gap: 15px;
+  }
+  .mobile-menu {
+      width: min(350px, 100%) !important;
+  }
+}
+@media (max-width: 720px) { .wrap { padding: 0 24px; } }
+
+/* Tags */
+.tag {
+  font-size: 10px; letter-spacing: var(--t-micro); text-transform: uppercase;
+  padding: 6px 14px; border-radius: 999px; color: var(--white); font-weight: 500; display: inline-flex;
+}
+.tag-duck     { background: var(--duck); }
+.tag-rabbit   { background: var(--rabbit); color: var(--ink); }
+.tag-beef     { background: var(--beef); }
+.tag-collagen { background: var(--taupe); }
+
+/* ANNOUNCEMENT */
+.announce {
+  background: var(--ink); color: var(--sand); overflow: hidden;
+  padding: 12px 0; font-size: 11px; letter-spacing: var(--t-micro); text-transform: uppercase;
+}
+.announce-track {
+  display: flex; gap: 60px;
+  animation: marquee 40s linear infinite; width: max-content;
+}
+.announce-track span { display: inline-flex; align-items: center; gap: 60px; white-space: nowrap; }
+.announce-track span::after { content: '◦'; color: var(--taupe); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* HEADER */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(254,249,245,0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .4s var(--ease), background .4s var(--ease);
+}
+.header.scrolled { border-bottom-color: var(--disabled); background: rgba(254,249,245,0.96); }
+.header-inner {
+  max-width: var(--max); margin: 0 auto; padding: 22px 40px;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px;
+}
+.logo { font-size: 28px; color: var(--charcoal); font-weight: 400; text-transform: lowercase; letter-spacing: -0.02em; }
+.nav { display: flex; gap: 40px; justify-self: center; }
+.nav a {
+  font-size: 13px; letter-spacing: var(--t-lower); color: var(--ink);
+  position: relative; padding: 6px 0;
+}
+.nav a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--charcoal); transform: scaleX(0); transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.nav a:hover::after,
+.nav a[aria-current="page"]::after { transform: scaleX(1); }
+.nav a[aria-current="page"] { color: var(--charcoal); }
+.header-actions { display: flex; gap: 20px; justify-self: end; align-items: center; }
+.icon-btn {
+  width: 40px; height: 40px; background: transparent; border: none; cursor: pointer;
+  color: var(--ink); display: inline-flex; align-items: center; justify-content: center;
+  position: relative; transition: color .3s var(--ease);
+}
+.icon-btn:hover { color: var(--charcoal); }
+.icon-btn svg { width: 18px; height: 18px; }
+.cart-count {
+  position: absolute; top: 4px; right: 4px;
+  background: var(--charcoal); color: var(--cream);
+  border-radius: 999px; font-size: 9px; padding: 2px 6px; letter-spacing: 0;
+}
+.hamburger { display: none; }
+.hamburger-icon { position: relative; width: 18px; height: 12px; }
+.hamburger-icon span {
+  position: absolute; left: 0; right: 0; height: 1.5px; background: currentColor;
+  transition: transform .4s var(--ease), opacity .3s var(--ease), top .4s var(--ease);
+}
+.hamburger-icon span:nth-child(1) { top: 0; }
+.hamburger-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger-icon span:nth-child(3) { top: 100%; transform: translateY(-100%); }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(3) { top: 50%; transform: translateY(-50%) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(420px,100%);
+  background: var(--cream); z-index: 60;
+  transform: translateX(100%); transition: transform .5s var(--ease);
+  display: flex; flex-direction: column; padding: 100px 40px 40px;
+  box-shadow: -20px 0 60px -20px rgba(81,76,69,0.2); visibility: hidden;
+}
+.mobile-menu[aria-hidden="false"] { transform: translateX(0); visibility: visible; }
+.mobile-menu-scrim {
+  position: fixed; inset: 0; background: rgba(81,76,69,0.4); backdrop-filter: blur(4px);
+  z-index: 55; opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s var(--ease);
+}
+.mobile-menu-scrim.active { opacity: 1; visibility: visible; }
+.mobile-nav { display: flex; flex-direction: column; gap: 4px; margin-bottom: 48px; }
+.mobile-nav a {
+  font-size: 28px; color: var(--ink); text-transform: lowercase; letter-spacing: var(--t-lower);
+  font-weight: 300; padding: 14px 0; border-bottom: 1px solid var(--disabled);
+  transition: color .3s var(--ease), padding-left .3s var(--ease);
+}
+.mobile-nav a:hover { color: var(--charcoal); padding-left: 8px; }
+.mobile-menu-foot {
+  margin-top: auto; display: flex; flex-direction: column; gap: 16px;
+  padding-top: 32px; border-top: 1px solid var(--disabled);
+}
+.mobile-menu-foot a { font-size: 12px; letter-spacing: var(--t-micro); text-transform: uppercase; color: var(--muted); }
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .hamburger { display: inline-flex; justify-self: start; }
+  .header-inner { padding: 18px 24px; }
+}
+
+/* ===================================================================
+   PDP — UNIQUE SECTIONS
+   =================================================================== */
+
+/* BREADCRUMB */
+.breadcrumb {
+  border-bottom: 1px solid var(--disabled);
+  padding: 16px 0;
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.breadcrumb-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.breadcrumb-inner a { transition: color .3s var(--ease); }
+.breadcrumb-inner a:hover { color: var(--ink); }
+.breadcrumb-sep { color: var(--taupe); }
+.breadcrumb-current { color: var(--ink); }
+@media (max-width: 720px) { .breadcrumb-inner { padding: 0 24px; } }
+
+/* HERO SPLIT */
+.pdp-hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Gallery */
+.pdp-gallery { display: flex; flex-direction: column; gap: 16px; }
+.pdp-gallery-main {
+  aspect-ratio: 4/5;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--sand-soft);
+  position: relative;
+  cursor: zoom-in;
+}
+.pdp-gallery-main img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+.pdp-gallery-main:hover img { transform: scale(1.03); }
+.pdp-gallery-badge {
+  position: absolute;
+  top: 20px; left: 20px;
+  background: rgba(254,249,245,0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 10px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.pdp-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.pdp-thumb {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--sand);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color .3s var(--ease);
+}
+.pdp-thumb.active { border-color: var(--charcoal); }
+.pdp-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Buy column */
+.pdp-buy { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 28px; }
+
+.pdp-proteins { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.pdp-title {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: var(--ink);
+  text-transform: lowercase;
+  margin: 0;
+}
+.pdp-title em { color: var(--taupe); font-style: italic; }
+
+.pdp-stars {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  letter-spacing: var(--t-lower);
+  color: var(--muted);
+}
+.pdp-stars-icons { color: var(--duck); letter-spacing: 2px; }
+.pdp-stars-count { color: var(--sec); border-bottom: 1px solid var(--sec); cursor: pointer; }
+
+.pdp-divider { height: 1px; background: var(--disabled); }
+
+/* Subscribe / one-time toggle */
+.pdp-purchase {
+  background: var(--white);
+  border: 1px solid var(--disabled);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.pdp-purchase-option {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: background .3s var(--ease);
+}
+.pdp-purchase-option:hover { background: var(--sand-soft); }
+.pdp-purchase-option + .pdp-purchase-option { border-top: 1px solid var(--disabled); }
+.pdp-purchase-option.selected { background: var(--sand); }
+
+.pdp-radio {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--taupe);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: border-color .3s var(--ease);
+}
+.pdp-purchase-option.selected .pdp-radio {
+  border-color: var(--charcoal);
+}
+.pdp-radio-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--charcoal);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.pdp-purchase-option.selected .pdp-radio-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+.pdp-option-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pdp-option-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: var(--t-lower);
+  text-transform: lowercase;
+}
+.pdp-option-sub {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: var(--t-lower);
+  text-transform: lowercase;
+}
+.pdp-option-sub em {
+  color: var(--duck);
+  font-style: normal;
+  font-weight: 500;
+}
+.pdp-option-price {
+  text-align: right;
+}
+.pdp-option-price .price-current {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: var(--t-lower);
+}
+.pdp-option-price .price-was {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: line-through;
+  letter-spacing: var(--t-lower);
+  display: block;
+}
+.pdp-option-price .price-save {
+  font-size: 10px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--duck);
+  font-weight: 500;
+}
+
+/* Subscribe benefits list */
+.pdp-sub-benefits {
+  border-top: 1px solid var(--disabled);
+  padding: 16px 24px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--sand-soft);
+}
+.pdp-sub-benefits.show { display: flex; }
+.pdp-sub-benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: var(--t-lower);
+  text-transform: lowercase;
+}
+.pdp-sub-benefit::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--duck);
+  flex-shrink: 0;
+}
+
+/* Quantity */
+.pdp-qty {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.pdp-qty-label {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.pdp-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--disabled);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.pdp-qty-btn {
+  width: 44px; height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .3s var(--ease);
+  font-weight: 300;
+}
+.pdp-qty-btn:hover { background: var(--sand); }
+.pdp-qty-num {
+  min-width: 36px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+/* ATC + secondary */
+.pdp-actions { display: flex; flex-direction: column; gap: 12px; }
+
+/* Benefit pills */
+.pdp-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+}
+.pdp-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--ink);
+  letter-spacing: var(--t-lower);
+  text-transform: lowercase;
+  line-height: 1.5;
+}
+.pdp-benefit-item::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--taupe);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Trust row */
+.pdp-trust {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 8px;
+}
+.pdp-trust-item {
+  background: var(--sand-soft);
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pdp-trust-item svg { width: 20px; height: 20px; margin: 0 auto; color: var(--taupe); }
+.pdp-trust-item .label {
+  font-size: 10px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .pdp-hero { gap: 48px; }
+}
+@media (max-width: 900px) {
+  .pdp-hero {
+    grid-template-columns: 1fr;
+    padding: 24px 24px 60px;
+    gap: 40px;
+  }
+  .pdp-buy { position: static; }
+  .pdp-thumbnails { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* RITUAL STEPS */
+.pdp-ritual {
+  background: var(--sand);
+  padding: 120px 0 140px;
+}
+.pdp-ritual-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.pdp-ritual-title { margin: 0; color: var(--ink); }
+.pdp-ritual-title em { color: var(--taupe); font-style: italic; }
+.pdp-ritual-intro {
+  color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0;
+  max-width: 42ch; justify-self: end; text-transform: lowercase; letter-spacing: var(--t-lower);
+}
+.ritual-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--taupe);
+  border-bottom: 1px solid var(--taupe);
+}
+.ritual-step {
+  padding: 60px 40px;
+  transition: background .5s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ritual-step + .ritual-step { border-left: 1px solid var(--taupe); }
+.ritual-step:hover { background: rgba(235,222,203,0.4); }
+.ritual-step-num {
+  font-size: 56px; font-weight: 300; color: var(--taupe);
+  line-height: 1; letter-spacing: -0.04em;
+}
+.ritual-step-title {
+  font-size: 13px; letter-spacing: var(--t-micro); text-transform: uppercase;
+  color: var(--ink); margin: 0; font-weight: 500;
+}
+.ritual-step-body {
+  color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0;
+  text-transform: lowercase; letter-spacing: var(--t-lower);
+}
+@media (max-width: 900px) {
+  .pdp-ritual { padding: 60px 0 80px; }
+  .pdp-ritual-head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
+  .pdp-ritual-intro { justify-self: start; }
+  .ritual-steps { grid-template-columns: 1fr; }
+  .ritual-step + .ritual-step { border-left: 0; border-top: 1px solid var(--taupe); }
+  .ritual-step { padding: 36px 24px; }
+}
+
+/* CHEW POWER */
+.pdp-chew {
+  background: var(--white);
+  padding: 120px 0 140px;
+}
+.pdp-chew-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.pdp-chew-title { margin: 0; color: var(--ink); }
+.pdp-chew-title em { color: var(--taupe); font-style: italic; }
+.pdp-chew-intro {
+  color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0;
+  max-width: 42ch; justify-self: end; text-transform: lowercase; letter-spacing: var(--t-lower);
+}
+
+.chew-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.chew-card {
+  background: var(--sand-soft);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.chew-card-title {
+  font-size: 12px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+}
+.chew-rows { display: flex; flex-direction: column; gap: 16px; }
+.chew-row {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+.chew-dog-icon {
+  width: 20px; height: 20px;
+  fill: var(--ink);
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.chew-row-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.chew-size-label {
+  font-size: 10px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.chew-bar-track {
+  height: 8px;
+  background: var(--disabled);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.chew-bar-fill {
+  height: 100%;
+  background: var(--taupe);
+  border-radius: 999px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.2s var(--ease);
+}
+.chew-bar-fill.animated { transform: scaleX(1); }
+
+@media (max-width: 900px) {
+  .pdp-chew { padding: 60px 0 80px; }
+  .pdp-chew-head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
+  .pdp-chew-intro { justify-self: start; }
+  .chew-grid { grid-template-columns: 1fr; }
+}
+
+/* INGREDIENTS */
+.pdp-ingredients {
+  background: var(--ink);
+  color: var(--sand);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+.pdp-ingredients::before {
+  content: ''; position: absolute;
+  top: -120px; left: -120px;
+  width: 480px; height: 480px;
+  border-radius: 50%; background: var(--taupe);
+  filter: blur(100px); opacity: 0.18; pointer-events: none;
+}
+.pdp-ingredients-inner {
+  position: relative; z-index: 1;
+}
+.pdp-ingredients-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.pdp-ingredients-text { display: flex; flex-direction: column; gap: 32px; }
+.pdp-ingredients-eyebrow {
+  color: var(--taupe);
+  justify-content: flex-start;
+}
+.pdp-ingredients-eyebrow::before { background: var(--taupe); }
+.pdp-ingredients-title {
+  color: var(--sand);
+  margin: 0;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.pdp-ingredients-title em { color: var(--taupe); font-style: italic; }
+.pdp-ingredients-body {
+  color: var(--taupe);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 44ch;
+  margin: 0;
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+}
+.pdp-no-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(235,222,203,0.15);
+}
+.pdp-no-item {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(235,222,203,0.1);
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 300;
+  letter-spacing: -0.005em;
+  line-height: 1;
+}
+.pdp-no-item .num {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--taupe);
+  min-width: 28px;
+  font-weight: 500;
+  align-self: center;
+}
+.pdp-no-item .txt {
+  color: rgba(235,222,203,0.5);
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+  position: relative;
+}
+.pdp-no-item .txt::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 1px;
+  background: rgba(191,166,148,0.6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .8s var(--ease);
+}
+.pdp-no-item.visible .txt::after { transform: scaleX(1); }
+.pdp-ingredients-source {
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--taupe);
+  padding-top: 24px;
+  border-top: 1px solid rgba(235,222,203,0.15);
+}
+@media (max-width: 900px) {
+  .pdp-ingredients { padding: 60px 0 80px; }
+  .pdp-ingredients-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* BUNDLE UPSELL */
+.pdp-upsell {
+  background: var(--cream);
+  padding: 120px 0 140px;
+}
+.pdp-upsell-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.pdp-upsell-head .eyebrow { justify-content: center; margin-bottom: 20px; }
+.pdp-upsell-title {
+  color: var(--ink); margin: 0;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+.pdp-upsell-title em { color: var(--taupe); font-style: italic; }
+.upsell-card {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--sand-soft);
+}
+.upsell-media {
+  aspect-ratio: 1;
+  background: url('https://navanpet.com/cdn/shop/files/31.png?v=1774723736&width=1440') center/cover;
+}
+.upsell-body {
+  padding: 48px 48px 48px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+.upsell-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.upsell-title {
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-transform: lowercase;
+  margin: 0;
+  line-height: 1.1;
+}
+.upsell-title em { color: var(--taupe); font-style: italic; }
+.upsell-desc {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 44ch;
+  text-transform: lowercase;
+  letter-spacing: var(--t-lower);
+}
+.upsell-proteins { display: flex; gap: 8px; flex-wrap: wrap; }
+.upsell-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--disabled);
+}
+.upsell-price {
+  font-size: 15px;
+  letter-spacing: var(--t-lower);
+  color: var(--ink);
+}
+.upsell-price s { color: var(--muted); margin-right: 8px; }
+@media (max-width: 900px) {
+  .pdp-upsell { padding: 60px 0 80px; }
+  .upsell-card { grid-template-columns: 1fr; }
+  .upsell-media { aspect-ratio: 16/9; }
+  .upsell-body { padding: 32px 24px; }
+}
+
+/* REVIEWS */
+.pdp-reviews {
+  background: var(--sand);
+  padding: 120px 0 140px;
+}
+.pdp-reviews-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.pdp-reviews-summary { display: flex; flex-direction: column; gap: 12px; }
+.pdp-reviews-score {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.pdp-reviews-num {
+  font-size: clamp(56px, 8vw, 100px);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  line-height: 1;
+}
+.pdp-reviews-stars-block { display: flex; flex-direction: column; gap: 6px; }
+.pdp-reviews-stars { color: var(--duck); font-size: 18px; letter-spacing: 3px; }
+.pdp-reviews-total {
+  font-size: 12px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.review-card {
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform .5s var(--ease);
+}
+.review-card:hover { transform: translateY(-4px); }
+.review-card-stars { color: var(--duck); letter-spacing: 3px; font-size: 13px; }
+.review-card-body {
+  color: var(--ink); font-size: 15px; line-height: 1.7; flex: 1;
+  text-transform: lowercase; letter-spacing: var(--t-lower); margin: 0;
+}
+.review-card-author {
+  display: flex; align-items: center; gap: 14px;
+  padding-top: 20px; border-top: 1px solid var(--disabled);
+}
+.review-avatar {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--taupe);
+  color: var(--cream); display: flex; align-items: center; justify-content: center;
+  font-size: 14px; text-transform: uppercase; font-weight: 500;
+}
+.review-meta {
+  font-size: 12px; line-height: 1.5; color: var(--muted);
+  text-transform: lowercase; letter-spacing: var(--t-lower);
+}
+.review-meta b { color: var(--ink); font-weight: 500; display: block; }
+
+.pdp-reviews-foot { margin-top: 48px; text-align: center; }
+@media (max-width: 900px) {
+  .pdp-reviews { padding: 60px 0 80px; }
+  .review-grid { grid-template-columns: 1fr; }
+  .pdp-reviews-head { grid-template-columns: 1fr; }
+}
+
+/* YOU MAY ALSO LIKE */
+.pdp-related {
+  background: var(--white);
+  padding: 120px 0 140px;
+}
+.pdp-related-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+.pdp-related-title {
+  margin: 0; color: var(--ink);
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 300; text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+.pdp-related-title em { color: var(--taupe); font-style: italic; }
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.related-card {
+  background: var(--sand-soft);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform .5s var(--ease);
+  cursor: pointer;
+}
+.related-card:hover { transform: translateY(-5px); }
+.related-media {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--sand);
+  position: relative;
+}
+.related-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.related-card:hover .related-media img { transform: scale(1.04); }
+.related-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.related-proteins { display: flex; gap: 6px; flex-wrap: wrap; }
+.related-title {
+  font-size: 20px; font-weight: 300; color: var(--ink);
+  text-transform: lowercase; letter-spacing: -0.005em; margin: 0;
+}
+.related-price {
+  font-size: 14px; color: var(--muted); letter-spacing: var(--t-lower); text-transform: lowercase;
+}
+.related-price strong { color: var(--ink); font-weight: 400; }
+@media (max-width: 900px) {
+  .pdp-related { padding: 60px 0 80px; }
+  .related-grid { grid-template-columns: 1fr; }
+}
+
+/* STICKY MOBILE ATC BAR */
+.mobile-atc-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 45;
+  background: rgba(254,249,245,0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--disabled);
+  padding: 16px 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.mobile-atc-info { display: flex; flex-direction: column; gap: 4px; }
+.mobile-atc-name { font-size: 14px; font-weight: 500; color: var(--ink); text-transform: lowercase; letter-spacing: var(--t-lower); }
+.mobile-atc-price { font-size: 13px; color: var(--muted); text-transform: lowercase; letter-spacing: var(--t-lower); }
+.mobile-atc-btn {
+  flex-shrink: 0;
+  height: 48px; padding: 0 28px; border-radius: 999px;
+  background: var(--charcoal); color: var(--cream);
+  border: none; font-family: var(--font); font-size: 11px;
+  letter-spacing: var(--t-micro); text-transform: uppercase;
+  font-weight: 500; cursor: pointer;
+  transition: background .3s var(--ease);
+}
+.mobile-atc-btn:hover { background: var(--charcoal-h); }
+@media (max-width: 900px) {
+  .mobile-atc-bar { display: flex; }
+  body { padding-bottom: 90px; }
+}
+
+/* FOOTER */
+.footer {
+  background: var(--cream); color: var(--ink);
+  padding: 100px 0 40px; border-top: 1px solid var(--disabled);
+}
+.footer-top {
+  padding-bottom: 80px; margin-bottom: 40px; border-bottom: 1px solid var(--disabled);
+  display: grid; grid-template-columns: 2fr 3fr; gap: 80px;
+}
+.footer-wordmark {
+  font-size: clamp(80px, 12vw, 180px); line-height: 0.9; color: var(--ink);
+  text-transform: lowercase; font-weight: 300; letter-spacing: -0.03em; margin: 0;
+}
+.footer-tag {
+  margin-top: 24px; color: var(--muted); font-size: 14px;
+  text-transform: lowercase; letter-spacing: var(--t-lower); max-width: 28ch; line-height: 1.6;
+}
+.footer-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.footer-col h5 {
+  font-size: 11px; letter-spacing: var(--t-micro); text-transform: uppercase;
+  color: var(--ink); margin: 0 0 20px; font-weight: 500;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.footer-col a {
+  font-size: 13px; color: var(--muted); text-transform: lowercase;
+  letter-spacing: var(--t-lower); transition: color .3s var(--ease);
+}
+.footer-col a:hover { color: var(--ink); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 24px; font-size: 11px; color: var(--muted);
+  text-transform: lowercase; letter-spacing: var(--t-lower);
+}
+.footer-bottom-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-bottom-links a:hover { color: var(--ink); }
+@media (max-width: 900px) {
+  .footer { padding: 60px 0 32px; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; margin-bottom: 32px; }
+  .footer-nav { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  <div class="announce-track">
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <a href="#" class="logo"><img src="https://navanpet.com/cdn/shop/files/navan_logo.png?v=1770933252&width=100" alt="Navan Pet Logo"></a>
+    <nav class="nav" aria-label="primary">
+      <a href="navan-collection.html"  aria-current="page">SHOP</a>
+      <a href="navan-faq_Version_2.html">FAQ</a>
+      <a href="navan-about.html" >ABOUT</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="navan-cart.html" class="icon-btn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu-scrim" id="menu-scrim" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="mobile navigation">
+  <nav class="mobile-nav" aria-label="mobile primary">
+     <a href="navan-collection.html"  data-menu-close>SHOP</a>
+      <a href="navan-faq_Version_2.html"  data-menu-close>FAQ</a>
+      <a href="navan-about.html"  data-menu-close>ABOUT</a>
+      <a href="#"  data-menu-close>Blog</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="navan-cart.html" data-menu-close>cart</a>
+    <a href="navan-faq_Version_2.html" data-menu-close>faq</a>
+    <a href="navan-privacy.html" data-menu-close>privacy</a>
+    <a href="navan-terms.html" data-menu-close>terms</a>
+  </div>
+</aside>
+
+
+<main>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="navan-homepage_Version_2.html" class="lower">home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="#" class="lower">shop</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current lower" aria-current="page">core protocol</span>
+    </div>
+  </nav>
+
+  <!-- HERO SPLIT -->
+  <section class="pdp-hero" aria-labelledby="pdp-title">
+
+    <!-- Gallery -->
+    <div class="pdp-gallery">
+      <div class="pdp-gallery-main" id="gallery-main">
+        <div class="pdp-gallery-badge">30-day core</div>
+        <img
+          id="gallery-img"
+          src="https://navanpet.com/cdn/shop/files/softchew-4_de07be68-a84d-4eff-b243-a1da7d7c07cb.png?v=1775139560&width=1440"
+          alt="navan core protocol bundle — rabbit ears, rabbit stick, duck neck"
+        />
+      </div>
+      <div class="pdp-thumbnails" role="list" aria-label="product images">
+        <div class="pdp-thumb active" role="listitem" tabindex="0" aria-label="product overview" data-src="https://navanpet.com/cdn/shop/files/softchew-4_de07be68-a84d-4eff-b243-a1da7d7c07cb.png?v=1775139560&width=1440">
+          <img src="https://navanpet.com/cdn/shop/files/softchew-4_de07be68-a84d-4eff-b243-a1da7d7c07cb.png?v=1775139560&width=1440" alt="" />
+        </div>
+        <div class="pdp-thumb" role="listitem" tabindex="0" aria-label="Dog Biting" data-src="https://navanpet.com/cdn/shop/files/42.png?v=1775139560&width=1440">
+          <img src="https://navanpet.com/cdn/shop/files/42.png?v=1775139560&width=1440" alt="" />
+        </div>
+        <div class="pdp-thumb" role="listitem" tabindex="0" aria-label="Rabbit ears" data-src="https://navanpet.com/cdn/shop/files/33.png?v=1775700512&width=1440">
+          <img src="https://navanpet.com/cdn/shop/files/33.png?v=1775700512&width=1440" alt="" />
+        </div>
+        <div class="pdp-thumb" role="listitem" tabindex="0" aria-label="Dog Bite" data-src="https://navanpet.com/cdn/shop/files/35.png?v=1775700667&width=1440">
+          <img src="https://navanpet.com/cdn/shop/files/35.png?v=1775700667&width=1440" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Buy column -->
+    <div class="pdp-buy">
+      <div class="pdp-proteins">
+        <span class="tag tag-rabbit">rabbit ears</span>
+        <span class="tag tag-rabbit">rabbit stick</span>
+        <span class="tag tag-duck">duck neck</span>
+      </div>
+
+      <h1 id="pdp-title" class="pdp-title">
+        30-day core<br/><em>protocol</em>
+      </h1>
+
+      <div class="pdp-stars" aria-label="4.9 out of 5, 94 reviews">
+        <span class="pdp-stars-icons" aria-hidden="true">★★★★★</span>
+        <span>4.9</span>
+        <a href="#pdp-reviews" class="pdp-stars-count">94 reviews</a>
+      </div>
+
+      <div class="pdp-divider" role="separator"></div>
+
+      <!-- Purchase toggle — Saint Rocco's pattern (guidelines p.17) -->
+      <div class="pdp-purchase" role="radiogroup" aria-labelledby="purchase-label">
+        <p id="purchase-label" class="visually-hidden" style="position:absolute;left:-9999px">purchase options</p>
+
+        <div class="pdp-purchase-option" id="opt-subscribe" role="radio" aria-checked="true" tabindex="0" data-price="$62" data-was="$74">
+          <div class="pdp-radio"><div class="pdp-radio-dot"></div></div>
+          <div class="pdp-option-label">
+            <div class="pdp-option-title">subscribe &amp; save</div>
+            <div class="pdp-option-sub">delivered every 30 days · <em>save 16%</em> · cancel anytime</div>
+          </div>
+          <div class="pdp-option-price">
+            <span class="price-was">$74</span>
+            <span class="price-current" id="subscribe-price">$62</span>
+            <span class="price-save">save 16%</span>
+          </div>
+        </div>
+
+        <div class="pdp-sub-benefits show" id="sub-benefits">
+          <div class="pdp-sub-benefit">free shipping on every delivery</div>
+          <div class="pdp-sub-benefit">skip, pause, or cancel anytime</div>
+          <div class="pdp-sub-benefit">first-access to new products</div>
+        </div>
+
+        <div class="pdp-purchase-option" id="opt-onetime" role="radio" aria-checked="false" tabindex="0" data-price="$74">
+          <div class="pdp-radio"><div class="pdp-radio-dot"></div></div>
+          <div class="pdp-option-label">
+            <div class="pdp-option-title">one-time purchase</div>
+            <div class="pdp-option-sub">ships within 2–3 business days</div>
+          </div>
+          <div class="pdp-option-price">
+            <span class="price-current">$74</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quantity -->
+      <div class="pdp-qty">
+        <span class="pdp-qty-label">quantity</span>
+        <div class="pdp-qty-ctrl" role="group" aria-label="quantity">
+          <button class="pdp-qty-btn" id="qty-minus" aria-label="decrease quantity">−</button>
+          <span class="pdp-qty-num" id="qty-num" aria-live="polite" aria-atomic="true">1</span>
+          <button class="pdp-qty-btn" id="qty-plus" aria-label="increase quantity">+</button>
+        </div>
+      </div>
+
+      <!-- ATC -->
+      <div class="pdp-actions">
+        <button class="btn btn-atc btn-full" id="atc-btn" aria-label="add core protocol to cart">
+          add to routine — <span id="atc-price">$62</span>
+        </button>
+        <button class="btn btn-secondary btn-full">buy it now</button>
+      </div>
+
+      <!-- Benefits -->
+      <div class="pdp-divider" role="separator"></div>
+      <div class="pdp-benefits" aria-label="product benefits">
+        <div class="pdp-benefit-item">supports daily dental maintenance</div>
+        <div class="pdp-benefit-item">highly digestible, single-ingredient proteins</div>
+        <div class="pdp-benefit-item">ideal size and density for small &amp; medium dogs</div>
+        <div class="pdp-benefit-item">perfect snack chew option for large dogs</div>
+        <div class="pdp-benefit-item">no glycerin · no starch · no fillers</div>
+      </div>
+
+      <!-- Trust row -->
+      <div class="pdp-trust" aria-label="trust signals">
+        <div class="pdp-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="label">vet-aware formulation</div>
+        </div>
+        <div class="pdp-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <div class="label">single ingredient</div>
+        </div>
+        <div class="pdp-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div class="label">free returns</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- THE RITUAL — HOW TO USE -->
+  <section class="pdp-ritual" aria-labelledby="ritual-h">
+    <div class="wrap">
+      <div class="pdp-ritual-head">
+        <h2 id="ritual-h" class="pdp-ritual-title display d-lg lower reveal">
+          how to use <em>the protocol</em>
+        </h2>
+        <p class="pdp-ritual-intro reveal reveal-delay-1">
+          a simple, repeatable daily practice. consistency is the mechanism — not a single chew.
+        </p>
+      </div>
+      <div class="ritual-steps">
+        <article class="ritual-step reveal">
+          <div class="ritual-step-num">01</div>
+          <h3 class="ritual-step-title">choose your chew</h3>
+          <p class="ritual-step-body">
+            rotate between the three chews in the core bundle — rabbit ears, rabbit stick, and duck neck — based on your dog's size and chewing session of the day. each provides a slightly different texture and duration.
+          </p>
+        </article>
+        <article class="ritual-step reveal reveal-delay-1">
+          <div class="ritual-step-num">02</div>
+          <h3 class="ritual-step-title">give daily or near-daily</h3>
+          <p class="ritual-step-body">
+            consistency is everything. one chew per day — or most days — is the standard ritual. the mechanical action compounds over time. always supervise while chewing.
+          </p>
+        </article>
+        <article class="ritual-step reveal reveal-delay-2">
+          <div class="ritual-step-num">03</div>
+          <h3 class="ritual-step-title">watch it compound</h3>
+          <p class="ritual-step-body">
+            most pet parents notice fresher breath within the first 25 days. cleaner-looking teeth by day 50. sustained oral support ongoing. this is long-term dental investment, not a quick fix.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEW POWER — from PDF p.59 -->
+  <section class="pdp-chew" aria-labelledby="chew-h">
+    <div class="wrap">
+      <div class="pdp-chew-head">
+        <h2 id="chew-h" class="pdp-chew-title display d-lg lower reveal">
+          chew <em>power</em>
+        </h2>
+        <p class="pdp-chew-intro reveal reveal-delay-1">
+          estimated chew time by dog size. larger dogs will consume chews faster. smaller dogs will have longer sessions — which means more mechanical cleaning time per chew.
+        </p>
+      </div>
+      <div class="chew-grid">
+
+        <div class="chew-card reveal" aria-label="rabbit ears chew time by dog size">
+          <div class="chew-card-title">rabbit ears</div>
+          <div class="chew-rows">
+            <div class="chew-row">
+              <!-- Dog icon (simplified SVG) -->
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true">
+                <ellipse cx="16" cy="20" rx="10" ry="8" />
+                <circle cx="16" cy="10" r="5" />
+                <ellipse cx="9" cy="8" rx="3" ry="4" transform="rotate(-20 9 8)" />
+                <ellipse cx="23" cy="8" rx="3" ry="4" transform="rotate(20 23 8)" />
+              </svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">small</span>
+                <div class="chew-bar-track" role="img" aria-label="small dog: long chew time">
+                  <div class="chew-bar-fill" style="width:78%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true" style="width:26px;height:26px;opacity:.85">
+                <ellipse cx="16" cy="21" rx="11" ry="9" />
+                <circle cx="16" cy="10" r="6" />
+                <ellipse cx="8" cy="7" rx="3.5" ry="4.5" transform="rotate(-20 8 7)" />
+                <ellipse cx="24" cy="7" rx="3.5" ry="4.5" transform="rotate(20 24 7)" />
+              </svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">medium</span>
+                <div class="chew-bar-track" role="img" aria-label="medium dog: moderate chew time">
+                  <div class="chew-bar-fill" style="width:52%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true" style="width:30px;height:30px;opacity:1">
+                <ellipse cx="16" cy="22" rx="12" ry="10" />
+                <circle cx="16" cy="9" r="7" />
+                <ellipse cx="7" cy="6" rx="4" ry="5" transform="rotate(-20 7 6)" />
+                <ellipse cx="25" cy="6" rx="4" ry="5" transform="rotate(20 25 6)" />
+              </svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">large</span>
+                <div class="chew-bar-track" role="img" aria-label="large dog: short chew time">
+                  <div class="chew-bar-fill" style="width:28%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chew-card reveal reveal-delay-1" aria-label="rabbit stick chew time by dog size">
+          <div class="chew-card-title">rabbit stick</div>
+          <div class="chew-rows">
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="20" rx="10" ry="8" /><circle cx="16" cy="10" r="5" /><ellipse cx="9" cy="8" rx="3" ry="4" transform="rotate(-20 9 8)" /><ellipse cx="23" cy="8" rx="3" ry="4" transform="rotate(20 23 8)" /></svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">small</span>
+                <div class="chew-bar-track" role="img" aria-label="small dog: long chew time">
+                  <div class="chew-bar-fill" style="width:85%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true" style="width:26px;height:26px;opacity:.85"><ellipse cx="16" cy="21" rx="11" ry="9" /><circle cx="16" cy="10" r="6" /><ellipse cx="8" cy="7" rx="3.5" ry="4.5" transform="rotate(-20 8 7)" /><ellipse cx="24" cy="7" rx="3.5" ry="4.5" transform="rotate(20 24 7)" /></svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">medium</span>
+                <div class="chew-bar-track" role="img" aria-label="medium dog: moderate chew time">
+                  <div class="chew-bar-fill" style="width:60%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true" style="width:30px;height:30px;opacity:1"><ellipse cx="16" cy="22" rx="12" ry="10" /><circle cx="16" cy="9" r="7" /><ellipse cx="7" cy="6" rx="4" ry="5" transform="rotate(-20 7 6)" /><ellipse cx="25" cy="6" rx="4" ry="5" transform="rotate(20 25 6)" /></svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">large</span>
+                <div class="chew-bar-track" role="img" aria-label="large dog: short chew time">
+                  <div class="chew-bar-fill" style="width:32%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chew-card reveal reveal-delay-2" aria-label="duck neck chew time by dog size">
+          <div class="chew-card-title">duck neck</div>
+          <div class="chew-rows">
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="20" rx="10" ry="8" /><circle cx="16" cy="10" r="5" /><ellipse cx="9" cy="8" rx="3" ry="4" transform="rotate(-20 9 8)" /><ellipse cx="23" cy="8" rx="3" ry="4" transform="rotate(20 23 8)" /></svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">small</span>
+                <div class="chew-bar-track" role="img" aria-label="small dog: extra long chew time">
+                  <div class="chew-bar-fill" style="width:90%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true" style="width:26px;height:26px;opacity:.85"><ellipse cx="16" cy="21" rx="11" ry="9" /><circle cx="16" cy="10" r="6" /><ellipse cx="8" cy="7" rx="3.5" ry="4.5" transform="rotate(-20 8 7)" /><ellipse cx="24" cy="7" rx="3.5" ry="4.5" transform="rotate(20 24 7)" /></svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">medium</span>
+                <div class="chew-bar-track" role="img" aria-label="medium dog: long chew time">
+                  <div class="chew-bar-fill" style="width:68%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="chew-row">
+              <svg class="chew-dog-icon" viewBox="0 0 32 32" aria-hidden="true" style="width:30px;height:30px;opacity:1"><ellipse cx="16" cy="22" rx="12" ry="10" /><circle cx="16" cy="9" r="7" /><ellipse cx="7" cy="6" rx="4" ry="5" transform="rotate(-20 7 6)" /><ellipse cx="25" cy="6" rx="4" ry="5" transform="rotate(20 25 6)" /></svg>
+              <div class="chew-row-right">
+                <span class="chew-size-label">large</span>
+                <div class="chew-bar-track" role="img" aria-label="large dog: moderate chew time">
+                  <div class="chew-bar-fill" style="width:48%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS -->
+  <section class="pdp-ingredients" aria-labelledby="ingredients-h">
+    <div class="wrap">
+      <div class="pdp-ingredients-inner">
+        <div class="pdp-ingredients-grid">
+          <div class="pdp-ingredients-text">
+            <span class="eyebrow pdp-ingredients-eyebrow">the ingredients</span>
+            <h2 id="ingredients-h" class="pdp-ingredients-title">
+              one ingredient.<br/><em>that's the whole list.</em>
+            </h2>
+            <p class="pdp-ingredients-body">
+              each navan chew is made from a single, clearly identified animal ingredient. no fillers to bulk it out. no glycerin to shape it. no starches to hold it together. just the ingredient itself.
+            </p>
+            <div class="pdp-ingredients-source">
+              sourcing details provided on each product page · minimally processed · single origin
+            </div>
+          </div>
+
+          <div>
+            <div class="pdp-no-list">
+              <div class="pdp-no-item">
+                <span class="num">01</span>
+                <span class="txt">no glycerin</span>
+              </div>
+              <div class="pdp-no-item">
+                <span class="num">02</span>
+                <span class="txt">no starches</span>
+              </div>
+              <div class="pdp-no-item">
+                <span class="num">03</span>
+                <span class="txt">no fillers</span>
+              </div>
+              <div class="pdp-no-item">
+                <span class="num">04</span>
+                <span class="txt">no artificial additives</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLE UPSELL -->
+  <section class="pdp-upsell" aria-labelledby="upsell-h">
+    <div class="wrap">
+      <div class="pdp-upsell-head">
+        <span class="eyebrow">complete the ritual</span>
+        <h2 id="upsell-h" class="pdp-upsell-title">
+          ready for more <em>resistance?</em>
+        </h2>
+      </div>
+      <div class="upsell-card">
+        <div class="upsell-media" role="img" aria-label="endurance protocol bundle product image"></div>
+        <div class="upsell-body">
+          <div class="upsell-badge">30-day endurance</div>
+          <h3 class="upsell-title">endurance <em>protocol</em></h3>
+          <p class="upsell-desc">
+            built to last. duck neck, duck wing, and collagen — denser textures for serious chewers. longer chew time means deeper mechanical cleaning and natural collagen support for joints and connective tissue.
+          </p>
+          <div class="upsell-proteins">
+            <span class="tag tag-duck">duck neck</span>
+            <span class="tag tag-duck">duck wing</span>
+            <span class="tag tag-collagen">collagen</span>
+          </div>
+          <div class="upsell-footer">
+            <div class="upsell-price"><s>$86</s> <strong>$72</strong> / month with subscription</div>
+            <a href="#" class="btn btn-primary">add to routine</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="pdp-reviews" id="pdp-reviews" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <div class="pdp-reviews-head">
+        <div class="pdp-reviews-summary">
+          <span class="eyebrow">navan nation</span>
+          <div class="pdp-reviews-score">
+            <div class="pdp-reviews-num" aria-hidden="true">4.9</div>
+            <div class="pdp-reviews-stars-block">
+              <div class="pdp-reviews-stars" aria-hidden="true">★★★★★</div>
+              <div class="pdp-reviews-total">94 reviews</div>
+            </div>
+          </div>
+          <h2 id="reviews-h" class="visually-hidden" style="position:absolute;left:-9999px">customer reviews</h2>
+        </div>
+        <a href="#" class="btn btn-secondary">write a review</a>
+      </div>
+
+      <div class="review-grid">
+        <article class="review-card reveal">
+          <div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-card-body">
+            i spent months looking for a chew that didn't list starch as the first ingredient. finally found it. her breath changed within the first few weeks.
+          </p>
+          <div class="review-card-author">
+            <div class="review-avatar" aria-hidden="true">m</div>
+            <div class="review-meta"><b>maya s.</b>with pepper, 4yr retriever · verified</div>
+          </div>
+        </article>
+        <article class="review-card reveal reveal-delay-1">
+          <div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-card-body">
+            treat my supplements like a religion. this is the first dog product that belongs on the same shelf as ritual and seed. design and formula both deliver.
+          </p>
+          <div class="review-card-author">
+            <div class="review-avatar" aria-hidden="true">j</div>
+            <div class="review-meta"><b>jordan c.</b>with atlas, 2yr husky · verified</div>
+          </div>
+        </article>
+        <article class="review-card reveal reveal-delay-2">
+          <div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-card-body">
+            packaging tells you everything. clean, simple, honest. the product lives up to it. he now waits by the drawer every morning.
+          </p>
+          <div class="review-card-author">
+            <div class="review-avatar" aria-hidden="true">l</div>
+            <div class="review-meta"><b>lauren t.</b>with otis, 6yr mini aussie · verified</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="pdp-reviews-foot">
+        <a href="#" class="btn-ghost">load all 94 reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOU MAY ALSO LIKE -->
+  <section class="pdp-related" aria-labelledby="related-h">
+    <div class="wrap">
+      <div class="pdp-related-head">
+        <h2 id="related-h" class="pdp-related-title">
+          continue <em>the ritual</em>
+        </h2>
+        <a href="#" class="btn-ghost">view all chews</a>
+      </div>
+      <div class="related-grid">
+        <article class="related-card reveal" aria-label="rabbit ears — single ingredient chew">
+          <div class="related-media">
+            <img src="https://navanpet.com/cdn/shop/files/DSC00061.jpg?v=1775700512&width=1440" alt="rabbit ears single ingredient chew" />
+          </div>
+          <div class="related-body">
+            <div class="related-proteins"><span class="tag tag-rabbit">rabbit</span></div>
+            <h3 class="related-title">rabbit ears</h3>
+            <div class="related-price">from <strong>$18</strong></div>
+          </div>
+        </article>
+        <article class="related-card reveal reveal-delay-1" aria-label="duck neck — single ingredient chew">
+          <div class="related-media">
+            <img src="https://navanpet.com/cdn/shop/files/DSC00071.jpg?v=1775699938&width=1440" alt="duck neck single ingredient chew" />
+          </div>
+          <div class="related-body">
+            <div class="related-proteins"><span class="tag tag-duck">duck</span></div>
+            <h3 class="related-title">duck neck</h3>
+            <div class="related-price">from <strong>$22</strong></div>
+          </div>
+        </article>
+        <article class="related-card reveal reveal-delay-2" aria-label="endurance protocol — 30-day bundle">
+          <div class="related-media">
+            <img src="https://navanpet.com/cdn/shop/files/DSC00078.jpg?v=1775700320&width=594" alt="30-day endurance protocol bundle" />
+          </div>
+          <div class="related-body">
+            <div class="related-proteins">
+              <span class="tag tag-duck">duck</span>
+              <span class="tag tag-collagen">collagen</span>
+            </div>
+            <h3 class="related-title">endurance protocol</h3>
+            <div class="related-price">from <strong>$72</strong> / month</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- MOBILE STICKY ATC -->
+<div class="mobile-atc-bar" id="mobile-atc" aria-label="quick add to cart">
+  <div class="mobile-atc-info">
+    <div class="mobile-atc-name">30-day core protocol</div>
+    <div class="mobile-atc-price" id="mobile-atc-price">$62 / month — subscribe</div>
+  </div>
+  <button class="mobile-atc-btn" aria-label="add to cart">add to cart</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand">
+        <h2 class="footer-wordmark">navan</h2>
+        <p class="footer-tag">clean living for your dog. a natural approach to vitality &amp; nourishment.</p>
+      </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>shop</h5>
+          <ul>
+            <li><a href="navan-product.html">core protocol</a></li>
+            <li><a href="navan-bundles.html">View Bundles</a></li>
+            <li><a href="navan-collection.html">all chews</a></li>
+            <li><a href="#">subscribe &amp; save</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>learn</h5>
+          <ul>
+            <li><a href="navan-homepage_Version_2.html#protocol">the protocol</a></li>
+            <li><a href="#">ingredients</a></li>
+            <li><a href="#">journal</a></li>
+            <li><a href="navan-faq_Version_2.html">faq</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>company</h5>
+          <ul>
+            <li><a href="navan-about.html">about</a></li>
+            <li><a href="#">nation</a></li>
+            <li><a href="#">press</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>support</h5>
+          <ul>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">account</a></li>
+            <li><a href="navan-faq_Version_2.html">help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 navan · the natural toothbrush pets love</div>
+      <div class="footer-bottom-links">
+        <a href="navan-privacy.html">privacy</a>
+        <a href="navan-terms.html">terms</a>
+        <a href="#">accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  // Reveal on scroll
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // Animate chew bars when they enter viewport
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.chew-bar-fill').forEach(bar => bar.classList.add('animated'));
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.chew-card').forEach(el => barObs.observe(el));
+
+  // Animate no-list strikethroughs when in view
+  const strikeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.pdp-no-item').forEach((item, i) => {
+          setTimeout(() => item.classList.add('visible'), i * 140);
+        });
+        strikeObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const noList = document.querySelector('.pdp-no-list');
+  if (noList) strikeObs.observe(noList);
+
+  // Gallery thumbnails
+  const galleryImg = document.getElementById('gallery-img');
+  const thumbs = document.querySelectorAll('.pdp-thumb');
+  thumbs.forEach(thumb => {
+    const activate = () => {
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      galleryImg.src = thumb.dataset.src;
+      galleryImg.style.opacity = '0';
+      galleryImg.style.transition = 'opacity .4s ease';
+      requestAnimationFrame(() => {
+        galleryImg.style.opacity = '1';
+      });
+    };
+    thumb.addEventListener('click', activate);
+    thumb.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+  });
+
+  // Subscribe toggle
+  const optSubscribe = document.getElementById('opt-subscribe');
+  const optOnetime  = document.getElementById('opt-onetime');
+  const subBenefits = document.getElementById('sub-benefits');
+  const atcPrice    = document.getElementById('atc-price');
+  const mobileAtcPrice = document.getElementById('mobile-atc-price');
+
+  const setOption = (selected) => {
+    const isSubscribe = selected === optSubscribe;
+    [optSubscribe, optOnetime].forEach(opt => {
+      const active = opt === selected;
+      opt.classList.toggle('selected', active);
+      opt.setAttribute('aria-checked', String(active));
+    });
+    subBenefits.classList.toggle('show', isSubscribe);
+    const price = isSubscribe ? '$62' : '$74';
+    atcPrice.textContent = price;
+    mobileAtcPrice.textContent = isSubscribe ? '$62 / month — subscribe' : '$74 — one-time';
+  };
+
+  optSubscribe.addEventListener('click', () => setOption(optSubscribe));
+  optOnetime.addEventListener('click',  () => setOption(optOnetime));
+  [optSubscribe, optOnetime].forEach(opt => {
+    opt.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOption(opt); }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); setOption(optOnetime); optOnetime.focus(); }
+      if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  { e.preventDefault(); setOption(optSubscribe); optSubscribe.focus(); }
+    });
+  });
+
+  // Quantity
+  let qty = 1;
+  const qtyNum = document.getElementById('qty-num');
+  const qtyMinus = document.getElementById('qty-minus');
+  const qtyPlus  = document.getElementById('qty-plus');
+  const updateQty = (n) => {
+    qty = Math.max(1, Math.min(10, n));
+    qtyNum.textContent = qty;
+    qtyMinus.disabled = qty === 1;
+  };
+  qtyMinus.addEventListener('click', () => updateQty(qty - 1));
+  qtyPlus.addEventListener('click',  () => updateQty(qty + 1));
+  updateQty(1);
+
+  // ATC button — feedback state
+  const atcBtn = document.getElementById('atc-btn');
+  const cartCount = document.getElementById('cart-count');
+  let cartQty = 0;
+  atcBtn.addEventListener('click', () => {
+    atcBtn.textContent = 'added ✓';
+    atcBtn.style.background = 'var(--duck)';
+    cartQty += qty;
+    cartCount.textContent = cartQty;
+    setTimeout(() => {
+      atcBtn.innerHTML = `add to routine — <span>${atcPrice ? atcPrice.textContent : ''}</span>`;
+      atcBtn.style.background = '';
+    }, 2200);
+  });
+
+  // Mobile ATC bar — show after hero scrolls off
+  const pdpBuy = document.querySelector('.pdp-buy');
+  const mobileAtc = document.getElementById('mobile-atc');
+  if (pdpBuy && mobileAtc) {
+    const mobileAtcObs = new IntersectionObserver(([entry]) => {
+      mobileAtc.style.display = entry.isIntersecting ? 'none' : 'flex';
+    }, { threshold: 0 });
+    mobileAtcObs.observe(pdpBuy);
+  }
+
+  // Mobile menu
+  (function() {
+    const btn   = document.getElementById('hamburger');
+    const menu  = document.getElementById('mobile-menu');
+    const scrim = document.getElementById('menu-scrim');
+    if (!btn || !menu || !scrim) return;
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+      menu.setAttribute('aria-hidden', String(!open));
+      scrim.setAttribute('aria-hidden', String(!open));
+      scrim.classList.toggle('active', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) { const f = menu.querySelector('a'); if (f) f.focus(); }
+    };
+    const toggle = () => setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    const close  = () => setOpen(false);
+    btn.addEventListener('click', toggle);
+    scrim.addEventListener('click', close);
+    menu.querySelectorAll('[data-menu-close]').forEach(l => l.addEventListener('click', close));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { close(); btn.focus(); }
+    });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) close(); });
+  })();
+</script>
+
+</body>
+</html>

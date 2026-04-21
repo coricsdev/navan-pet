@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>shop all chews — navan · the natural toothbrush pets love</title>
+<meta name="description" content="single-ingredient dental chews for dogs. no glycerin, no starch, no fillers. browse bundles and individual chews by protein and dog size." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* NAVAN — COLLECTION PAGE. Project standard stylesheet. */
+:root {
+  --sand:#EBDECB; --sand-soft:#F3EBDD; --cream:#FEF9F5; --white:#FFFFFF;
+  --taupe:#BFA694; --charcoal:#6A625A; --charcoal-h:#59524C; --ink:#514C45;
+  --muted:#7A736A; --duck:#95A77D; --rabbit:#8FC8D4; --beef:#CA8575;
+  --sec:#738063; --sec-h:#8EA18F; --disabled:#E8DDD2;
+  --font:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  --t-caps:0.118em; --t-lower:0.042em; --t-micro:0.22em;
+  --max:1400px; --content:1240px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{margin:0;font-family:var(--font);font-weight:400;color:var(--ink);background:var(--cream);line-height:1.6;letter-spacing:0.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;} a{color:inherit;text-decoration:none;} button{font-family:inherit;}
+:focus-visible{outline:2px solid var(--sec);outline-offset:3px;border-radius:4px;}
+.eyebrow{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--taupe);display:inline-block;}
+.eyebrow.no-rule::before{display:none;}
+.lower{text-transform:lowercase;letter-spacing:var(--t-lower);}
+.display{font-weight:300;line-height:0.95;letter-spacing:-0.015em;}
+.d-xxl{font-size:clamp(56px,10vw,180px);}
+.d-lg{font-size:clamp(36px,5vw,80px);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 36px;border-radius:999px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:background-color .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease);}
+.btn-primary{background:var(--charcoal);color:var(--cream);}
+.btn-primary:hover{background:var(--charcoal-h);}
+.btn-secondary{background:transparent;color:var(--sec);border-color:var(--sec);}
+.btn-secondary:hover{color:var(--sec-h);border-color:var(--sec-h);}
+.btn-ghost{background:transparent;padding:0;height:auto;color:var(--ink);letter-spacing:var(--t-lower);text-transform:lowercase;font-size:14px;font-weight:400;border:0;position:relative;cursor:pointer;}
+.btn-ghost::after{content:'→';margin-left:10px;display:inline-block;transition:transform .4s var(--ease);}
+.btn-ghost:hover::after{transform:translateX(6px);}
+.btn-ghost::before{content:'';position:absolute;left:0;right:30px;bottom:-4px;height:1px;background:var(--taupe);transform-origin:left;transform:scaleX(0);transition:transform .5s var(--ease);}
+.btn-ghost:hover::before{transform:scaleX(1);}
+.wrap{max-width:var(--content);margin:0 auto;padding:0 40px;}
+@media(max-width: 767px){
+   /* Header Mobile Changes */
+  .header-inner {
+    gap: 20px;
+    padding: 10px 20px;
+  }
+  .header-actions{
+    gap: 15px;
+  }
+  .mobile-menu {
+      width: min(350px, 100%);
+  }
+}
+@media(max-width:720px){.wrap{padding:0 24px;}}
+.tag{font-size:10px;letter-spacing:var(--t-micro);text-transform:uppercase;padding:5px 12px;border-radius:999px;color:var(--white);font-weight:500;display:inline-flex;align-items:center;}
+.tag-duck{background:var(--duck);}
+.tag-rabbit{background:var(--rabbit);color:var(--ink);}
+.tag-collagen{background:var(--taupe);}
+
+/* ANNOUNCEMENT */
+.announce{background:var(--ink);color:var(--sand);overflow:hidden;padding:12px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;}
+.announce-track{display:flex;gap:60px;animation:marquee 40s linear infinite;width:max-content;}
+.announce-track span{display:inline-flex;align-items:center;gap:60px;white-space:nowrap;}
+.announce-track span::after{content:'◦';color:var(--taupe);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:50;background:rgba(254,249,245,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .4s var(--ease),background .4s var(--ease);}
+.header.scrolled{border-bottom-color:var(--disabled);background:rgba(254,249,245,0.96);}
+.header-inner{max-width:var(--max);margin:0 auto;padding:22px 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px;}
+.logo{font-size:28px;color:var(--charcoal);font-weight:400;text-transform:lowercase;letter-spacing:-0.02em;}
+.nav{display:flex;gap:40px;justify-self:center;}
+.nav a{font-size:13px;letter-spacing:var(--t-lower);color:var(--ink);position:relative;padding:6px 0;}
+.nav a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--charcoal);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
+.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1);}
+.nav a[aria-current="page"]{color:var(--charcoal);}
+.header-actions{display:flex;gap:20px;justify-self:end;align-items:center;}
+.icon-btn{width:40px;height:40px;background:transparent;border:none;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;position:relative;transition:color .3s var(--ease);}
+.icon-btn:hover{color:var(--charcoal);}
+.icon-btn svg{width:18px;height:18px;}
+.cart-count{position:absolute;top:4px;right:4px;background:var(--charcoal);color:var(--cream);border-radius:999px;font-size:9px;padding:2px 6px;letter-spacing:0;}
+.hamburger{display:none;}
+.hamburger-icon{position:relative;width:18px;height:12px;}
+.hamburger-icon span{position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s var(--ease),top .4s var(--ease);}
+.hamburger-icon span:nth-child(1){top:0;}
+.hamburger-icon span:nth-child(2){top:50%;transform:translateY(-50%);}
+.hamburger-icon span:nth-child(3){top:100%;transform:translateY(-100%);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(3){top:50%;transform:translateY(-50%) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--cream);z-index:60;transform:translateX(100%);transition:transform .5s var(--ease);display:flex;flex-direction:column;padding:100px 40px 40px;box-shadow:-20px 0 60px -20px rgba(81,76,69,0.2);visibility:hidden;}
+.mobile-menu[aria-hidden="false"]{transform:translateX(0);visibility:visible;}
+.mobile-menu-scrim{position:fixed;inset:0;background:rgba(81,76,69,0.4);backdrop-filter:blur(4px);z-index:55;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s var(--ease);}
+.mobile-menu-scrim.active{opacity:1;visibility:visible;}
+.mobile-nav{display:flex;flex-direction:column;gap:4px;margin-bottom:48px;}
+.mobile-nav a{font-size:28px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);font-weight:300;padding:14px 0;border-bottom:1px solid var(--disabled);transition:color .3s var(--ease),padding-left .3s var(--ease);}
+.mobile-nav a:hover{color:var(--charcoal);padding-left:8px;}
+.mobile-menu-foot{margin-top:auto;display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--disabled);}
+.mobile-menu-foot a{font-size:12px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+body.menu-open{overflow:hidden;}
+@media(max-width:900px){.nav{display:none;}.hamburger{display:inline-flex;justify-self:start;}.header-inner{padding:18px 24px;}}
+
+/* BREADCRUMB */
+.breadcrumb{border-bottom:1px solid var(--disabled);padding:16px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.breadcrumb-inner{max-width:var(--max);margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:16px;}
+.breadcrumb-inner a{transition:color .3s var(--ease);}
+.breadcrumb-inner a:hover{color:var(--ink);}
+.breadcrumb-sep{color:var(--taupe);}
+.breadcrumb-current{color:var(--ink);}
+@media(max-width:720px){.breadcrumb-inner{padding:0 24px;}}
+
+/* COLLECTION HERO */
+.coll-hero{padding:72px 40px 80px;max-width:var(--max);margin:0 auto;}
+.coll-hero-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-bottom:40px;border-bottom:1px solid var(--taupe);}
+.coll-hero-left{display:flex;flex-direction:column;gap:8px;}
+.coll-hero-title{margin:0;color:var(--ink);}
+.coll-hero-title em{color:var(--taupe);font-style:italic;font-weight:300;}
+.coll-hero-right{display:flex;flex-direction:column;gap:20px;justify-self:end;align-items:flex-end;}
+.coll-hero-lead{max-width:44ch;color:var(--muted);font-size:15px;line-height:1.7;margin:0;text-transform:lowercase;letter-spacing:var(--t-lower);text-align:right;}
+.coll-hero-meta{display:flex;gap:32px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.coll-hero-meta b{color:var(--ink);font-weight:500;}
+.coll-legend{display:flex;gap:24px;align-items:center;padding-top:28px;flex-wrap:wrap;}
+.coll-legend-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+.coll-legend-items{display:flex;gap:10px;flex-wrap:wrap;}
+.coll-legend-dot{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);font-weight:500;}
+.coll-legend-dot::before{content:'';width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0;}
+.coll-legend-dot.duck::before{background:var(--duck);}
+.coll-legend-dot.rabbit::before{background:var(--rabbit);}
+.coll-legend-dot.collagen::before{background:var(--taupe);}
+@media(max-width:900px){
+  .coll-hero{padding:40px 24px 60px;}
+  .coll-hero-top{grid-template-columns:1fr;gap:28px;}
+  .coll-hero-right{justify-self:start;align-items:flex-start;}
+  .coll-hero-lead{text-align:left;}
+}
+
+/* FILTER BAR */
+.coll-bar{position:sticky;top:84px;z-index:40;background:rgba(254,249,245,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--disabled);border-bottom:1px solid var(--disabled);padding:16px 0;}
+.coll-bar-inner{max-width:var(--max);margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.coll-filters{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.coll-filter-group{display:flex;align-items:center;gap:8px;}
+.coll-filter-group-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;white-space:nowrap;}
+.coll-filter-divider{width:1px;height:20px;background:var(--disabled);flex-shrink:0;}
+.coll-pills{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.coll-pills::-webkit-scrollbar{display:none;}
+.coll-pill{border:1px solid var(--disabled);background:transparent;color:var(--ink);padding:8px 16px;border-radius:999px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;cursor:pointer;white-space:nowrap;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
+.coll-pill:hover{border-color:var(--taupe);}
+.coll-pill.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+.coll-pill[data-protein="duck"].active{background:var(--duck);border-color:var(--duck);color:var(--white);}
+.coll-pill[data-protein="rabbit"].active{background:var(--rabbit);border-color:var(--rabbit);color:var(--ink);}
+.coll-pill[data-protein="collagen"].active{background:var(--taupe);border-color:var(--taupe);color:var(--white);}
+.coll-bar-right{display:flex;align-items:center;gap:20px;flex-shrink:0;}
+.coll-count{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.coll-count b{color:var(--ink);}
+.coll-sort-wrap{position:relative;}
+.coll-sort{appearance:none;-webkit-appearance:none;background:transparent;border:1px solid var(--disabled);border-radius:999px;padding:8px 36px 8px 16px;font-family:var(--font);font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);cursor:pointer;outline:none;transition:border-color .3s var(--ease);}
+.coll-sort:focus{border-color:var(--sec);}
+.coll-sort-chevron{position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);}
+.coll-view-btns{display:flex;gap:4px;}
+.coll-view-btn{width:36px;height:36px;border:1px solid var(--disabled);border-radius:8px;background:transparent;cursor:pointer;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
+.coll-view-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+.coll-view-btn svg{width:14px;height:14px;}
+@media(max-width:900px){
+  .coll-bar{top:68px;}
+  .coll-bar-inner{padding:0 24px;gap:12px;}
+  .coll-bar-right{gap:12px;}
+  .coll-count{display:none;}
+  .coll-view-btns{display:none;}
+}
+
+/* PRODUCT GRID */
+.coll-main{padding:48px 0 120px;}
+.coll-grid{max-width:var(--max);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start;}
+.coll-grid.list-view{grid-template-columns:1fr;}
+.coll-empty{grid-column:1/-1;padding:100px 0;text-align:center;color:var(--muted);display:none;}
+.coll-empty.show{display:block;}
+.coll-empty h3{font-size:24px;font-weight:300;text-transform:lowercase;letter-spacing:var(--t-lower);color:var(--ink);margin:0 0 12px;}
+.coll-empty p{font-size:15px;text-transform:lowercase;letter-spacing:var(--t-lower);}
+
+/* Bundle card */
+.coll-card-bundle{grid-column:span 2;background:var(--sand-soft);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;transition:transform .6s var(--ease);position:relative;}
+.coll-card-bundle:hover{transform:translateY(-5px);}
+.coll-card-bundle[data-hidden="true"]{display:none;}
+.bundle-card-media{aspect-ratio:1;background:var(--sand);overflow:hidden;position:relative;}
+.bundle-card-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+.coll-card-bundle:hover .bundle-card-media img{transform:scale(1.04);}
+.bundle-card-badge{position:absolute;top:18px;left:18px;background:rgba(254,249,245,0.92);backdrop-filter:blur(6px);border-radius:999px;padding:7px 14px;font-size:10px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);z-index:2;}
+.bundle-card-body{padding:36px 32px;display:flex;flex-direction:column;gap:16px;justify-content:center;}
+.bundle-card-proteins{display:flex;gap:6px;flex-wrap:wrap;}
+.bundle-card-name{font-size:clamp(22px,2.6vw,36px);font-weight:300;letter-spacing:-0.01em;color:var(--ink);text-transform:lowercase;margin:0;line-height:1.1;}
+.bundle-card-name em{color:var(--taupe);font-style:italic;}
+.bundle-card-desc{font-size:13px;color:var(--muted);line-height:1.65;text-transform:lowercase;letter-spacing:var(--t-lower);margin:0;max-width:36ch;}
+.bundle-card-meta{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--disabled);margin-top:4px;flex-wrap:wrap;gap:12px;}
+.bundle-card-chew{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;}
+.chew-dots-sm{display:inline-flex;gap:4px;}
+.chew-dots-sm i{width:7px;height:7px;border-radius:50%;background:var(--disabled);}
+.chew-dots-sm i.on{background:var(--charcoal);}
+.bundle-card-price{font-size:14px;letter-spacing:var(--t-lower);color:var(--ink);}
+.bundle-card-price s{color:var(--muted);margin-right:6px;}
+.bundle-card-price small{font-size:10px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);margin-left:4px;}
+.bundle-card-body .btn{margin-top:4px;align-self:flex-start;}
+
+/* Standard card */
+.coll-card{background:var(--sand-soft);border-radius:20px;overflow:hidden;transition:transform .5s var(--ease);position:relative;cursor:pointer;height: 100%;}
+.coll-card:hover{transform:translateY(-5px);}
+.coll-card[data-hidden="true"]{display:none;}
+.coll-card-media{aspect-ratio:1;overflow:hidden;background:var(--sand);position:relative;}
+.coll-card-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+.coll-card:hover .coll-card-media img{transform:scale(1.04);}
+.coll-card-overlay{position:absolute;inset:0;background:rgba(81,76,69,0);display:flex;align-items:flex-end;justify-content:center;padding:20px;transition:background .4s var(--ease);pointer-events:none;}
+.coll-card:hover .coll-card-overlay{background:rgba(81,76,69,0.12);}
+.coll-card-quickadd{transform:translateY(8px);opacity:0;pointer-events:all;transition:transform .4s var(--ease),opacity .4s var(--ease);height:44px;padding:0 24px;border-radius:999px;background:rgba(254,249,245,0.95);backdrop-filter:blur(6px);border:none;cursor:pointer;font-family:var(--font);font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;color:var(--ink);white-space:nowrap;}
+.coll-card:hover .coll-card-quickadd{transform:translateY(0);opacity:1;}
+@media(hover:none){.coll-card-quickadd{opacity:1;transform:translateY(0);}}
+.coll-card-body{padding:20px 20px 24px;display:flex;flex-direction:column;gap:10px;}
+.coll-card-protein{display:flex;gap:6px;flex-wrap:wrap;}
+.coll-card-name{font-size:18px;font-weight:300;letter-spacing:-0.005em;color:var(--ink);text-transform:lowercase;margin:0;line-height:1.2;}
+.coll-card-sub{font-size:12px;color:var(--muted);letter-spacing:var(--t-lower);text-transform:lowercase;line-height:1.5;margin:0;}
+.coll-card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:4px;}
+.coll-card-price{font-size:14px;letter-spacing:var(--t-lower);color:var(--ink);}
+.coll-card-price small{font-size:11px;color:var(--muted);letter-spacing:var(--t-lower);margin-left:4px;}
+.coll-card-sizes{display:flex;gap:4px;font-size:10px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);align-items:center;}
+.size-dot{width:22px;height:22px;border-radius:50%;border:1px solid var(--disabled);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:0;color:var(--muted);font-weight:500;transition:border-color .3s var(--ease),color .3s var(--ease);}
+.coll-card:hover .size-dot{border-color:var(--taupe);color:var(--ink);}
+
+/* Editorial break */
+.coll-editorial{grid-column:1/-1;border-radius:24px;overflow:hidden;background:var(--ink);display:grid;grid-template-columns:1fr 1.6fr;min-height:380px;position:relative;transition:transform .6s var(--ease);}
+.coll-editorial:hover{transform:translateY(-4px);}
+.coll-editorial-text{padding:60px 56px;display:flex;flex-direction:column;justify-content:center;gap:24px;position:relative;z-index:2;}
+.coll-editorial-eyebrow{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--taupe);font-weight:500;display:flex;align-items:center;gap:10px;}
+.coll-editorial-eyebrow::before{content:'';width:24px;height:1px;background:var(--taupe);display:block;}
+.coll-editorial-title{font-size:clamp(28px,3.4vw,48px);font-weight:300;color:var(--sand);text-transform:lowercase;letter-spacing:-0.01em;margin:0;line-height:1.1;}
+.coll-editorial-title em{color:var(--taupe);font-style:italic;}
+.coll-editorial-body{color:var(--taupe);font-size:14px;line-height:1.7;text-transform:lowercase;letter-spacing:var(--t-lower);margin:0;max-width:38ch;}
+.coll-editorial-link{background:transparent;border:1px solid var(--sand);color:var(--sand);padding:12px 28px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease);align-self:flex-start;text-decoration:none;}
+.coll-editorial-link:hover{background:var(--sand);color:var(--ink);}
+.coll-editorial-media{background:url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1400&q=85') center/cover;position:relative;}
+.coll-editorial-media::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,transparent 40%);}
+
+/* List view */
+.coll-grid.list-view .coll-card{border-radius:16px;display:grid;grid-template-columns:200px 1fr;gap:0;}
+.coll-grid.list-view .coll-card-media{aspect-ratio:1;border-radius:0;height:100%;}
+.coll-grid.list-view .coll-card-body{padding:24px 28px;flex-direction:row;align-items:center;gap:32px;flex-wrap:wrap;}
+.coll-grid.list-view .coll-card-name{font-size:20px;}
+.coll-grid.list-view .coll-card-quickadd{opacity:1;transform:none;position:static;pointer-events:all;}
+.coll-grid.list-view .coll-card-overlay{display:none;}
+.coll-grid.list-view .coll-card-bundle{grid-template-columns:200px 1fr;grid-column:1;}
+.coll-grid.list-view .coll-editorial{grid-template-columns:1fr 1.6fr;}
+
+/* TRUST STRIP */
+.coll-trust{background:var(--sand);border-top:1px solid var(--taupe);border-bottom:1px solid var(--taupe);padding:64px 0;}
+.coll-trust-inner{max-width:var(--content);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;}
+.coll-trust-item{display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--taupe);}
+.coll-trust-num{font-size:36px;font-weight:300;color:var(--taupe);letter-spacing:-0.03em;line-height:1;}
+.coll-trust-title{font-size:13px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);font-weight:500;margin:0;}
+.coll-trust-body{font-size:13px;color:var(--muted);line-height:1.65;text-transform:lowercase;letter-spacing:var(--t-lower);margin:0;}
+@media(max-width:900px){.coll-trust-inner{grid-template-columns:1fr 1fr;gap:28px;}}
+@media(max-width:480px){.coll-trust-inner{grid-template-columns:1fr;}}
+
+/* FOOTER */
+.footer{background:var(--cream);color:var(--ink);padding:100px 0 40px;border-top:1px solid var(--disabled);}
+.footer-top{padding-bottom:80px;margin-bottom:40px;border-bottom:1px solid var(--disabled);display:grid;grid-template-columns:2fr 3fr;gap:80px;}
+.footer-wordmark{font-size:clamp(80px,12vw,180px);line-height:0.9;color:var(--ink);text-transform:lowercase;font-weight:300;letter-spacing:-0.03em;margin:0;}
+.footer-tag{margin-top:24px;color:var(--muted);font-size:14px;text-transform:lowercase;letter-spacing:var(--t-lower);max-width:28ch;line-height:1.6;}
+.footer-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;}
+.footer-col h5{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);margin:0 0 20px;font-weight:500;}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+.footer-col a{font-size:13px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);transition:color .3s var(--ease);}
+.footer-col a:hover{color:var(--ink);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;font-size:11px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.footer-bottom-links{display:flex;gap:32px;flex-wrap:wrap;}
+.footer-bottom-links a:hover{color:var(--ink);}
+@media(max-width:900px){.footer{padding:60px 0 32px;}.footer-top{grid-template-columns:1fr;gap:40px;padding-bottom:48px;margin-bottom:32px;}.footer-nav{grid-template-columns:1fr 1fr;gap:32px;}}
+
+/* GRID RESPONSIVE */
+@media(max-width:1100px){.coll-grid{grid-template-columns:repeat(2,1fr);}.coll-card-bundle{grid-column:span 2;}}
+@media(max-width:900px){
+  .coll-main{padding:32px 0 80px;}
+  .coll-grid{padding:0 24px;gap:20px;}
+  .coll-editorial{grid-template-columns:1fr;min-height:auto;}
+  .coll-editorial-media{min-height:240px;}
+  .coll-editorial-media::before{background:linear-gradient(to bottom,var(--ink) 0%,transparent 50%);}
+  .coll-editorial-text{padding:40px 28px;}
+}
+@media(max-width:640px){
+  .coll-grid{grid-template-columns:1fr;}
+  .coll-card-bundle{grid-column:1;grid-template-columns:1fr;}
+  .bundle-card-media{aspect-ratio:16/9;}
+  .bundle-card-body{padding:28px 24px;}
+}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.08s;}
+.reveal-delay-2{transition-delay:.16s;}
+.reveal-delay-3{transition-delay:.24s;}
+.reveal-delay-4{transition-delay:.32s;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}.reveal{opacity:1;transform:none;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <div class="announce-track">
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <a href="#" class="logo"><img src="https://navanpet.com/cdn/shop/files/navan_logo.png?v=1770933252&width=100" alt="Navan Pet Logo"></a>
+    <nav class="nav" aria-label="primary">
+      <a href="navan-collection.html" aria-current="page">SHOP</a>
+      <a href="navan-faq_Version_2.html">FAQ</a>
+      <a href="navan-about.html" >ABOUT</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="navan-cart.html" class="icon-btn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+    </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu-scrim" id="menu-scrim" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="mobile navigation">
+  <nav class="mobile-nav" aria-label="mobile primary">
+     <a href="navan-collection.html"  data-menu-close>SHOP</a>
+      <a href="navan-faq_Version_2.html"  data-menu-close>FAQ</a>
+      <a href="navan-about.html"  data-menu-close>ABOUT</a>
+      <a href="#"  data-menu-close>Blog</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="navan-cart.html" data-menu-close>cart</a>
+    <a href="navan-faq_Version_2.html" data-menu-close>faq</a>
+    <a href="navan-privacy.html" data-menu-close>privacy</a>
+    <a href="navan-terms.html" data-menu-close>terms</a>
+  </div>
+</aside>
+
+<main>
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="navan-homepage_Version_2.html" class="lower">home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current lower" aria-current="page">shop all chews</span>
+    </div>
+  </nav>
+
+  <div class="coll-hero">
+    <div class="coll-hero-top">
+      <div class="coll-hero-left">
+        <span class="eyebrow no-rule" style="margin-bottom:8px">all chews</span>
+        <h1 class="coll-hero-title display d-xxl lower">the clean<br/><em>chew catalogue.</em></h1>
+        <div class="coll-legend">
+          <span class="coll-legend-label">by protein</span>
+          <div class="coll-legend-items">
+            <span class="coll-legend-dot duck">duck</span>
+            <span class="coll-legend-dot rabbit">rabbit</span>
+            <span class="coll-legend-dot collagen">collagen</span>
+          </div>
+        </div>
+      </div>
+      <div class="coll-hero-right">
+        <p class="coll-hero-lead">single-ingredient dental chews. no glycerin, no starch, no fillers. each product is a clearly identified animal ingredient — nothing else.</p>
+        <div class="coll-hero-meta">
+          <span><b>8</b> products</span>
+          <span><b>2</b> bundles</span>
+          <span><b>3</b> proteins</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="coll-bar" role="region" aria-label="filter and sort">
+    <div class="coll-bar-inner">
+      <div class="coll-filters">
+        <div class="coll-filter-group">
+          <span class="coll-filter-group-label" id="protein-label">protein</span>
+          <div class="coll-pills" role="group" aria-labelledby="protein-label">
+            <button class="coll-pill active" data-filter="protein" data-protein="all" aria-pressed="true">all</button>
+            <button class="coll-pill" data-filter="protein" data-protein="duck" aria-pressed="false">duck</button>
+            <button class="coll-pill" data-filter="protein" data-protein="rabbit" aria-pressed="false">rabbit</button>
+            <button class="coll-pill" data-filter="protein" data-protein="collagen" aria-pressed="false">collagen</button>
+          </div>
+        </div>
+        <div class="coll-filter-divider" aria-hidden="true"></div>
+        <div class="coll-filter-group">
+          <span class="coll-filter-group-label" id="size-label">dog size</span>
+          <div class="coll-pills" role="group" aria-labelledby="size-label">
+            <button class="coll-pill active" data-filter="size" data-size="all" aria-pressed="true">all</button>
+            <button class="coll-pill" data-filter="size" data-size="small" aria-pressed="false">small</button>
+            <button class="coll-pill" data-filter="size" data-size="medium" aria-pressed="false">medium</button>
+            <button class="coll-pill" data-filter="size" data-size="large" aria-pressed="false">large</button>
+          </div>
+        </div>
+      </div>
+      <div class="coll-bar-right">
+        <span class="coll-count"><b id="visible-count">8</b> products</span>
+        <div class="coll-sort-wrap">
+          <select class="coll-sort" id="coll-sort" aria-label="sort products">
+            <option value="featured">featured</option>
+            <option value="price-asc">price: low to high</option>
+            <option value="price-desc">price: high to low</option>
+            <option value="name">name: a–z</option>
+          </select>
+          <svg class="coll-sort-chevron" viewBox="0 0 12 8" fill="none" width="10" height="10" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="coll-view-btns" role="group" aria-label="view mode">
+          <button class="coll-view-btn active" id="btn-grid" aria-label="grid view" aria-pressed="true">
+            <svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="6" height="6" rx="1"/><rect x="8" y="0" width="6" height="6" rx="1"/><rect x="0" y="8" width="6" height="6" rx="1"/><rect x="8" y="8" width="6" height="6" rx="1"/></svg>
+          </button>
+          <button class="coll-view-btn" id="btn-list" aria-label="list view" aria-pressed="false">
+            <svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="14" height="3" rx="1"/><rect x="0" y="5.5" width="14" height="3" rx="1"/><rect x="0" y="11" width="14" height="3" rx="1"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="coll-main">
+    <h2 style="position:absolute;left:-9999px">products</h2>
+    <div class="coll-grid" id="coll-grid">
+
+      <!-- CORE PROTOCOL BUNDLE -->
+      <article class="coll-card reveal reveal-delay-1" data-protein="duck rabbit" data-size="small medium large" data-type="bundle" data-price="62" data-name="Core Collection" aria-label="30-day core protocol bundle">
+        <a href="navan-product.html" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 50;"></a>
+        <div class="coll-card-media">
+          <img src="https://navanpet.com/cdn/shop/files/softchew-4_de07be68-a84d-4eff-b243-a1da7d7c07cb.png?c=1775139560" alt="endurance protocol bundle" />
+          <div class="coll-card-overlay"><button class="coll-card-quickadd" aria-label="quick add endurance protocol to cart">add to routine</button></div>
+        </div>
+        <div class="coll-card-body">
+          <div class="coll-card-protein"><span class="tag tag-rabbit">rabbit ears</span><span class="tag tag-rabbit">rabbit stick</span><span class="tag tag-duck">duck neck</span></div>
+          <h2 class="coll-card-name">Core <em>Collection</em></h2>
+          <p class="coll-card-sub">30-day bundle · rabbit ears, rabbit stick, duck neck</p>
+          <div class="coll-card-foot">
+            <div class="coll-card-price"><s style="color:var(--muted);margin-right:6px">$74</s> $62 <small>/ month</small></div>
+          
+          </div>
+        </div>
+      </article>
+
+      <!-- ENDURANCE BUNDLE (standard card, spans 1 col) -->
+      <article class="coll-card reveal reveal-delay-1" data-protein="duck collagen" data-size="small medium large" data-type="bundle" data-price="72" data-name="endurance protocol" aria-label="30-day endurance protocol bundle">
+        <a href="navan-product.html" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 50;"></a>
+        <div class="coll-card-media">
+          <img src="https://navanpet.com/cdn/shop/files/31.png?v=1774723736" alt="endurance protocol bundle" />
+          <div class="coll-card-overlay"><button class="coll-card-quickadd" aria-label="quick add endurance protocol to cart">add to routine</button></div>
+        </div>
+        <div class="coll-card-body">
+          <div class="coll-card-protein"><span class="tag tag-duck">duck</span><span class="tag tag-collagen">collagen</span></div>
+          <h2 class="coll-card-name">endurance protocol</h2>
+          <p class="coll-card-sub">30-day bundle · duck neck, duck wing, collagen</p>
+          <div class="coll-card-foot">
+            <div class="coll-card-price"><s style="color:var(--muted);margin-right:6px">$86</s> $72 <small>/ month</small></div>
+            <div class="coll-card-sizes"><span class="size-dot">S</span><span class="size-dot">M</span><span class="size-dot">L</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- RABBIT EARS -->
+      <article class="coll-card reveal" data-protein="rabbit" data-size="small medium" data-type="single" data-price="18" data-name="rabbit ears" aria-label="rabbit ears chew">
+        <a href="navan-product.html" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 50;"></a>
+        <div class="coll-card-media">
+          <img src="https://navanpet.com/cdn/shop/files/DSC00061.jpg?v=1775700512&width=594" alt="rabbit ears" />
+          <div class="coll-card-overlay"><button class="coll-card-quickadd" aria-label="quick add rabbit ears to cart">add to cart</button></div>
+        </div>
+        <div class="coll-card-body">
+          <div class="coll-card-protein"><span class="tag tag-rabbit">rabbit</span></div>
+          <h2 class="coll-card-name">rabbit ears</h2>
+          <p class="coll-card-sub">light, digestible · ideal for small &amp; medium dogs</p>
+          <div class="coll-card-foot">
+            <div class="coll-card-price">from $18</div>
+            <div class="coll-card-sizes"><span class="size-dot">S</span><span class="size-dot">M</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- RABBIT STICK -->
+      <article class="coll-card reveal reveal-delay-1" data-protein="rabbit" data-size="small medium" data-type="single" data-price="20" data-name="rabbit stick" aria-label="rabbit stick chew">
+        <a href="navan-product.html" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 50;"></a>
+        <div class="coll-card-media">
+          <img src="https://navanpet.com/cdn/shop/files/DSC00066.jpg?v=1775700667&width=594" alt="rabbit stick" />
+          <div class="coll-card-overlay"><button class="coll-card-quickadd" aria-label="quick add rabbit stick to cart">add to cart</button></div>
+        </div>
+        <div class="coll-card-body">
+          <div class="coll-card-protein"><span class="tag tag-rabbit">rabbit</span></div>
+          <h2 class="coll-card-name">rabbit stick</h2>
+          <p class="coll-card-sub">gentle on smaller jaws · satisfying chew duration</p>
+          <div class="coll-card-foot">
+            <div class="coll-card-price">from $20</div>
+            <div class="coll-card-sizes"><span class="size-dot">S</span><span class="size-dot">M</span></div>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- EDITORIAL BREAK -->
+      <div class="coll-editorial" data-editorial="true" aria-hidden="true">
+        <div class="coll-editorial-text">
+          <span class="coll-editorial-eyebrow">the navan protocol</span>
+          <h3 class="coll-editorial-title">consistency<br/><em>is the mechanism.</em></h3>
+          <p class="coll-editorial-body">25 days to fresher breath. 50 days to cleaner-looking teeth. 75 days of sustained oral support. not a treat — a ritual.</p>
+          <a href="navan-homepage_Version_2.html#protocol" class="coll-editorial-link">see the protocol</a>
+        </div>
+        <div class="coll-editorial-media" role="img" aria-label="lifestyle moment: dog at rest in natural light"></div>
+      </div>
+
+      <!-- DUCK NECK -->
+      <article class="coll-card reveal" data-protein="duck" data-size="small medium large" data-type="single" data-price="22" data-name="duck neck" aria-label="duck neck chew">
+        <a href="navan-product.html" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 50;"></a>
+        <div class="coll-card-media">
+          <img src="https://navanpet.com/cdn/shop/files/DSC00071.jpg?v=1775699938&width=594" alt="duck neck" />
+          <div class="coll-card-overlay"><button class="coll-card-quickadd" aria-label="quick add duck neck to cart">add to cart</button></div>
+        </div>
+        <div class="coll-card-body">
+          <div class="coll-card-protein"><span class="tag tag-duck">duck</span></div>
+          <h2 class="coll-card-name">duck neck</h2>
+          <p class="coll-card-sub">extended chew time · ideal for all sizes</p>
+          <div class="coll-card-foot">
+            <div class="coll-card-price">from $22</div>
+            <div class="coll-card-sizes"><span class="size-dot">S</span><span class="size-dot">M</span><span class="size-dot">L</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- DUCK WING -->
+      <article class="coll-card reveal reveal-delay-1" data-protein="duck" data-size="medium large" data-type="single" data-price="24" data-name="duck wing" aria-label="duck wing chew">
+        <a href="navan-product.html" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 50;"></a>
+        <div class="coll-card-media">
+          <img src="https://navanpet.com/cdn/shop/files/DSC00078.jpg?v=1775700320&width=594" alt="duck wing" />
+          <div class="coll-card-overlay"><button class="coll-card-quickadd" aria-label="quick add duck wing to cart">add to cart</button></div>
+        </div>
+        <div class="coll-card-body">
+          <div class="coll-card-protein"><span class="tag tag-duck">duck</span></div>
+          <h2 class="coll-card-name">duck wing</h2>
+          <p class="coll-card-sub">dense texture · serious chewers · medium &amp; large</p>
+          <div class="coll-card-foot">
+            <div class="coll-card-price">from $24</div>
+            <div class="coll-card-sizes"><span class="size-dot">M</span><span class="size-dot">L</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- COLLAGEN -->
+      <article class="coll-card reveal reveal-delay-2" data-protein="collagen" data-size="small medium large" data-type="single" data-price="26" data-name="collagen" aria-label="collagen chew">
+        <a href="navan-product.html" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 50;"></a>
+        <div class="coll-card-media">
+          <img src="https://navanpet.com/cdn/shop/files/DSC00067.jpg?v=1775700791&width=594" alt="collagen chew" />
+          <div class="coll-card-overlay"><button class="coll-card-quickadd" aria-label="quick add collagen to cart">add to cart</button></div>
+        </div>
+        <div class="coll-card-body">
+          <div class="coll-card-protein"><span class="tag tag-collagen">collagen</span></div>
+          <h2 class="coll-card-name">collagen</h2>
+          <p class="coll-card-sub">natural joint &amp; connective tissue support · all sizes</p>
+          <div class="coll-card-foot">
+            <div class="coll-card-price">from $26</div>
+            <div class="coll-card-sizes"><span class="size-dot">S</span><span class="size-dot">M</span><span class="size-dot">L</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EMPTY STATE -->
+      <div class="coll-empty" id="coll-empty">
+        <h3>no products match</h3>
+        <p>try a different filter or <button class="btn-ghost" id="clear-filters-empty">clear all filters</button></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="coll-trust" aria-label="why navan">
+    <div class="coll-trust-inner">
+      <div class="coll-trust-item reveal">
+        <div class="coll-trust-num">01</div>
+        <h3 class="coll-trust-title">single ingredient</h3>
+        <p class="coll-trust-body">every chew is one clearly identified animal ingredient. no fillers, no glycerin, no starch. just the ingredient itself.</p>
+      </div>
+      <div class="coll-trust-item reveal reveal-delay-1">
+        <div class="coll-trust-num">02</div>
+        <h3 class="coll-trust-title">natural chewing action</h3>
+        <p class="coll-trust-body">mechanical cleaning through extended chewing — the way dogs were built to maintain oral health. no chemicals required.</p>
+      </div>
+      <div class="coll-trust-item reveal reveal-delay-2">
+        <div class="coll-trust-num">03</div>
+        <h3 class="coll-trust-title">designed for longevity</h3>
+        <p class="coll-trust-body">a 2019 study of 2m+ dogs found that those receiving more frequent dental care lived longer. daily rituals compound.</p>
+      </div>
+      <div class="coll-trust-item reveal reveal-delay-3">
+        <div class="coll-trust-num">04</div>
+        <h3 class="coll-trust-title">vet-aware formulation</h3>
+        <p class="coll-trust-body">designed to complement — not replace — regular veterinary dental care. clean-living integrity from ingredient to intent.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 class="footer-wordmark">navan</h2>
+        <p class="footer-tag">clean living for your dog. a natural approach to vitality &amp; nourishment.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>shop</h5>
+          <ul>
+            <li><a href="navan-product.html">core protocol</a></li>
+            <li><a href="navan-bundles.html">View Bundles</a></li>
+            <li><a href="navan-collection.html">all chews</a></li>
+            <li><a href="#">subscribe &amp; save</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>learn</h5>
+          <ul>
+            <li><a href="navan-homepage_Version_2.html#protocol">the protocol</a></li>
+            <li><a href="#">ingredients</a></li>
+            <li><a href="#">journal</a></li>
+            <li><a href="navan-faq_Version_2.html">faq</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>company</h5>
+          <ul>
+            <li><a href="navan-about.html">about</a></li>
+            <li><a href="#">nation</a></li>
+            <li><a href="#">press</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>support</h5>
+          <ul>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">account</a></li>
+            <li><a href="navan-faq_Version_2.html">help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 navan · the natural toothbrush pets love</div>
+      <div class="footer-bottom-links">
+        <a href="navan-privacy.html">privacy</a>
+        <a href="navan-terms.html">terms</a>
+        <a href="#">accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  (function() {
+    const grid       = document.getElementById('coll-grid');
+    const countEl    = document.getElementById('visible-count');
+    const emptyEl    = document.getElementById('coll-empty');
+    const sortEl     = document.getElementById('coll-sort');
+    const btnGrid    = document.getElementById('btn-grid');
+    const btnList    = document.getElementById('btn-list');
+    const clearEmpty = document.getElementById('clear-filters-empty');
+
+    const allCards = () => Array.from(grid.querySelectorAll('[data-protein][data-size]'));
+    let activeProtein = 'all';
+    let activeSize    = 'all';
+
+    const matchesProtein = c => activeProtein === 'all' || c.dataset.protein.toLowerCase().includes(activeProtein);
+    const matchesSize    = c => activeSize === 'all'    || c.dataset.size.toLowerCase().includes(activeSize);
+
+    const applyFilter = () => {
+      let visible = 0;
+      allCards().forEach(card => {
+        const show = matchesProtein(card) && matchesSize(card);
+        card.dataset.hidden = show ? 'false' : 'true';
+        if (card.classList.contains('coll-card-bundle')) {
+          card.style.gridColumn = show ? 'span 2' : '';
+        }
+        if (show) visible++;
+      });
+      countEl.textContent = visible;
+      emptyEl.classList.toggle('show', visible === 0);
+    };
+
+    document.querySelectorAll('[data-filter="protein"]').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter="protein"]').forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false'); });
+        pill.classList.add('active'); pill.setAttribute('aria-pressed', 'true');
+        activeProtein = pill.dataset.protein;
+        applyFilter();
+      });
+    });
+
+    document.querySelectorAll('[data-filter="size"]').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter="size"]').forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false'); });
+        pill.classList.add('active'); pill.setAttribute('aria-pressed', 'true');
+        activeSize = pill.dataset.size;
+        applyFilter();
+      });
+    });
+
+    if (clearEmpty) {
+      clearEmpty.addEventListener('click', () => {
+        activeProtein = 'all'; activeSize = 'all';
+        document.querySelectorAll('[data-filter="protein"]').forEach(p => p.classList.toggle('active', p.dataset.protein === 'all'));
+        document.querySelectorAll('[data-filter="size"]').forEach(p => p.classList.toggle('active', p.dataset.size === 'all'));
+        applyFilter();
+      });
+    }
+
+    sortEl.addEventListener('change', () => {
+      const val = sortEl.value;
+      const cards = allCards().filter(c => c.dataset.hidden !== 'true');
+      cards.sort((a, b) => {
+        if (val === 'price-asc')  return +a.dataset.price - +b.dataset.price;
+        if (val === 'price-desc') return +b.dataset.price - +a.dataset.price;
+        if (val === 'name')       return (a.dataset.name || '').localeCompare(b.dataset.name || '');
+        return 0;
+      });
+      const editorial = grid.querySelector('[data-editorial]');
+      const empty = grid.querySelector('.coll-empty');
+      cards.forEach(c => grid.insertBefore(c, editorial || empty));
+    });
+
+    const setView = (mode) => {
+      const isGrid = mode === 'grid';
+      grid.classList.toggle('list-view', !isGrid);
+      btnGrid.classList.toggle('active', isGrid);  btnList.classList.toggle('active', !isGrid);
+      btnGrid.setAttribute('aria-pressed', String(isGrid));  btnList.setAttribute('aria-pressed', String(!isGrid));
+      document.querySelectorAll('.coll-card-bundle').forEach(c => {
+        c.style.gridColumn = (!isGrid || c.dataset.hidden === 'true') ? '' : 'span 2';
+      });
+    };
+
+    btnGrid.addEventListener('click', () => setView('grid'));
+    btnList.addEventListener('click', () => setView('list'));
+  })();
+
+  (function() {
+    const btn   = document.getElementById('hamburger');
+    const menu  = document.getElementById('mobile-menu');
+    const scrim = document.getElementById('menu-scrim');
+    if (!btn || !menu || !scrim) return;
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+      menu.setAttribute('aria-hidden', String(!open));
+      scrim.setAttribute('aria-hidden', String(!open));
+      scrim.classList.toggle('active', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) { const f = menu.querySelector('a'); if (f) f.focus(); }
+    };
+    const toggle = () => setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    const close  = () => setOpen(false);
+    btn.addEventListener('click', toggle);
+    scrim.addEventListener('click', close);
+    menu.querySelectorAll('[data-menu-close]').forEach(l => l.addEventListener('click', close));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { close(); btn.focus(); }
+    });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) close(); });
+  })();
+</script>
+</body>
+</html>

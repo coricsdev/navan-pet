@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>privacy policy — navan · the natural toothbrush pets love</title>
+<meta name="description" content="navan privacy policy. how we collect, use, and protect your personal information." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* NAVAN — LEGAL PAGES. Project standard stylesheet. */
+:root {
+  --sand:#EBDECB; --sand-soft:#F3EBDD; --cream:#FEF9F5; --white:#FFFFFF;
+  --taupe:#BFA694; --charcoal:#6A625A; --charcoal-h:#59524C; --ink:#514C45;
+  --muted:#7A736A; --duck:#95A77D; --rabbit:#8FC8D4;
+  --sec:#738063; --sec-h:#8EA18F; --disabled:#E8DDD2;
+  --font:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  --t-caps:0.118em; --t-lower:0.042em; --t-micro:0.22em;
+  --max:1400px; --content:1240px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:120px;}
+body{margin:0;font-family:var(--font);font-weight:400;color:var(--ink);background:var(--cream);line-height:1.6;letter-spacing:0.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;} a{color:inherit;text-decoration:none;} button{font-family:inherit;}
+:focus-visible{outline:2px solid var(--sec);outline-offset:3px;border-radius:4px;}
+
+.eyebrow{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--taupe);display:inline-block;}
+.lower{text-transform:lowercase;letter-spacing:var(--t-lower);}
+.display{font-weight:300;line-height:0.95;letter-spacing:-0.015em;}
+.d-xxl{font-size:clamp(56px,10vw,180px);}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 36px;border-radius:999px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:background-color .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease);}
+.btn-primary{background:var(--charcoal);color:var(--cream);}
+.btn-primary:hover{background:var(--charcoal-h);}
+
+.wrap{max-width:var(--content);margin:0 auto;padding:0 40px;}
+@media(max-width:720px){.wrap{padding:0 24px;}}
+
+/* ANNOUNCEMENT */
+.announce{background:var(--ink);color:var(--sand);overflow:hidden;padding:12px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;}
+.announce-track{display:flex;gap:60px;animation:marquee 40s linear infinite;width:max-content;}
+.announce-track span{display:inline-flex;align-items:center;gap:60px;white-space:nowrap;}
+.announce-track span::after{content:'◦';color:var(--taupe);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:50;background:rgba(254,249,245,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .4s var(--ease),background .4s var(--ease);}
+.header.scrolled{border-bottom-color:var(--disabled);background:rgba(254,249,245,0.96);}
+.header-inner{max-width:var(--max);margin:0 auto;padding:22px 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px;}
+.logo{font-size:28px;color:var(--charcoal);font-weight:400;text-transform:lowercase;letter-spacing:-0.02em;}
+.nav{display:flex;gap:40px;justify-self:center;}
+.nav a{font-size:13px;letter-spacing:var(--t-lower);color:var(--ink);position:relative;padding:6px 0;}
+.nav a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--charcoal);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
+.nav a:hover::after{transform:scaleX(1);}
+.header-actions{display:flex;gap:20px;justify-self:end;align-items:center;}
+.icon-btn{width:40px;height:40px;background:transparent;border:none;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;position:relative;transition:color .3s var(--ease);}
+.icon-btn:hover{color:var(--charcoal);}
+.icon-btn svg{width:18px;height:18px;}
+.cart-count{position:absolute;top:4px;right:4px;background:var(--charcoal);color:var(--cream);border-radius:999px;font-size:9px;padding:2px 6px;}
+.hamburger{display:none;}
+.hamburger-icon{position:relative;width:18px;height:12px;}
+.hamburger-icon span{position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s var(--ease),top .4s var(--ease);}
+.hamburger-icon span:nth-child(1){top:0;}
+.hamburger-icon span:nth-child(2){top:50%;transform:translateY(-50%);}
+.hamburger-icon span:nth-child(3){top:100%;transform:translateY(-100%);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(3){top:50%;transform:translateY(-50%) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--cream);z-index:60;transform:translateX(100%);transition:transform .5s var(--ease);display:flex;flex-direction:column;padding:100px 40px 40px;box-shadow:-20px 0 60px -20px rgba(81,76,69,0.2);visibility:hidden;}
+.mobile-menu[aria-hidden="false"]{transform:translateX(0);visibility:visible;}
+.mobile-menu-scrim{position:fixed;inset:0;background:rgba(81,76,69,0.4);backdrop-filter:blur(4px);z-index:55;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s var(--ease);}
+.mobile-menu-scrim.active{opacity:1;visibility:visible;}
+.mobile-nav{display:flex;flex-direction:column;gap:4px;margin-bottom:48px;}
+.mobile-nav a{font-size:28px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);font-weight:300;padding:14px 0;border-bottom:1px solid var(--disabled);transition:color .3s var(--ease),padding-left .3s var(--ease);}
+.mobile-nav a:hover{color:var(--charcoal);padding-left:8px;}
+.mobile-menu-foot{margin-top:auto;display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--disabled);}
+.mobile-menu-foot a{font-size:12px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+body.menu-open{overflow:hidden;}
+@media(max-width:900px){.nav{display:none;}.hamburger{display:inline-flex;justify-self:start;}.header-inner{padding:18px 24px;}}
+
+/* ================================================================
+   LEGAL PAGE — SHARED LAYOUT
+   ================================================================ */
+
+/* BREADCRUMB */
+.breadcrumb{border-bottom:1px solid var(--disabled);padding:16px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.breadcrumb-inner{max-width:var(--max);margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:16px;}
+.breadcrumb-inner a{transition:color .3s var(--ease);}
+.breadcrumb-inner a:hover{color:var(--ink);}
+.breadcrumb-sep{color:var(--taupe);}
+.breadcrumb-current{color:var(--ink);}
+@media(max-width: 767px){
+   /* Header Mobile Changes */
+  .header-inner {
+    gap: 20px;
+    padding: 10px 20px;
+  }
+  .header-actions{
+    gap: 15px;
+  }
+  .mobile-menu {
+      width: min(350px, 100%);
+  }
+}
+@media(max-width:720px){.breadcrumb-inner{padding:0 24px;}}
+
+/* LEGAL HERO */
+.legal-hero{padding:72px 40px 80px;max-width:var(--max);margin:0 auto;}
+.legal-hero-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-bottom:40px;border-bottom:1px solid var(--taupe);}
+.legal-hero-title{margin:0;color:var(--ink);}
+.legal-hero-title em{color:var(--taupe);font-style:italic;font-weight:300;}
+.legal-hero-right{display:flex;flex-direction:column;gap:12px;justify-self:end;align-items:flex-end;text-align:right;}
+.legal-hero-meta{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.legal-hero-meta b{color:var(--ink);font-weight:500;}
+.legal-sibling{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--sec);border-bottom:1px solid var(--sec);padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease);}
+.legal-sibling:hover{color:var(--sec-h);border-color:var(--sec-h);}
+@media(max-width:900px){
+  .legal-hero{padding:40px 24px 60px;}
+  .legal-hero-top{grid-template-columns:1fr;gap:24px;}
+  .legal-hero-right{justify-self:start;align-items:flex-start;text-align:left;}
+}
+
+/* LEGAL BODY LAYOUT */
+.legal-body{padding:0 0 120px;}
+.legal-layout{max-width:var(--max);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start;}
+
+/* SIDEBAR TOC */
+.legal-toc{position:sticky;top:120px;display:flex;flex-direction:column;gap:0;}
+.legal-toc-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;padding-bottom:16px;border-bottom:1px solid var(--taupe);margin-bottom:4px;}
+.legal-toc-link{display:block;font-size:13px;letter-spacing:var(--t-lower);text-transform:lowercase;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--disabled);transition:color .3s var(--ease),padding-left .3s var(--ease);cursor:pointer;}
+.legal-toc-link:hover{color:var(--ink);padding-left:4px;}
+.legal-toc-link.active{color:var(--charcoal);font-weight:500;}
+
+/* LEGAL CONTENT */
+.legal-content{padding-top:4px;}
+.legal-section{scroll-margin-top:120px;padding-bottom:64px;border-bottom:1px solid var(--disabled);margin-bottom:64px;}
+.legal-section:last-child{border-bottom:none;margin-bottom:0;}
+.legal-section-num{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:16px;display:block;}
+.legal-section-title{font-size:clamp(22px,2.4vw,32px);font-weight:300;letter-spacing:-0.005em;color:var(--ink);text-transform:lowercase;margin:0 0 28px;line-height:1.2;}
+.legal-section-title em{color:var(--taupe);font-style:italic;}
+.legal-content p{font-size:15px;line-height:1.8;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);margin:0 0 20px;max-width:68ch;}
+.legal-content p:last-child{margin-bottom:0;}
+.legal-content strong{font-weight:500;color:var(--ink);}
+.legal-content a{color:var(--sec);border-bottom:1px solid var(--sec);transition:color .3s,border-color .3s;}
+.legal-content a:hover{color:var(--sec-h);border-color:var(--sec-h);}
+.legal-list{margin:0 0 20px;padding:0 0 0 0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.legal-list li{font-size:15px;line-height:1.7;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);padding-left:20px;position:relative;max-width:68ch;}
+.legal-list li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--taupe);}
+.legal-highlight{background:var(--sand-soft);border-left:3px solid var(--duck);border-radius:0 12px 12px 0;padding:20px 24px;margin:0 0 20px;}
+.legal-highlight p{color:var(--muted) !important;font-size:14px !important;margin:0 !important;}
+.legal-table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14px;}
+.legal-table th{text-align:left;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;padding:10px 16px;border-bottom:1px solid var(--taupe);}
+.legal-table td{padding:14px 16px;border-bottom:1px solid var(--disabled);color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);vertical-align:top;}
+.legal-table tr:last-child td{border-bottom:none;}
+
+/* Contact callout */
+.legal-contact{background:var(--sand);border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:80px;}
+.legal-contact-text{display:flex;flex-direction:column;gap:8px;}
+.legal-contact-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+.legal-contact-body{font-size:15px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);}
+
+@media(max-width:900px){
+  .legal-layout{grid-template-columns:1fr;gap:0;padding:0 24px;}
+  .legal-toc{position:static;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:0;padding:20px 0;border-bottom:1px solid var(--disabled);margin-bottom:40px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .legal-toc::-webkit-scrollbar{display:none;}
+  .legal-toc-label{display:none;}
+  .legal-toc-link{border-bottom:none;border-right:1px solid var(--disabled);padding:8px 16px;white-space:nowrap;flex-shrink:0;}
+  .legal-toc-link:last-child{border-right:none;}
+  .legal-body{padding:0 0 80px;}
+}
+
+/* FOOTER */
+.footer{background:var(--cream);color:var(--ink);padding:100px 0 40px;border-top:1px solid var(--disabled);}
+.footer-top{padding-bottom:80px;margin-bottom:40px;border-bottom:1px solid var(--disabled);display:grid;grid-template-columns:2fr 3fr;gap:80px;}
+.footer-wordmark{font-size:clamp(80px,12vw,180px);line-height:0.9;color:var(--ink);text-transform:lowercase;font-weight:300;letter-spacing:-0.03em;margin:0;}
+.footer-tag{margin-top:24px;color:var(--muted);font-size:14px;text-transform:lowercase;letter-spacing:var(--t-lower);max-width:28ch;line-height:1.6;}
+.footer-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;}
+.footer-col h5{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);margin:0 0 20px;font-weight:500;}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+.footer-col a{font-size:13px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);transition:color .3s var(--ease);}
+.footer-col a:hover{color:var(--ink);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;font-size:11px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.footer-bottom-links{display:flex;gap:32px;flex-wrap:wrap;}
+.footer-bottom-links a:hover{color:var(--ink);}
+@media(max-width:900px){.footer{padding:60px 0 32px;}.footer-top{grid-template-columns:1fr;gap:40px;padding-bottom:48px;margin-bottom:32px;}.footer-nav{grid-template-columns:1fr 1fr;gap:32px;}}
+
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <div class="announce-track">
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <a href="#" class="logo"><img src="https://navanpet.com/cdn/shop/files/navan_logo.png?v=1770933252&width=100" alt="Navan Pet Logo"></a>
+    <nav class="nav" aria-label="primary">
+      <a href="navan-collection.html">SHOP</a>
+      <a href="navan-faq_Version_2.html" aria-current="page">FAQ</a>
+      <a href="navan-about.html" >ABOUT</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="navan-cart.html" class="icon-btn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu-scrim" id="menu-scrim" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="mobile navigation">
+  <nav class="mobile-nav" aria-label="mobile primary">
+     <a href="navan-collection.html"  data-menu-close>SHOP</a>
+      <a href="navan-faq_Version_2.html"  data-menu-close>FAQ</a>
+      <a href="navan-about.html"  data-menu-close>ABOUT</a>
+      <a href="#"  data-menu-close>Blog</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="navan-cart.html" data-menu-close>cart</a>
+    <a href="navan-faq_Version_2.html" data-menu-close>faq</a>
+    <a href="navan-privacy.html" data-menu-close>privacy</a>
+    <a href="navan-terms.html" data-menu-close>terms</a>
+  </div>
+</aside>
+
+<main>
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="navan-homepage_Version_2.html" class="lower">home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current lower" aria-current="page">privacy policy</span>
+    </div>
+  </nav>
+
+  <div class="legal-hero">
+    <div class="legal-hero-top">
+      <div>
+        <span class="eyebrow" style="margin-bottom:16px;display:inline-flex;">legal</span>
+        <h1 class="legal-hero-title display d-xxl lower">privacy <em>policy.</em></h1>
+      </div>
+      <div class="legal-hero-right">
+        <div class="legal-hero-meta"><b>last updated</b> january 1, 2025</div>
+        <div class="legal-hero-meta"><b>version</b> 1.0</div>
+        <a href="navan-terms.html" class="legal-sibling">view terms of service →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-body">
+    <div class="legal-layout">
+
+      <!-- TOC SIDEBAR -->
+      <nav class="legal-toc" aria-label="privacy policy sections" id="legal-toc">
+        <div class="legal-toc-label">contents</div>
+        <a class="legal-toc-link active" href="#pp-overview">overview</a>
+        <a class="legal-toc-link" href="#pp-collect">what we collect</a>
+        <a class="legal-toc-link" href="#pp-use">how we use it</a>
+        <a class="legal-toc-link" href="#pp-share">sharing</a>
+        <a class="legal-toc-link" href="#pp-cookies">cookies</a>
+        <a class="legal-toc-link" href="#pp-rights">your rights</a>
+        <a class="legal-toc-link" href="#pp-ccpa">california (ccpa)</a>
+        <a class="legal-toc-link" href="#pp-retention">data retention</a>
+        <a class="legal-toc-link" href="#pp-children">children</a>
+        <a class="legal-toc-link" href="#pp-security">security</a>
+        <a class="legal-toc-link" href="#pp-changes">changes</a>
+        <a class="legal-toc-link" href="#pp-contact">contact</a>
+      </nav>
+
+      <!-- CONTENT -->
+      <article class="legal-content" aria-labelledby="pp-h">
+        <h2 id="pp-h" style="position:absolute;left:-9999px">privacy policy content</h2>
+
+        <section class="legal-section" id="pp-overview">
+          <span class="legal-section-num">01</span>
+          <h3 class="legal-section-title">overview</h3>
+          <p>navan ("we", "us", or "our") operates the website navanpet.com and associated services (the "service"). this privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase.</p>
+          <p>please read this policy carefully. if you disagree with its terms, please discontinue use of the site.</p>
+          <div class="legal-highlight">
+            <p><strong>the short version:</strong> we collect information you give us when you buy something or sign up. we use it to fulfil your order, improve our service, and communicate with you. we do not sell your personal data to third parties for their own marketing purposes.</p>
+          </div>
+        </section>
+
+        <section class="legal-section" id="pp-collect">
+          <span class="legal-section-num">02</span>
+          <h3 class="legal-section-title">what we <em>collect</em></h3>
+          <p>we collect information in the following ways:</p>
+          <p><strong>information you provide directly</strong></p>
+          <ul class="legal-list">
+            <li>name, email address, shipping and billing address, and phone number when you create an account or place an order</li>
+            <li>payment information (processed securely by our payment processor — we do not store full card numbers)</li>
+            <li>communications you send us, including customer support messages</li>
+            <li>email address when you subscribe to our launch list or newsletter</li>
+          </ul>
+          <p><strong>information collected automatically</strong></p>
+          <ul class="legal-list">
+            <li>ip address, browser type, operating system, referring urls, and pages visited</li>
+            <li>device identifiers and cookie data (see cookies section below)</li>
+            <li>purchase history and browsing behaviour on our site</li>
+          </ul>
+          <p><strong>information from third parties</strong></p>
+          <ul class="legal-list">
+            <li>if you connect a social media account or log in via a third-party service, we may receive basic profile information from that platform, subject to your privacy settings on that platform</li>
+          </ul>
+        </section>
+
+        <section class="legal-section" id="pp-use">
+          <span class="legal-section-num">03</span>
+          <h3 class="legal-section-title">how we <em>use it</em></h3>
+          <p>we use the information we collect to:</p>
+          <ul class="legal-list">
+            <li>process and fulfil your orders, including shipping notifications and delivery updates</li>
+            <li>manage your account and subscription preferences</li>
+            <li>send transactional emails (order confirmations, receipts, shipping updates)</li>
+            <li>send marketing communications if you have opted in — you may unsubscribe at any time</li>
+            <li>personalise your experience on our site based on your browsing and purchase history</li>
+            <li>respond to customer service enquiries</li>
+            <li>analyse site usage and improve our products, services, and website</li>
+            <li>detect and prevent fraudulent transactions and other illegal activities</li>
+            <li>comply with applicable legal obligations</li>
+          </ul>
+          <p>our lawful basis for processing is: contract performance (for order fulfilment), legitimate interests (for analytics and fraud prevention), and consent (for marketing emails).</p>
+        </section>
+
+        <section class="legal-section" id="pp-share">
+          <span class="legal-section-num">04</span>
+          <h3 class="legal-section-title">sharing your <em>information</em></h3>
+          <p>we do not sell, trade, or rent your personal information to third parties for their own marketing purposes. we may share your information with:</p>
+          <table class="legal-table">
+            <thead><tr><th>recipient</th><th>purpose</th></tr></thead>
+            <tbody>
+              <tr><td>shopify inc.</td><td>our ecommerce platform and order management</td></tr>
+              <tr><td>payment processors (e.g. stripe)</td><td>secure payment processing</td></tr>
+              <tr><td>shipping carriers (e.g. ups, usps, fedex)</td><td>order fulfilment and delivery</td></tr>
+              <tr><td>email service providers (e.g. klaviyo)</td><td>transactional and marketing emails</td></tr>
+              <tr><td>analytics providers (e.g. google analytics)</td><td>website performance and usage analysis</td></tr>
+              <tr><td>subscription management (e.g. recharge)</td><td>managing subscribe &amp; save orders</td></tr>
+            </tbody>
+          </table>
+          <p>all third-party service providers are contractually required to use your data only for the purposes we specify and to maintain appropriate security standards.</p>
+          <p>we may also disclose information where required by law, court order, or governmental authority, or to protect the rights and safety of navan or others.</p>
+        </section>
+
+        <section class="legal-section" id="pp-cookies">
+          <span class="legal-section-num">05</span>
+          <h3 class="legal-section-title">cookies &amp; <em>tracking</em></h3>
+          <p>we use cookies and similar tracking technologies to operate and improve our site. cookies are small data files stored on your device.</p>
+          <p><strong>types of cookies we use:</strong></p>
+          <ul class="legal-list">
+            <li><strong>essential cookies:</strong> required for the site to function — shopping cart, login sessions, checkout flow</li>
+            <li><strong>analytics cookies:</strong> help us understand how visitors use our site (e.g. google analytics — data is aggregated and anonymised where possible)</li>
+            <li><strong>marketing cookies:</strong> used to deliver relevant advertisements and track campaign performance (e.g. meta pixel, google ads)</li>
+            <li><strong>preference cookies:</strong> remember your settings and preferences across visits</li>
+          </ul>
+          <p>you can control cookies through your browser settings. disabling certain cookies may affect the functionality of our site. you may also opt out of interest-based advertising via the <a href="https://optout.aboutads.info" target="_blank" rel="noopener">digital advertising alliance opt-out tool</a>.</p>
+        </section>
+
+        <section class="legal-section" id="pp-rights">
+          <span class="legal-section-num">06</span>
+          <h3 class="legal-section-title">your <em>rights</em></h3>
+          <p>depending on your location, you may have the following rights regarding your personal data:</p>
+          <ul class="legal-list">
+            <li><strong>access:</strong> request a copy of the personal information we hold about you</li>
+            <li><strong>correction:</strong> request that we correct inaccurate or incomplete information</li>
+            <li><strong>deletion:</strong> request that we delete your personal information, subject to certain exceptions</li>
+            <li><strong>portability:</strong> request your data in a structured, machine-readable format</li>
+            <li><strong>objection:</strong> object to processing based on legitimate interests or for direct marketing</li>
+            <li><strong>withdrawal of consent:</strong> where processing is based on consent, you may withdraw it at any time without affecting the lawfulness of prior processing</li>
+          </ul>
+          <p>to exercise any of these rights, please contact us at <a href="mailto:privacy@navanpet.com">privacy@navanpet.com</a>. we will respond within 30 days. we may need to verify your identity before fulfilling a request.</p>
+        </section>
+
+        <section class="legal-section" id="pp-ccpa">
+          <span class="legal-section-num">07</span>
+          <h3 class="legal-section-title">california residents <em>(ccpa)</em></h3>
+          <div class="legal-highlight">
+            <p>if you are a california resident, the california consumer privacy act (ccpa) and california privacy rights act (cpra) give you additional rights regarding your personal information.</p>
+          </div>
+          <p><strong>categories of personal information collected</strong> in the past 12 months: identifiers (name, email, ip address), commercial information (purchase history), internet activity (browsing behaviour on our site), and inferences drawn from the above.</p>
+          <p><strong>your california rights include:</strong></p>
+          <ul class="legal-list">
+            <li>the right to know what personal information we collect, use, disclose, and sell</li>
+            <li>the right to delete personal information we have collected, subject to exceptions</li>
+            <li>the right to correct inaccurate personal information</li>
+            <li>the right to opt out of the sale or sharing of personal information — <strong>we do not sell your personal information</strong></li>
+            <li>the right to limit use of sensitive personal information</li>
+            <li>the right to non-discrimination for exercising your rights</li>
+          </ul>
+          <p>to exercise your california rights, contact us at <a href="mailto:privacy@navanpet.com">privacy@navanpet.com</a> or submit a request through our website. we will acknowledge your request within 10 business days and respond within 45 calendar days.</p>
+          <p>you may designate an authorised agent to submit a request on your behalf. we may require written permission and identity verification.</p>
+        </section>
+
+        <section class="legal-section" id="pp-retention">
+          <span class="legal-section-num">08</span>
+          <h3 class="legal-section-title">data <em>retention</em></h3>
+          <p>we retain your personal information for as long as necessary to fulfil the purposes outlined in this policy, including for legal, accounting, or reporting requirements.</p>
+          <ul class="legal-list">
+            <li>account information: retained for the duration of your account plus 3 years after account closure</li>
+            <li>order records: retained for 7 years for tax and accounting compliance</li>
+            <li>marketing data: retained until you unsubscribe or request deletion</li>
+            <li>analytics data: typically retained in aggregated, anonymised form</li>
+          </ul>
+          <p>when personal information is no longer required, we delete or anonymise it securely.</p>
+        </section>
+
+        <section class="legal-section" id="pp-children">
+          <span class="legal-section-num">09</span>
+          <h3 class="legal-section-title">children's <em>privacy</em></h3>
+          <p>our service is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. if you believe we have inadvertently collected such information, please contact us immediately at <a href="mailto:privacy@navanpet.com">privacy@navanpet.com</a> and we will take steps to delete it promptly.</p>
+        </section>
+
+        <section class="legal-section" id="pp-security">
+          <span class="legal-section-num">10</span>
+          <h3 class="legal-section-title">security</h3>
+          <p>we implement commercially reasonable technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. these include ssl/tls encryption for data in transit, secure payment processing via pci-compliant providers, and access controls limiting who can access your data.</p>
+          <p>however, no method of transmission over the internet or electronic storage is 100% secure. while we strive to protect your personal information, we cannot guarantee its absolute security.</p>
+        </section>
+
+        <section class="legal-section" id="pp-changes">
+          <span class="legal-section-num">11</span>
+          <h3 class="legal-section-title">changes to this <em>policy</em></h3>
+          <p>we may update this privacy policy from time to time. when we do, we will revise the "last updated" date at the top of this page. if we make material changes, we will notify you by email (to the address associated with your account) or by posting a prominent notice on our website prior to the change taking effect.</p>
+          <p>your continued use of our service after any changes constitutes your acceptance of the revised policy.</p>
+        </section>
+
+        <section class="legal-section" id="pp-contact">
+          <span class="legal-section-num">12</span>
+          <h3 class="legal-section-title">contact <em>us</em></h3>
+          <p>if you have questions, concerns, or requests regarding this privacy policy or our data practices, please contact us:</p>
+          <ul class="legal-list">
+            <li>email: <a href="mailto:privacy@navanpet.com">privacy@navanpet.com</a></li>
+            <li>general: <a href="mailto:hello@navanpet.com">hello@navanpet.com</a></li>
+            <li>website: <a href="https://navanpet.com">navanpet.com</a></li>
+          </ul>
+          <p>we will make every effort to resolve your concern promptly and transparently — consistent with our commitment to clean ingredients and honest design.</p>
+        </section>
+
+        <div class="legal-contact">
+          <div class="legal-contact-text">
+            <span class="legal-contact-label">also review</span>
+            <span class="legal-contact-body">our terms of service outline the rules governing your use of navan products and this website.</span>
+          </div>
+          <a href="navan-terms.html" class="btn btn-primary">view terms of service</a>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 class="footer-wordmark">navan</h2>
+        <p class="footer-tag">clean living for your dog. a natural approach to vitality &amp; nourishment.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>shop</h5>
+          <ul>
+            <li><a href="navan-product.html">core protocol</a></li>
+            <li><a href="navan-bundles.html">View Bundles</a></li>
+            <li><a href="navan-collection.html">all chews</a></li>
+            <li><a href="#">subscribe &amp; save</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>learn</h5>
+          <ul>
+            <li><a href="navan-homepage_Version_2.html#protocol">the protocol</a></li>
+            <li><a href="#">ingredients</a></li>
+            <li><a href="#">journal</a></li>
+            <li><a href="navan-faq_Version_2.html">faq</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>company</h5>
+          <ul>
+            <li><a href="navan-about.html">about</a></li>
+            <li><a href="#">nation</a></li>
+            <li><a href="#">press</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>support</h5>
+          <ul>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">account</a></li>
+            <li><a href="navan-faq_Version_2.html">help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 navan · the natural toothbrush pets love</div>
+      <div class="footer-bottom-links">
+        <a href="navan-privacy.html">privacy</a>
+        <a href="navan-terms.html">terms</a>
+        <a href="#">accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+
+  // Sticky TOC active state
+  (function() {
+    const sections = document.querySelectorAll('.legal-section[id]');
+    const links    = document.querySelectorAll('.legal-toc-link');
+    if (!sections.length || !links.length) return;
+
+    const linkMap = {};
+    links.forEach(l => { linkMap[l.getAttribute('href').replace('#','')] = l; });
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const link = linkMap[e.target.id];
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+    sections.forEach(s => obs.observe(s));
+  })();
+
+  // Mobile menu
+  (function() {
+    const btn   = document.getElementById('hamburger');
+    const menu  = document.getElementById('mobile-menu');
+    const scrim = document.getElementById('menu-scrim');
+    if (!btn || !menu || !scrim) return;
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+      menu.setAttribute('aria-hidden', String(!open));
+      scrim.setAttribute('aria-hidden', String(!open));
+      scrim.classList.toggle('active', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) { const f = menu.querySelector('a'); if (f) f.focus(); }
+    };
+    const toggle = () => setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    const close  = () => setOpen(false);
+    btn.addEventListener('click', toggle);
+    scrim.addEventListener('click', close);
+    menu.querySelectorAll('[data-menu-close]').forEach(l => l.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { close(); btn.focus(); } });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) close(); });
+  })();
+</script>
+</body>
+</html>

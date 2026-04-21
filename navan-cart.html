@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>your cart — navan · the natural toothbrush pets love</title>
+<meta name="description" content="review your navan order before checkout." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* NAVAN — CART + CHECKOUT. Project standard stylesheet. */
+:root {
+  --sand:#EBDECB; --sand-soft:#F3EBDD; --cream:#FEF9F5; --white:#FFFFFF;
+  --taupe:#BFA694; --charcoal:#6A625A; --charcoal-h:#59524C; --ink:#514C45;
+  --muted:#7A736A; --duck:#95A77D; --rabbit:#8FC8D4; --beef:#CA8575;
+  --sec:#738063; --sec-h:#8EA18F; --disabled:#E8DDD2;
+  --font:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  --t-caps:0.118em; --t-lower:0.042em; --t-micro:0.22em;
+  --max:1400px; --content:1240px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{margin:0;font-family:var(--font);font-weight:400;color:var(--ink);background:var(--cream);line-height:1.6;letter-spacing:0.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;} a{color:inherit;text-decoration:none;} button{font-family:inherit;}
+:focus-visible{outline:2px solid var(--sec);outline-offset:3px;border-radius:4px;}
+
+/* Type */
+.eyebrow{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--taupe);display:inline-block;}
+.eyebrow.no-rule::before{display:none;}
+.lower{text-transform:lowercase;letter-spacing:var(--t-lower);}
+.display{font-weight:300;line-height:0.95;letter-spacing:-0.015em;}
+.d-xl{font-size:clamp(44px,7vw,120px);}
+.d-lg{font-size:clamp(36px,5vw,80px);}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 36px;border-radius:999px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:background-color .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),opacity .3s var(--ease);}
+.btn-primary{background:var(--charcoal);color:var(--cream);}
+.btn-primary:hover{background:var(--charcoal-h);}
+.btn-secondary{background:transparent;color:var(--sec);border-color:var(--sec);}
+.btn-secondary:hover{color:var(--sec-h);border-color:var(--sec-h);}
+.btn-full{width:100%;}
+.btn-checkout{height:60px;font-size:12px;background:var(--ink);color:var(--cream);border-radius:999px;letter-spacing:var(--t-micro);display:flex;align-items:center;justify-content:center;width:100%;border:none;cursor:pointer;transition:background .4s var(--ease);}
+.btn-checkout:hover{background:var(--charcoal);}
+.btn-ghost{background:transparent;padding:0;height:auto;color:var(--ink);letter-spacing:var(--t-lower);text-transform:lowercase;font-size:14px;font-weight:400;border:0;position:relative;cursor:pointer;}
+.btn-ghost::after{content:'→';margin-left:10px;display:inline-block;transition:transform .4s var(--ease);}
+.btn-ghost:hover::after{transform:translateX(6px);}
+
+/* Tags */
+.tag{font-size:10px;letter-spacing:var(--t-micro);text-transform:uppercase;padding:4px 10px;border-radius:999px;color:var(--white);font-weight:500;display:inline-flex;}
+.tag-duck{background:var(--duck);}
+.tag-rabbit{background:var(--rabbit);color:var(--ink);}
+.tag-collagen{background:var(--taupe);}
+
+.wrap{max-width:var(--content);margin:0 auto;padding:0 40px;}
+@media(max-width:720px){.wrap{padding:0 24px;}}
+
+/* ANNOUNCEMENT */
+.announce{background:var(--ink);color:var(--sand);overflow:hidden;padding:12px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;}
+.announce-track{display:flex;gap:60px;animation:marquee 40s linear infinite;width:max-content;}
+.announce-track span{display:inline-flex;align-items:center;gap:60px;white-space:nowrap;}
+.announce-track span::after{content:'◦';color:var(--taupe);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:50;background:rgba(254,249,245,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .4s var(--ease),background .4s var(--ease);}
+.header.scrolled{border-bottom-color:var(--disabled);background:rgba(254,249,245,0.96);}
+.header-inner{max-width:var(--max);margin:0 auto;padding:22px 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px;}
+.logo{font-size:28px;color:var(--charcoal);font-weight:400;text-transform:lowercase;letter-spacing:-0.02em;}
+.nav{display:flex;gap:40px;justify-self:center;}
+.nav a{font-size:13px;letter-spacing:var(--t-lower);color:var(--ink);position:relative;padding:6px 0;}
+.nav a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--charcoal);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
+.nav a:hover::after{transform:scaleX(1);}
+.header-actions{display:flex;gap:20px;justify-self:end;align-items:center;}
+.icon-btn{width:40px;height:40px;background:transparent;border:none;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;position:relative;transition:color .3s var(--ease);}
+.icon-btn:hover{color:var(--charcoal);}
+.icon-btn svg{width:18px;height:18px;}
+.cart-count{position:absolute;top:4px;right:4px;background:var(--charcoal);color:var(--cream);border-radius:999px;font-size:9px;padding:2px 6px;letter-spacing:0;}
+.hamburger{display:none;}
+.hamburger-icon{position:relative;width:18px;height:12px;}
+.hamburger-icon span{position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s var(--ease),top .4s var(--ease);}
+.hamburger-icon span:nth-child(1){top:0;}
+.hamburger-icon span:nth-child(2){top:50%;transform:translateY(-50%);}
+.hamburger-icon span:nth-child(3){top:100%;transform:translateY(-100%);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg);}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(3){top:50%;transform:translateY(-50%) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--cream);z-index:60;transform:translateX(100%);transition:transform .5s var(--ease);display:flex;flex-direction:column;padding:100px 40px 40px;box-shadow:-20px 0 60px -20px rgba(81,76,69,0.2);visibility:hidden;}
+.mobile-menu[aria-hidden="false"]{transform:translateX(0);visibility:visible;}
+.mobile-menu-scrim{position:fixed;inset:0;background:rgba(81,76,69,0.4);backdrop-filter:blur(4px);z-index:55;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s var(--ease);}
+.mobile-menu-scrim.active{opacity:1;visibility:visible;}
+.mobile-nav{display:flex;flex-direction:column;gap:4px;margin-bottom:48px;}
+.mobile-nav a{font-size:28px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);font-weight:300;padding:14px 0;border-bottom:1px solid var(--disabled);transition:color .3s var(--ease),padding-left .3s var(--ease);}
+.mobile-nav a:hover{color:var(--charcoal);padding-left:8px;}
+.mobile-menu-foot{margin-top:auto;display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--disabled);}
+.mobile-menu-foot a{font-size:12px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+body.menu-open{overflow:hidden;}
+@media(max-width:900px){.nav{display:none;}.hamburger{display:inline-flex;justify-self:start;}.header-inner{padding:18px 24px;}}
+
+/* ================================================================
+   CART PAGE VIEW
+   ================================================================ */
+#view-cart{display:block;}
+#view-checkout{display:none;}
+
+/* BREADCRUMB */
+.breadcrumb{border-bottom:1px solid var(--disabled);padding:16px 0;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.breadcrumb-inner{max-width:var(--max);margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:16px;}
+.breadcrumb-inner a{transition:color .3s var(--ease);}
+.breadcrumb-inner a:hover{color:var(--ink);}
+.breadcrumb-sep{color:var(--taupe);}
+.breadcrumb-current{color:var(--ink);}
+@media(max-width:720px){.breadcrumb-inner{padding:0 24px;}}
+
+/* CART HERO */
+.cart-hero{padding:64px 40px 56px;max-width:var(--max);margin:0 auto;border-bottom:1px solid var(--taupe);}
+.cart-hero-inner{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;}
+.cart-hero-title{margin:0;color:var(--ink);}
+.cart-hero-title em{color:var(--taupe);font-style:italic;font-weight:300;}
+.cart-hero-meta{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+.cart-item-count{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.cart-item-count b{color:var(--ink);}
+@media(max-width:720px){
+  .cart-hero{padding:40px 24px 40px;}
+  .cart-hero-inner{grid-template-columns:1fr;gap:16px;}
+  .cart-hero-meta{align-items:flex-start;}
+}
+
+/* CART LAYOUT */
+.cart-layout{max-width:var(--max);margin:0 auto;padding:60px 40px 120px;display:grid;grid-template-columns:1fr 400px;gap:80px;align-items:start;}
+@media(max-width:1100px){.cart-layout{grid-template-columns:1fr 360px;gap:48px;}}
+@media(max-width:900px){.cart-layout{grid-template-columns:1fr;gap:48px;padding:40px 24px 80px;}}
+
+/* CART ITEMS */
+.cart-items{display:flex;flex-direction:column;gap:0;}
+.cart-items-header{display:grid;grid-template-columns:1fr auto auto auto;gap:24px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--taupe);font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);}
+.cart-items-header span:nth-child(2){min-width:80px;text-align:center;}
+.cart-items-header span:nth-child(3){min-width:100px;text-align:center;}
+.cart-items-header span:nth-child(4){min-width:80px;text-align:right;}
+@media(max-width:600px){.cart-items-header{display:none;}}
+
+/* Line item */
+.cart-item{display:grid;grid-template-columns:100px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--disabled);align-items:start;}
+.cart-item-img{width:100px;aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--sand);flex-shrink:0;}
+.cart-item-img img{width:100%;height:100%;object-fit:cover;}
+.cart-item-body{display:grid;grid-template-columns:1fr auto auto auto;gap:24px;align-items:center;}
+.cart-item-info{display:flex;flex-direction:column;gap:8px;}
+.cart-item-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.cart-item-name{font-size:16px;font-weight:400;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);margin:0;}
+.cart-item-sub{font-size:12px;color:var(--muted);letter-spacing:var(--t-lower);text-transform:lowercase;}
+
+/* Subscribe toggle on line item — Saint Rocco's pattern */
+.cart-item-sub-toggle{margin-top:4px;}
+.sub-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;}
+.sub-toggle input[type="checkbox"]{display:none;}
+.sub-toggle-track{width:36px;height:20px;border-radius:999px;background:var(--disabled);position:relative;transition:background .3s var(--ease);flex-shrink:0;}
+.sub-toggle-thumb{position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--white);transition:transform .3s var(--ease);}
+.sub-toggle input:checked ~ .sub-toggle-track{background:var(--duck);}
+.sub-toggle input:checked ~ .sub-toggle-track .sub-toggle-thumb{transform:translateX(16px);}
+.sub-toggle-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+.sub-toggle-label .save{color:var(--duck);margin-left:4px;}
+
+/* Qty stepper */
+.cart-qty{display:flex;align-items:center;gap:0;background:var(--white);border:1px solid var(--disabled);border-radius:999px;overflow:hidden;min-width:100px;justify-content:center;}
+.qty-btn{width:36px;height:36px;background:transparent;border:none;cursor:pointer;color:var(--ink);font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .3s var(--ease);font-weight:300;}
+.qty-btn:hover{background:var(--sand);}
+.qty-btn:disabled{opacity:0.3;cursor:not-allowed;}
+.qty-val{min-width:28px;text-align:center;font-size:14px;color:var(--ink);}
+
+/* Item price + remove */
+.cart-item-price{font-size:15px;color:var(--ink);letter-spacing:var(--t-lower);text-align:right;min-width:80px;}
+.cart-item-price .was{font-size:12px;color:var(--muted);text-decoration:line-through;display:block;}
+.cart-item-remove{background:transparent;border:none;cursor:pointer;color:var(--taupe);transition:color .3s var(--ease);padding:4px;display:flex;align-items:center;justify-content:center;}
+.cart-item-remove:hover{color:var(--ink);}
+.cart-item-remove svg{width:16px;height:16px;}
+
+@media(max-width:600px){
+  .cart-item{grid-template-columns:80px 1fr;}
+  .cart-item-img{width:80px;}
+  .cart-item-body{grid-template-columns:1fr;gap:16px;}
+  .cart-item-foot-mobile{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+}
+
+/* FREE SHIPPING PROGRESS */
+.shipping-progress{padding:24px 0;border-bottom:1px solid var(--disabled);}
+.shipping-progress-label{font-size:12px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between;}
+.shipping-progress-label .milestone{color:var(--duck);font-weight:500;}
+.progress-track{height:4px;background:var(--disabled);border-radius:999px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--duck);border-radius:999px;transition:width 1s var(--ease);}
+
+/* CROSS-SELL */
+.cart-crosssell{margin-top:40px;padding:24px;background:var(--sand-soft);border-radius:20px;}
+.cart-crosssell-head{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.crosssell-item{display:grid;grid-template-columns:72px 1fr auto;gap:16px;align-items:center;}
+.crosssell-img{width:72px;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--sand);}
+.crosssell-img img{width:100%;height:100%;object-fit:cover;}
+.crosssell-name{font-size:14px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);margin:0 0 4px;}
+.crosssell-price{font-size:13px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.crosssell-add{height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--charcoal);background:transparent;color:var(--ink);font-family:var(--font);font-size:10px;letter-spacing:var(--t-micro);text-transform:uppercase;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease);}
+.crosssell-add:hover{background:var(--charcoal);color:var(--cream);}
+
+/* ================================================================
+   ORDER SUMMARY SIDEBAR
+   ================================================================ */
+.cart-summary{position:sticky;top:100px;background:var(--white);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:24px;border:1px solid var(--disabled);}
+.cart-summary-title{font-size:14px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);font-weight:500;padding-bottom:20px;border-bottom:1px solid var(--disabled);}
+
+/* Discount code */
+.discount-row{display:flex;gap:8px;}
+.discount-input{flex:1;height:48px;padding:0 20px;border:1px solid var(--disabled);border-radius:999px;font-family:var(--font);font-size:13px;letter-spacing:var(--t-lower);color:var(--ink);background:var(--cream);outline:none;transition:border-color .3s var(--ease);}
+.discount-input:focus{border-color:var(--sec);}
+.discount-input::placeholder{color:var(--muted);}
+.discount-btn{height:48px;padding:0 20px;border-radius:999px;border:1px solid var(--disabled);background:var(--sand);color:var(--ink);font-family:var(--font);font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .3s var(--ease),border-color .3s var(--ease);white-space:nowrap;}
+.discount-btn:hover{background:var(--sand-soft);border-color:var(--taupe);}
+
+/* Line totals */
+.summary-lines{display:flex;flex-direction:column;gap:12px;}
+.summary-line{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:14px;letter-spacing:var(--t-lower);text-transform:lowercase;}
+.summary-line .label{color:var(--muted);}
+.summary-line .value{color:var(--ink);}
+.summary-line.discount .label{color:var(--duck);}
+.summary-line.discount .value{color:var(--duck);}
+.summary-divider{height:1px;background:var(--disabled);}
+.summary-line.total{font-size:18px;font-weight:500;}
+.summary-line.total .label{color:var(--ink);}
+
+/* Subscribe savings note */
+.summary-sub-note{background:var(--sand-soft);border-radius:12px;padding:14px 16px;font-size:12px;letter-spacing:var(--t-lower);text-transform:lowercase;color:var(--muted);}
+.summary-sub-note b{color:var(--duck);font-weight:500;}
+
+/* Trust micro-row */
+.summary-trust{display:flex;flex-direction:column;gap:10px;}
+.summary-trust-item{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:var(--t-lower);text-transform:lowercase;color:var(--muted);}
+.summary-trust-item svg{width:16px;height:16px;color:var(--taupe);flex-shrink:0;}
+
+/* Payment icons */
+.payment-icons{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.pay-icon{height:22px;background:var(--disabled);border-radius:4px;padding:0 8px;display:flex;align-items:center;font-size:9px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+
+@media(max-width:900px){.cart-summary{position:static;}}
+
+/* ================================================================
+   CHECKOUT VIEW — Shopify Checkout Branding API mockup
+   ================================================================ */
+#view-checkout{display:none;}
+
+/* Checkout header */
+.co-header{background:var(--cream);border-bottom:1px solid var(--disabled);padding:20px 40px;display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:50;}
+.co-logo{font-size:26px;color:var(--charcoal);font-weight:400;text-transform:lowercase;letter-spacing:-0.02em;}
+@media(max-width:720px){.co-header{padding:16px 24px;}}
+
+/* Checkout progress */
+.co-progress{background:var(--cream);border-bottom:1px solid var(--disabled);padding:16px 0;}
+.co-progress-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:center;gap:0;}
+.co-step{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+.co-step.active{color:var(--ink);}
+.co-step.done{color:var(--duck);}
+.co-step-dot{width:8px;height:8px;border-radius:50%;background:var(--disabled);flex-shrink:0;}
+.co-step.active .co-step-dot{background:var(--charcoal);}
+.co-step.done .co-step-dot{background:var(--duck);}
+.co-step-sep{width:40px;height:1px;background:var(--disabled);margin:0 8px;}
+@media(max-width:600px){.co-step span:not(.co-step-dot){display:none;}.co-step-sep{width:20px;}}
+
+/* Checkout layout */
+.co-layout{max-width:1200px;margin:0 auto;padding:48px 40px 80px;display:grid;grid-template-columns:1fr 380px;gap:80px;align-items:start;}
+@media(max-width:900px){.co-layout{grid-template-columns:1fr;gap:40px;padding:32px 24px 60px;}}
+@media(max-width:720px){.co-progress-inner{padding:0 24px;}}
+
+/* Checkout form sections */
+.co-form{display:flex;flex-direction:column;gap:32px;}
+.co-section{display:flex;flex-direction:column;gap:20px;}
+.co-section-title{font-size:13px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);font-weight:500;padding-bottom:16px;border-bottom:1px solid var(--disabled);}
+.co-field-group{display:grid;gap:14px;}
+.co-field-group.cols-2{grid-template-columns:1fr 1fr;}
+.co-field{display:flex;flex-direction:column;gap:8px;}
+.co-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+.co-input{height:52px;padding:0 20px;border:1px solid var(--disabled);border-radius:16px;font-family:var(--font);font-size:14px;letter-spacing:var(--t-lower);color:var(--ink);background:var(--white);outline:none;transition:border-color .4s var(--ease),box-shadow .4s var(--ease);width:100%;}
+.co-input:focus{border-color:var(--sec);box-shadow:0 0 0 4px rgba(115,128,99,0.12);}
+.co-input::placeholder{color:var(--muted);}
+.co-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A736A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px;padding-right:44px;cursor:pointer;}
+
+/* Shipping options */
+.co-shipping-options{display:flex;flex-direction:column;gap:8px;}
+.co-ship-option{border:1px solid var(--disabled);border-radius:16px;padding:16px 20px;cursor:pointer;transition:border-color .3s var(--ease),background .3s var(--ease);}
+.co-ship-option:hover{border-color:var(--taupe);}
+.co-ship-option.selected{border-color:var(--charcoal);background:var(--sand-soft);}
+.co-ship-option-inner{display:flex;align-items:center;gap:16px;}
+.co-radio-circle{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--taupe);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .3s var(--ease);}
+.co-ship-option.selected .co-radio-circle{border-color:var(--charcoal);}
+.co-radio-dot{width:10px;height:10px;border-radius:50%;background:var(--charcoal);opacity:0;transform:scale(0);transition:opacity .3s var(--ease),transform .3s var(--ease);}
+.co-ship-option.selected .co-radio-dot{opacity:1;transform:scale(1);}
+.co-ship-label{flex:1;}
+.co-ship-name{font-size:14px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.co-ship-eta{font-size:12px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.co-ship-price{font-size:14px;color:var(--ink);letter-spacing:var(--t-lower);}
+
+/* Payment fields */
+.co-card-input{position:relative;}
+.co-card-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;gap:6px;}
+.co-card-icon span{height:20px;background:var(--disabled);border-radius:3px;padding:0 6px;display:flex;align-items:center;font-size:9px;letter-spacing:var(--t-micro);color:var(--muted);text-transform:uppercase;font-weight:500;}
+.co-card-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+/* Order summary sidebar — checkout */
+.co-summary{background:var(--sand-soft);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:20px;position:sticky;top:100px;}
+.co-summary-title{font-size:13px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);font-weight:500;padding-bottom:16px;border-bottom:1px solid var(--taupe);}
+.co-summary-item{display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;}
+.co-summary-item-img{width:56px;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--sand);position:relative;}
+.co-summary-item-img img{width:100%;height:100%;object-fit:cover;}
+.co-summary-item-badge{position:absolute;top:-6px;right:-6px;width:20px;height:20px;background:var(--charcoal);color:var(--cream);border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:500;}
+.co-summary-item-name{font-size:13px;color:var(--ink);text-transform:lowercase;letter-spacing:var(--t-lower);margin:0 0 4px;}
+.co-summary-item-sub{font-size:11px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.co-summary-item-price{font-size:14px;color:var(--ink);letter-spacing:var(--t-lower);}
+.co-summary-divider{height:1px;background:var(--taupe);opacity:0.3;}
+.co-summary-lines{display:flex;flex-direction:column;gap:10px;}
+.co-summary-line{display:flex;justify-content:space-between;font-size:13px;letter-spacing:var(--t-lower);text-transform:lowercase;color:var(--muted);}
+.co-summary-line.total{font-size:16px;color:var(--ink);font-weight:500;padding-top:10px;border-top:1px solid var(--taupe);}
+.co-summary-line.discount{color:var(--duck);}
+.co-summary-discount-row{display:flex;gap:8px;}
+.co-discount-input{flex:1;height:44px;padding:0 16px;border:1px solid var(--taupe);border-radius:999px;font-family:var(--font);font-size:12px;letter-spacing:var(--t-lower);color:var(--ink);background:transparent;outline:none;transition:border-color .3s var(--ease);}
+.co-discount-input:focus{border-color:var(--sec);}
+.co-discount-input::placeholder{color:var(--muted);}
+.co-discount-btn{height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--taupe);background:transparent;font-family:var(--font);font-size:10px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .3s var(--ease);white-space:nowrap;}
+.co-discount-btn:hover{border-color:var(--charcoal);color:var(--ink);}
+@media(max-width:900px){.co-summary{position:static;}}
+@media(max-width:600px){.co-field-group.cols-2{grid-template-columns:1fr;}}
+
+/* Shopify restriction notice */
+.co-notice{background:var(--sand);border:1px solid var(--taupe);border-radius:16px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start;margin-bottom:8px;}
+.co-notice-icon{flex-shrink:0;margin-top:2px;}
+.co-notice-icon svg{width:18px;height:18px;color:var(--taupe);}
+.co-notice-text{font-size:12px;letter-spacing:var(--t-lower);text-transform:lowercase;color:var(--muted);line-height:1.6;}
+.co-notice-text b{color:var(--ink);font-weight:500;}
+
+/* View toggle (demo only) */
+.view-toggle{max-width:var(--max);margin:0 auto;padding:0 40px 32px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+.view-toggle-label{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);font-weight:500;}
+.view-tab{padding:10px 20px;border-radius:999px;border:1px solid var(--disabled);background:transparent;font-family:var(--font);font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .3s var(--ease);}
+.view-tab.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+@media(max-width:720px){.view-toggle{padding:0 24px 24px;}}
+
+/* FOOTER */
+.footer{background:var(--cream);color:var(--ink);padding:100px 0 40px;border-top:1px solid var(--disabled);}
+.footer-top{padding-bottom:80px;margin-bottom:40px;border-bottom:1px solid var(--disabled);display:grid;grid-template-columns:2fr 3fr;gap:80px;}
+.footer-wordmark{font-size:clamp(80px,12vw,180px);line-height:0.9;color:var(--ink);text-transform:lowercase;font-weight:300;letter-spacing:-0.03em;margin:0;}
+.footer-tag{margin-top:24px;color:var(--muted);font-size:14px;text-transform:lowercase;letter-spacing:var(--t-lower);max-width:28ch;line-height:1.6;}
+.footer-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;}
+.footer-col h5{font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--ink);margin:0 0 20px;font-weight:500;}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+.footer-col a{font-size:13px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);transition:color .3s var(--ease);}
+.footer-col a:hover{color:var(--ink);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;font-size:11px;color:var(--muted);text-transform:lowercase;letter-spacing:var(--t-lower);}
+.footer-bottom-links{display:flex;gap:32px;flex-wrap:wrap;}
+.footer-bottom-links a:hover{color:var(--ink);}
+@media(max-width:900px){.footer{padding:60px 0 32px;}.footer-top{grid-template-columns:1fr;gap:40px;padding-bottom:48px;margin-bottom:32px;}.footer-nav{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <div class="announce-track">
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <a href="#" class="logo"><img src="https://navanpet.com/cdn/shop/files/navan_logo.png?v=1770933252&width=100" alt="Navan Pet Logo"></a>
+    <nav class="nav" aria-label="primary">
+      <a href="navan-collection.html">SHOP</a>
+      <a href="navan-faq_Version_2.html">FAQ</a>
+      <a href="navan-about.html">ABOUT</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="navan-cart.html" class="icon-btn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu-scrim" id="menu-scrim" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="mobile navigation">
+  <nav class="mobile-nav" aria-label="mobile primary">
+     <a href="navan-collection.html"  data-menu-close>SHOP</a>
+      <a href="navan-faq_Version_2.html"  data-menu-close>FAQ</a>
+      <a href="navan-about.html"  data-menu-close>ABOUT</a>
+      <a href="#"  data-menu-close>Blog</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="navan-cart.html" data-menu-close>cart</a>
+    <a href="navan-faq_Version_2.html" data-menu-close>faq</a>
+    <a href="navan-privacy.html" data-menu-close>privacy</a>
+    <a href="navan-terms.html" data-menu-close>terms</a>
+  </div>
+</aside>
+
+<!-- VIEW TOGGLE (demo tool) -->
+<div style="background:var(--sand);border-bottom:1px solid var(--taupe);padding:14px 0;">
+  <div class="view-toggle">
+    <span class="view-toggle-label">page view</span>
+    <button class="view-tab active" id="tab-cart" aria-pressed="true">cart</button>
+    <button class="view-tab" id="tab-checkout" aria-pressed="false">checkout</button>
+  </div>
+</div>
+
+<!-- ================================================================
+     CART VIEW
+     ================================================================ -->
+<div id="view-cart">
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="navan-homepage_Version_2.html" class="lower">home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current lower" aria-current="page">your cart</span>
+    </div>
+  </nav>
+
+  <div class="cart-hero">
+    <div class="cart-hero-inner">
+      <h1 class="cart-hero-title display d-xl lower">your <em>ritual.</em></h1>
+      <div class="cart-hero-meta">
+        <div class="cart-item-count"><b id="item-count">2</b> items in your cart</div>
+        <a href="navan-collection.html" class="btn-ghost">continue shopping</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-layout">
+
+    <!-- ITEMS -->
+    <div>
+      <div class="cart-items" id="cart-items" role="list" aria-label="cart items">
+
+        <!-- DESKTOP TABLE HEADER -->
+        <div class="cart-items-header" aria-hidden="true">
+          <span>product</span>
+          <span>qty</span>
+          <span>frequency</span>
+          <span>price</span>
+        </div>
+
+        <!-- LINE ITEM 1 — Core Protocol Bundle -->
+        <article class="cart-item" role="listitem" aria-label="30-day core protocol">
+          <div class="cart-item-img">
+            <img src="https://navanpet.com/cdn/shop/files/softchew-4_de07be68-a84d-4eff-b243-a1da7d7c07cb.png?c=1775139560" alt="core protocol bundle" />
+          </div>
+          <div class="cart-item-body">
+            <div class="cart-item-info">
+              <div class="cart-item-tags">
+                <span class="tag tag-rabbit">rabbit</span>
+                <span class="tag tag-duck">duck</span>
+              </div>
+              <h2 class="cart-item-name">30-day core protocol</h2>
+              <p class="cart-item-sub">rabbit ears · rabbit stick · duck neck</p>
+              <div class="cart-item-sub-toggle">
+                <label class="sub-toggle" aria-label="subscribe and save 16%">
+                  <input type="checkbox" id="sub-toggle-1" checked />
+                  <span class="sub-toggle-track"><span class="sub-toggle-thumb"></span></span>
+                  <span class="sub-toggle-label">subscribe<span class="save" id="sub-label-1">· save 16%</span></span>
+                </label>
+              </div>
+            </div>
+            <div class="cart-qty" role="group" aria-label="quantity">
+              <button class="qty-btn" aria-label="decrease quantity" data-item="1" data-action="minus" disabled>−</button>
+              <span class="qty-val" id="qty-1" aria-live="polite" aria-atomic="true">1</span>
+              <button class="qty-btn" aria-label="increase quantity" data-item="1" data-action="plus">+</button>
+            </div>
+            <div class="cart-item-price" id="price-1">
+              <span class="was">$74</span>
+              $62
+            </div>
+            <button class="cart-item-remove" aria-label="remove core protocol from cart" data-item="1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- LINE ITEM 2 — Collagen -->
+        <article class="cart-item" role="listitem" aria-label="collagen chew">
+          <div class="cart-item-img">
+            <img src="https://navanpet.com/cdn/shop/files/DSC00067.jpg?v=1775700791&width=594" alt="collagen chew" />
+          </div>
+          <div class="cart-item-body">
+            <div class="cart-item-info">
+              <div class="cart-item-tags">
+                <span class="tag tag-collagen">collagen</span>
+              </div>
+              <h2 class="cart-item-name">collagen</h2>
+              <p class="cart-item-sub">joint &amp; connective tissue support · all sizes</p>
+              <div class="cart-item-sub-toggle">
+                <label class="sub-toggle" aria-label="subscribe and save 16%">
+                  <input type="checkbox" id="sub-toggle-2" />
+                  <span class="sub-toggle-track"><span class="sub-toggle-thumb"></span></span>
+                  <span class="sub-toggle-label">subscribe<span class="save" id="sub-label-2" style="display:none">· save 16%</span></span>
+                </label>
+              </div>
+            </div>
+            <div class="cart-qty" role="group" aria-label="quantity">
+              <button class="qty-btn" aria-label="decrease quantity" data-item="2" data-action="minus" disabled>−</button>
+              <span class="qty-val" id="qty-2" aria-live="polite" aria-atomic="true">1</span>
+              <button class="qty-btn" aria-label="increase quantity" data-item="2" data-action="plus">+</button>
+            </div>
+            <div class="cart-item-price" id="price-2">$26</div>
+            <button class="cart-item-remove" aria-label="remove collagen from cart" data-item="2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- FREE SHIPPING PROGRESS -->
+      <div class="shipping-progress" aria-label="free shipping progress">
+        <div class="shipping-progress-label">
+          <span>you're <b id="shipping-left">$0</b> away from free shipping</span>
+          <span class="milestone">free shipping at $60</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-fill" id="progress-fill" style="width:88%"></div>
+        </div>
+      </div>
+
+      <!-- CROSS-SELL -->
+      <div class="cart-crosssell" aria-label="you might also like">
+        <div class="cart-crosssell-head">complete the ritual</div>
+        <div class="crosssell-item">
+          <div class="crosssell-img">
+            <img src="https://navanpet.com/cdn/shop/files/DSC00078.jpg?v=1775700320&width=594" alt="duck wing" />
+          </div>
+          <div>
+            <p class="crosssell-name">duck wing</p>
+            <p class="crosssell-price">from $24</p>
+          </div>
+          <button class="crosssell-add" aria-label="add duck wing to cart">add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <aside class="cart-summary" aria-label="order summary">
+      <div class="cart-summary-title">order summary</div>
+
+      <div class="discount-row">
+        <input type="text" class="discount-input" id="discount-input" placeholder="discount code" aria-label="discount code" />
+        <button class="discount-btn" id="discount-btn" aria-label="apply discount code">apply</button>
+      </div>
+
+      <div class="summary-lines" id="summary-lines">
+        <div class="summary-line">
+          <span class="label">subtotal <span id="summary-count">(2 items)</span></span>
+          <span class="value" id="summary-subtotal">$88</span>
+        </div>
+        <div class="summary-line discount" id="sub-savings-row">
+          <span class="label">subscription savings</span>
+          <span class="value" id="sub-savings">-$12</span>
+        </div>
+        <div class="summary-line">
+          <span class="label">shipping</span>
+          <span class="value" id="summary-shipping" style="color:var(--duck)">free</span>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-line total">
+          <span class="label">total</span>
+          <span class="value" id="summary-total">$76</span>
+        </div>
+      </div>
+
+      <div class="summary-sub-note">
+        <b>subscribe &amp; save is active.</b> your core protocol will ship every 30 days. skip, pause, or cancel anytime.
+      </div>
+
+      <button class="btn-checkout" id="checkout-btn" aria-label="proceed to checkout">
+        proceed to checkout →
+      </button>
+
+      <div class="summary-trust" aria-label="trust badges">
+        <div class="summary-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          secure checkout — ssl encrypted
+        </div>
+        <div class="summary-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 14l-4-4 4-4M20 10H5"/></svg>
+          free returns within 30 days
+        </div>
+        <div class="summary-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          free shipping on orders over $60
+        </div>
+      </div>
+
+      <div class="payment-icons" aria-label="accepted payment methods">
+        <span class="pay-icon">visa</span>
+        <span class="pay-icon">mc</span>
+        <span class="pay-icon">amex</span>
+        <span class="pay-icon">paypal</span>
+        <span class="pay-icon">shop pay</span>
+        <span class="pay-icon">apple pay</span>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ================================================================
+     CHECKOUT VIEW — Shopify Checkout Branding API mockup
+     ================================================================ -->
+<div id="view-checkout">
+
+  <!-- Checkout-specific header (replaces site header) -->
+  <div class="co-header">
+    <a href="navan-homepage_Version_2.html" class="co-logo" aria-label="navan home">navan</a>
+  </div>
+
+  <!-- Shopify implementation notice -->
+  <div style="max-width:1200px;margin:20px auto 0;padding:0 40px;">
+    <div class="co-notice">
+      <span class="co-notice-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </span>
+      <div class="co-notice-text">
+        <b>shopify checkout branding api.</b> this mockup shows the maximum visual customisation possible. pill inputs, border radius, font (montserrat), colours (#6A625A buttons, #FEF9F5/#EBDECB backgrounds, #514C45 text), and logo are applied via the branding api. <b>shopify plus</b> unlocks full control including custom section blocks and thank-you page customisation. on standard plans: logo, button colour, and accent colour only.
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress steps -->
+  <div class="co-progress" aria-label="checkout progress">
+    <div class="co-progress-inner">
+      <div class="co-step done" aria-label="cart — complete">
+        <span class="co-step-dot"></span>
+        <span>cart</span>
+      </div>
+      <div class="co-step-sep" aria-hidden="true"></div>
+      <div class="co-step active" aria-label="information — current step">
+        <span class="co-step-dot"></span>
+        <span>information</span>
+      </div>
+      <div class="co-step-sep" aria-hidden="true"></div>
+      <div class="co-step" aria-label="shipping — not yet reached">
+        <span class="co-step-dot"></span>
+        <span>shipping</span>
+      </div>
+      <div class="co-step-sep" aria-hidden="true"></div>
+      <div class="co-step" aria-label="payment — not yet reached">
+        <span class="co-step-dot"></span>
+        <span>payment</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="co-layout">
+
+    <!-- FORM -->
+    <div class="co-form">
+
+      <!-- Contact -->
+      <section class="co-section" aria-labelledby="co-contact-h">
+        <div class="co-section-title" id="co-contact-h">contact information</div>
+        <div class="co-field-group">
+          <div class="co-field">
+            <label class="co-label" for="co-email">email</label>
+            <input class="co-input" type="email" id="co-email" placeholder="your@email.com" autocomplete="email" />
+          </div>
+          <div class="co-field">
+            <label class="co-label" for="co-phone">phone <span style="color:var(--taupe)">(optional)</span></label>
+            <input class="co-input" type="tel" id="co-phone" placeholder="+1 (000) 000-0000" autocomplete="tel" />
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:4px;">
+          <input type="checkbox" id="co-marketing" style="accent-color:var(--duck);width:16px;height:16px;" checked />
+          <label for="co-marketing" style="font-size:12px;letter-spacing:var(--t-lower);text-transform:lowercase;color:var(--muted);">email me with navan news and exclusive offers</label>
+        </div>
+      </section>
+
+      <!-- Shipping address -->
+      <section class="co-section" aria-labelledby="co-ship-h">
+        <div class="co-section-title" id="co-ship-h">shipping address</div>
+        <div class="co-field-group cols-2">
+          <div class="co-field">
+            <label class="co-label" for="co-first">first name</label>
+            <input class="co-input" type="text" id="co-first" autocomplete="given-name" />
+          </div>
+          <div class="co-field">
+            <label class="co-label" for="co-last">last name</label>
+            <input class="co-input" type="text" id="co-last" autocomplete="family-name" />
+          </div>
+        </div>
+        <div class="co-field-group">
+          <div class="co-field">
+            <label class="co-label" for="co-address">address</label>
+            <input class="co-input" type="text" id="co-address" autocomplete="street-address" />
+          </div>
+          <div class="co-field">
+            <label class="co-label" for="co-apt">apartment, suite, etc. <span style="color:var(--taupe)">(optional)</span></label>
+            <input class="co-input" type="text" id="co-apt" autocomplete="address-line2" />
+          </div>
+        </div>
+        <div class="co-field-group cols-2">
+          <div class="co-field">
+            <label class="co-label" for="co-city">city</label>
+            <input class="co-input" type="text" id="co-city" autocomplete="address-level2" />
+          </div>
+          <div class="co-field">
+            <label class="co-label" for="co-state">state</label>
+            <select class="co-input co-select" id="co-state" autocomplete="address-level1">
+              <option value="">select state</option>
+              <option>california</option>
+              <option>colorado</option>
+              <option>florida</option>
+              <option>new york</option>
+              <option>tennessee</option>
+              <option>texas</option>
+            </select>
+          </div>
+        </div>
+        <div class="co-field-group cols-2">
+          <div class="co-field">
+            <label class="co-label" for="co-zip">zip code</label>
+            <input class="co-input" type="text" id="co-zip" autocomplete="postal-code" maxlength="10" />
+          </div>
+          <div class="co-field">
+            <label class="co-label" for="co-country">country</label>
+            <select class="co-input co-select" id="co-country" autocomplete="country">
+              <option>united states</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shipping method -->
+      <section class="co-section" aria-labelledby="co-method-h">
+        <div class="co-section-title" id="co-method-h">shipping method</div>
+        <div class="co-shipping-options" role="radiogroup" aria-labelledby="co-method-h">
+          <div class="co-ship-option selected" role="radio" aria-checked="true" tabindex="0" id="ship-free">
+            <div class="co-ship-option-inner">
+              <div class="co-radio-circle"><div class="co-radio-dot"></div></div>
+              <div class="co-ship-label">
+                <div class="co-ship-name">standard shipping</div>
+                <div class="co-ship-eta">5–7 business days</div>
+              </div>
+              <div class="co-ship-price" style="color:var(--duck)">free</div>
+            </div>
+          </div>
+          <div class="co-ship-option" role="radio" aria-checked="false" tabindex="0" id="ship-express">
+            <div class="co-ship-option-inner">
+              <div class="co-radio-circle"><div class="co-radio-dot"></div></div>
+              <div class="co-ship-label">
+                <div class="co-ship-name">express shipping</div>
+                <div class="co-ship-eta">2–3 business days</div>
+              </div>
+              <div class="co-ship-price">$12</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Payment -->
+      <section class="co-section" aria-labelledby="co-pay-h">
+        <div class="co-section-title" id="co-pay-h">payment</div>
+        <div class="co-field-group">
+          <div class="co-field">
+            <label class="co-label" for="co-card-num">card number</label>
+            <div class="co-card-input">
+              <input class="co-input" type="text" id="co-card-num" placeholder="0000 0000 0000 0000" autocomplete="cc-number" maxlength="19" />
+              <div class="co-card-icon">
+                <span class="pay-icon">visa</span>
+                <span class="pay-icon">mc</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="co-card-row">
+          <div class="co-field">
+            <label class="co-label" for="co-expiry">expiry date</label>
+            <input class="co-input" type="text" id="co-expiry" placeholder="mm / yy" autocomplete="cc-exp" maxlength="7" />
+          </div>
+          <div class="co-field">
+            <label class="co-label" for="co-cvv">security code</label>
+            <input class="co-input" type="text" id="co-cvv" placeholder="cvv" autocomplete="cc-csc" maxlength="4" />
+          </div>
+        </div>
+        <div class="co-field">
+          <label class="co-label" for="co-name-card">name on card</label>
+          <input class="co-input" type="text" id="co-name-card" autocomplete="cc-name" />
+        </div>
+      </section>
+
+      <button class="btn-checkout" style="max-width:100%" aria-label="complete order">
+        complete order →
+      </button>
+
+      <div style="text-align:center;margin-top:12px;font-size:11px;letter-spacing:var(--t-micro);text-transform:uppercase;color:var(--muted);">
+        secure checkout · ssl encrypted
+      </div>
+
+    </div>
+
+    <!-- ORDER SUMMARY SIDEBAR -->
+    <aside class="co-summary" aria-label="order summary">
+      <div class="co-summary-title">order summary</div>
+
+      <div class="co-summary-item">
+        <div class="co-summary-item-img">
+          <img src="https://navanpet.com/cdn/shop/files/softchew-4_de07be68-a84d-4eff-b243-a1da7d7c07cb.png?c=1775139560" alt="core protocol" />
+          <span class="co-summary-item-badge">1</span>
+        </div>
+        <div>
+          <p class="co-summary-item-name">30-day core protocol</p>
+          <p class="co-summary-item-sub">subscribe · every 30 days</p>
+        </div>
+        <div class="co-summary-item-price">$62</div>
+      </div>
+
+      <div class="co-summary-item">
+        <div class="co-summary-item-img">
+          <img src="https://navanpet.com/cdn/shop/files/DSC00067.jpg?v=1775700791&width=594" alt="collagen" />
+          <span class="co-summary-item-badge">1</span>
+        </div>
+        <div>
+          <p class="co-summary-item-name">collagen</p>
+          <p class="co-summary-item-sub">one-time purchase</p>
+        </div>
+        <div class="co-summary-item-price">$26</div>
+      </div>
+
+      <div class="co-summary-divider"></div>
+
+      <div class="co-summary-discount-row">
+        <input class="co-discount-input" type="text" placeholder="discount code" aria-label="discount code" />
+        <button class="co-discount-btn">apply</button>
+      </div>
+
+      <div class="co-summary-lines">
+        <div class="co-summary-line"><span>subtotal</span><span>$88</span></div>
+        <div class="co-summary-line discount"><span>subscription savings</span><span>-$12</span></div>
+        <div class="co-summary-line"><span>shipping</span><span style="color:var(--duck)">free</span></div>
+        <div class="co-summary-line"><span>estimated tax</span><span>calculated at next step</span></div>
+        <div class="co-summary-line total"><span>total</span><span>$76</span></div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- FOOTER (cart view only — checkout has none per Shopify standard) -->
+<div id="cart-footer">
+  <footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 class="footer-wordmark">navan</h2>
+          <p class="footer-tag">clean living for your dog. a natural approach to vitality &amp; nourishment.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>shop</h5>
+          <ul>
+            <li><a href="navan-product.html">core protocol</a></li>
+            <li><a href="navan-bundles.html">View Bundles</a></li>
+            <li><a href="navan-collection.html">all chews</a></li>
+            <li><a href="#">subscribe &amp; save</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>learn</h5>
+          <ul>
+            <li><a href="navan-homepage_Version_2.html#protocol">the protocol</a></li>
+            <li><a href="#">ingredients</a></li>
+            <li><a href="#">journal</a></li>
+            <li><a href="navan-faq_Version_2.html">faq</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>company</h5>
+          <ul>
+            <li><a href="navan-about.html">about</a></li>
+            <li><a href="#">nation</a></li>
+            <li><a href="#">press</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>support</h5>
+          <ul>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">account</a></li>
+            <li><a href="navan-faq_Version_2.html">help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 navan · the natural toothbrush pets love</div>
+      <div class="footer-bottom-links">
+        <a href="navan-privacy.html">privacy</a>
+        <a href="navan-terms.html">terms</a>
+        <a href="#">accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+
+  // ================================================================
+  // VIEW TOGGLE (demo: cart ↔ checkout)
+  // ================================================================
+  (function() {
+    const tabCart     = document.getElementById('tab-cart');
+    const tabCheckout = document.getElementById('tab-checkout');
+    const viewCart    = document.getElementById('view-cart');
+    const viewCo      = document.getElementById('view-checkout');
+    const cartFooter  = document.getElementById('cart-footer');
+    const announce    = document.querySelector('.announce');
+    const siteHeader  = document.getElementById('header');
+
+    const setView = (mode) => {
+      const isCart = mode === 'cart';
+      viewCart.style.display  = isCart ? 'block' : 'none';
+      viewCo.style.display    = isCart ? 'none'  : 'block';
+      cartFooter.style.display = isCart ? 'block' : 'none';
+      announce.style.display   = isCart ? 'block' : 'none';
+      siteHeader.style.display = isCart ? 'block' : 'none';
+      tabCart.classList.toggle('active', isCart);
+      tabCheckout.classList.toggle('active', !isCart);
+      tabCart.setAttribute('aria-pressed', String(isCart));
+      tabCheckout.setAttribute('aria-pressed', String(!isCart));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    tabCart.addEventListener('click', () => setView('cart'));
+    tabCheckout.addEventListener('click', () => setView('checkout'));
+  })();
+
+  // ================================================================
+  // CART INTERACTIVITY
+  // ================================================================
+  (function() {
+    // Item data [basePrice, subscribePrice, qty, isSubscribed]
+    const items = {
+      1: { base: 74, subPrice: 62, qty: 1, subscribed: true  },
+      2: { base: 26, subPrice: 26, qty: 1, subscribed: false }
+    };
+
+    const calcPrice = (id) => {
+      const item = items[id];
+      return (item.subscribed ? item.subPrice : item.base) * item.qty;
+    };
+
+    const updateSummary = () => {
+      let subtotal = 0;
+      let subSavings = 0;
+      let count = 0;
+      let hasAnyItem = false;
+
+      Object.keys(items).forEach(id => {
+        const item = items[id];
+        if (!item.removed) {
+          hasAnyItem = true;
+          const price = calcPrice(id);
+          subtotal += price;
+          if (item.subscribed) {
+            subSavings += (item.base - item.subPrice) * item.qty;
+          }
+          count += item.qty;
+        }
+      });
+
+      const shipping = subtotal >= 60 ? 0 : 9;
+      const total    = subtotal - subSavings + shipping;
+
+      document.getElementById('summary-subtotal').textContent = '$' + (subtotal + subSavings);
+      document.getElementById('sub-savings').textContent = '-$' + subSavings;
+      document.getElementById('summary-shipping').textContent = shipping === 0 ? 'free' : '$' + shipping;
+      document.getElementById('summary-shipping').style.color = shipping === 0 ? 'var(--duck)' : 'var(--ink)';
+      document.getElementById('summary-total').textContent = '$' + total;
+      document.getElementById('summary-count').textContent = '(' + count + ' item' + (count !== 1 ? 's' : '') + ')';
+      document.getElementById('item-count').textContent = count;
+      document.getElementById('cart-badge').textContent  = count;
+
+      const subSavingsRow = document.getElementById('sub-savings-row');
+      subSavingsRow.style.display = subSavings > 0 ? '' : 'none';
+
+      // Progress bar
+      const progress = Math.min(100, (subtotal / 60) * 100);
+      document.getElementById('progress-fill').style.width = progress + '%';
+      const left = Math.max(0, 60 - subtotal);
+      document.getElementById('shipping-left').textContent = left > 0 ? '$' + left : '$0';
+    };
+
+    // Qty buttons
+    document.querySelectorAll('.qty-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id     = btn.dataset.item;
+        const action = btn.dataset.action;
+        const item   = items[id];
+        if (action === 'plus')  item.qty = Math.min(10, item.qty + 1);
+        if (action === 'minus') item.qty = Math.max(1, item.qty - 1);
+        document.getElementById('qty-' + id).textContent = item.qty;
+
+        // Update price display
+        const priceEl = document.getElementById('price-' + id);
+        if (id === '1') {
+          priceEl.innerHTML = item.subscribed
+            ? `<span class="was">$${item.base * item.qty}</span>$${item.subPrice * item.qty}`
+            : `$${item.base * item.qty}`;
+        } else {
+          priceEl.textContent = '$' + calcPrice(id);
+        }
+
+        // Disable minus at 1
+        const minusBtn = document.querySelector(`[data-item="${id}"][data-action="minus"]`);
+        if (minusBtn) minusBtn.disabled = item.qty <= 1;
+
+        updateSummary();
+      });
+    });
+
+    // Subscribe toggles
+    document.querySelectorAll('.sub-toggle input[type="checkbox"]').forEach(chk => {
+      chk.addEventListener('change', () => {
+        const id = chk.id.replace('sub-toggle-', '');
+        items[id].subscribed = chk.checked;
+        const saveLabel = document.getElementById('sub-label-' + id);
+        if (saveLabel) saveLabel.style.display = chk.checked ? 'inline' : 'none';
+
+        // Update price display for item 1
+        if (id === '1') {
+          const item = items['1'];
+          const priceEl = document.getElementById('price-1');
+          priceEl.innerHTML = item.subscribed
+            ? `<span class="was">$${item.base * item.qty}</span>$${item.subPrice * item.qty}`
+            : `$${item.base * item.qty}`;
+        }
+        updateSummary();
+      });
+    });
+
+    // Remove items
+    document.querySelectorAll('.cart-item-remove').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.item;
+        const articleEl = btn.closest('.cart-item');
+        articleEl.style.transition = 'opacity .4s, transform .4s';
+        articleEl.style.opacity = '0';
+        articleEl.style.transform = 'translateX(16px)';
+        setTimeout(() => {
+          articleEl.style.display = 'none';
+          items[id].removed = true;
+          updateSummary();
+        }, 400);
+      });
+    });
+
+    // Discount code
+    const discountBtn = document.getElementById('discount-btn');
+    const discountInput = document.getElementById('discount-input');
+    if (discountBtn) {
+      discountBtn.addEventListener('click', () => {
+        const code = discountInput.value.trim().toUpperCase();
+        if (code === 'NAVAN10') {
+          discountBtn.textContent = 'applied ✓';
+          discountBtn.style.color = 'var(--duck)';
+          discountInput.disabled = true;
+        } else if (code) {
+          discountBtn.textContent = 'invalid code';
+          discountBtn.style.color = 'var(--beef)';
+          setTimeout(() => { discountBtn.textContent = 'apply'; discountBtn.style.color = ''; }, 2000);
+        }
+      });
+    }
+
+    // Shipping options (checkout view)
+    document.querySelectorAll('.co-ship-option').forEach(opt => {
+      const activate = () => {
+        document.querySelectorAll('.co-ship-option').forEach(o => {
+          o.classList.remove('selected');
+          o.setAttribute('aria-checked', 'false');
+        });
+        opt.classList.add('selected');
+        opt.setAttribute('aria-checked', 'true');
+      };
+      opt.addEventListener('click', activate);
+      opt.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+    });
+
+    // Proceed to checkout button
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener('click', () => {
+        document.getElementById('tab-checkout').click();
+      });
+    }
+
+    updateSummary();
+  })();
+
+  // ================================================================
+  // MOBILE MENU
+  // ================================================================
+  (function() {
+    const btn   = document.getElementById('hamburger');
+    const menu  = document.getElementById('mobile-menu');
+    const scrim = document.getElementById('menu-scrim');
+    if (!btn || !menu || !scrim) return;
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+      menu.setAttribute('aria-hidden', String(!open));
+      scrim.setAttribute('aria-hidden', String(!open));
+      scrim.classList.toggle('active', open);
+      document.body.classList.toggle('menu-open', open);
+      if (open) { const f = menu.querySelector('a'); if (f) f.focus(); }
+    };
+    const toggle = () => setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    const close  = () => setOpen(false);
+    btn.addEventListener('click', toggle);
+    scrim.addEventListener('click', close);
+    menu.querySelectorAll('[data-menu-close]').forEach(l => l.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { close(); btn.focus(); } });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) close(); });
+  })();
+</script>
+</body>
+</html>
