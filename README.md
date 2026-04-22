@@ -13,3 +13,4 @@
 | Privacy | [View](https://coricsdev.github.io/navan-pet/navan-privacy.html) |
 | Product | [View](https://coricsdev.github.io/navan-pet/navan-product.html) |
 | Terms | [View](https://coricsdev.github.io/navan-pet/navan-terms.html) |
+| Review/Contact | [View](https://coricsdev.github.io/navan-pet/navan-review-contact.html) |
