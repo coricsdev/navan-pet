@@ -65,9 +65,8 @@ button { font-family: inherit; }
 /* ---- UTILITIES ---- */
 .eyebrow {
   font-size: 11px;
-  letter-spacing: var(--t-micro);
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--taupe);
   font-weight: 500;
   display: inline-flex;
   align-items: center;
@@ -113,7 +112,7 @@ button { font-family: inherit; }
 }
 .btn-primary   { background: var(--charcoal); color: var(--cream); }
 .btn-primary:hover { background: var(--charcoal-h); }
-.btn-secondary { background: transparent; color: var(--sec); border-color: var(--sec); }
+.btn-secondary { background: transparent; color: var(--white); border-color: var(--white); }
 .btn-secondary:hover { color: var(--sec-h); border-color: var(--sec-h); }
 .btn-ghost {
   background: transparent;
@@ -1042,7 +1041,8 @@ body.menu-open { overflow: hidden; }
 
 /* ---- CTA ---- */
 .bundles-cta {
-  background: var(--cream);
+  /* background: var(--cream); */
+  background: linear-gradient(#514c45c9, #514c45), url(./img/bundles-cta.png) no-repeat center / cover;
   padding: 140px 0;
   text-align: center;
 }
@@ -1053,10 +1053,10 @@ body.menu-open { overflow: hidden; }
 }
 .bundles-cta-eyebrow { justify-content: center; margin-bottom: 24px; }
 .bundles-cta-eyebrow::before { display: none; }
-.bundles-cta-title { margin: 0 0 32px; color: var(--ink); }
+.bundles-cta-title { margin: 0 0 32px; color: var(--sand); }
 .bundles-cta-title em { color: var(--taupe); font-style: italic; }
 .bundles-cta-body {
-  color: var(--muted);
+  color: var(--taupe);
   font-size: 16px;
   line-height: 1.7;
   max-width: 44ch;
