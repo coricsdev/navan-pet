@@ -73,7 +73,7 @@ button { font-family: inherit; }
 .eyebrow {
   font-size: 11px;
   letter-spacing: var(--t-micro);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: var(--taupe);
   font-weight: 500;
   display: inline-flex;
@@ -909,7 +909,7 @@ body.menu-open { overflow: hidden; }
   text-align: center;
 }
 .about-name-inner {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -944,7 +944,7 @@ body.menu-open { overflow: hidden; }
   color: var(--ink);
   line-height: 0.9;
   letter-spacing: -0.04em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .about-name-letter .word {
   font-size: 11px;
@@ -964,12 +964,28 @@ body.menu-open { overflow: hidden; }
   margin: 0 auto;
   line-height: 1.4;
 }
+@media(max-width: 767px){
+  .about-name-inner{
+    padding: 20px;
+  }
+}
 @media (max-width: 720px) {
   .about-name { padding: 80px 0; }
   .about-name-acronym { gap: 4px; }
   .about-name-letter + .about-name-letter::before { display: none; }
 }
-
+@media(max-width:551px){
+  .about-name-acronym{
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+  .about-name-letter .big{
+    font-size: 45px;
+  }
+  .about-name-letter .word{
+    font-size: 9px;
+  }
+}
 /* CTA */
 .about-cta {
   /* background: var(--white); */
@@ -1253,7 +1269,7 @@ body.menu-open { overflow: hidden; }
     <div class="wrap">
       <div class="about-enter-grid">
         <div class="about-enter-head">
-          <span class="eyebrow reveal">02 · enter navan</span>
+          <span class="eyebrow reveal">02 · ENTER navan</span>
           <h2 class="about-enter-title display d-lg lower reveal">
             a clean-living<br/>mindset, <em class="italic">for dental care.</em>
           </h2>
@@ -1338,7 +1354,7 @@ body.menu-open { overflow: hidden; }
     <div class="wrap">
       <div class="about-movement-grid">
         <div class="about-movement-text">
-          <span class="eyebrow reveal">03 · the movement</span>
+          <span class="eyebrow reveal">03 · THE MOVEMENT</span>
           <h2 class="about-movement-quote reveal">
             consistency <em>compounds.</em>
           </h2>
@@ -1362,7 +1378,7 @@ body.menu-open { overflow: hidden; }
   <!-- MANIFESTO -->
   <section class="about-manifesto">
     <div class="about-manifesto-inner">
-      <span class="eyebrow about-manifesto-eyebrow">the nation manifesto</span>
+      <span class="eyebrow about-manifesto-eyebrow">THE NATION MANIFISTO</span>
       <h2 class="about-manifesto-title display d-lg lower">
         welcome to<br/><em>navan nation.</em>
       </h2>
@@ -1380,7 +1396,7 @@ body.menu-open { overflow: hidden; }
   <!-- NAME -->
   <section class="about-name">
     <div class="about-name-inner">
-      <span class="eyebrow about-name-eyebrow">what navan means</span>
+      <span class="eyebrow about-name-eyebrow">WHAT navan MEANS</span>
       <div class="about-name-acronym">
         <div class="about-name-letter reveal">
           <div class="big">n</div>
@@ -1396,7 +1412,7 @@ body.menu-open { overflow: hidden; }
         </div>
         <div class="about-name-letter reveal reveal-delay-3">
           <div class="big">a</div>
-          <div class="word">vitality &</div>
+          <div class="word">vitality</div>
         </div>
         <div class="about-name-letter reveal reveal-delay-3">
           <div class="big">n</div>
@@ -1412,7 +1428,7 @@ body.menu-open { overflow: hidden; }
   <!-- CTA -->
   <section class="about-cta">
     <div class="about-cta-inner">
-      <span class="eyebrow about-cta-eyebrow">join us</span>
+      <span class="eyebrow about-cta-eyebrow">JOIN US</span>
       <h2 class="about-cta-title display d-lg lower">
         start <em class="italic">the ritual.</em>
       </h2>
