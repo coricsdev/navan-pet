@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>reviews &amp; contact — navan · the natural toothbrush pets love</title>
+<meta name="description" content="leave a review or reach out — we read every single message." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ================================================================
+   PROJECT STANDARD — header / footer tokens (unchanged)
+   ================================================================ */
+:root {
+  --sand:       #EBDECB;
+  --sand-light: #FEF9F5;
+  --sand-soft:  #F3EBDD;
+  --cream:      #FEF9F5;
+  --white:      #FFFFFF;
+  --taupe:      #BFA694;
+  --charcoal:   #6A625A;
+  --charcoal-h: #59524C;
+  --taupe-dark: #6A625A;
+  --ink:        #514C45;
+  --muted:      #7A736A;
+  --duck:       #95A77D;
+  --rabbit:     #8FC8D4;
+  --beef:       #CA8575;
+  --sec:        #738063;
+  --sec-h:      #8EA18F;
+  --disabled:   #E8DDD2;
+  --border: rgba(191, 166, 148, 0.30);
+  --font: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --t-caps:  0.118em;
+  --t-lower: 0.042em;
+  --t-micro: 0.22em;
+  --max:     1400px;
+  --content: 1240px;
+  --ease:    cubic-bezier(.22,.61,.36,1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+  margin: 0; font-family: var(--font); font-weight: 400; color: var(--ink);
+  background: var(--cream); line-height: 1.6; letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--sec); outline-offset: 3px; border-radius: 4px; }
+
+/* Announcement */
+.announce {
+  background: var(--ink); color: var(--sand); overflow: hidden;
+  padding: 12px 0; font-size: 11px; letter-spacing: var(--t-micro); text-transform: uppercase;
+}
+.announce-track { display: flex; gap: 60px; animation: marquee 40s linear infinite; width: max-content; }
+.announce-track span { display: inline-flex; align-items: center; gap: 60px; white-space: nowrap; }
+.announce-track span::after { content: '◦'; color: var(--taupe); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Header */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(254,249,245,0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent; transition: border-color .4s var(--ease), background .4s var(--ease);
+}
+.header.scrolled { border-bottom-color: var(--disabled); background: rgba(254,249,245,0.96); }
+.header-inner {
+  max-width: var(--max); margin: 0 auto; padding: 22px 40px;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px;
+}
+.logo { font-size: 28px; color: var(--charcoal); font-weight: 400; text-transform: lowercase; letter-spacing: -0.02em; }
+.nav { display: flex; gap: 40px; justify-self: center; }
+.nav a {
+  font-size: 13px; letter-spacing: var(--t-lower); color: var(--ink);
+  position: relative; padding: 6px 0;
+}
+.nav a[aria-current="page"] {
+    color: var(--charcoal);
+}
+.nav a:hover::after, .nav a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+.nav a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--charcoal); transform: scaleX(0); transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.nav a:hover::after { transform: scaleX(1); }
+.header-actions { display: flex; gap: 20px; justify-self: end; align-items: center; }
+.icon-btn {
+  width: 40px; height: 40px; background: transparent; border: none; cursor: pointer;
+  color: var(--ink); display: inline-flex; align-items: center; justify-content: center;
+  position: relative; transition: color .3s var(--ease);
+}
+.icon-btn:hover { color: var(--charcoal); }
+.icon-btn svg { width: 18px; height: 18px; }
+.cart-count {
+  position: absolute; top: 4px; right: 4px;
+  background: var(--charcoal); color: var(--cream);
+  border-radius: 999px; font-size: 9px; padding: 2px 6px;
+}
+.hamburger { display: none; }
+.hamburger-icon { position: relative; width: 18px; height: 12px; }
+.hamburger-icon span {
+  position: absolute; left: 0; right: 0; height: 1.5px; background: currentColor;
+  transition: transform .4s var(--ease), opacity .3s var(--ease), top .4s var(--ease);
+}
+.hamburger-icon span:nth-child(1) { top: 0; }
+.hamburger-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger-icon span:nth-child(3) { top: 100%; transform: translateY(-100%); }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] .hamburger-icon span:nth-child(3) { top: 50%; transform: translateY(-50%) rotate(-45deg); }
+.mobile-menu {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(420px,100%);
+  background: var(--cream); z-index: 60; transform: translateX(100%);
+  transition: transform .5s var(--ease); display: flex; flex-direction: column;
+  padding: 100px 40px 40px; box-shadow: -20px 0 60px -20px rgba(81,76,69,0.2); visibility: hidden;
+}
+.mobile-menu[aria-hidden="false"] { transform: translateX(0); visibility: visible; }
+.mobile-menu-scrim {
+  position: fixed; inset: 0; background: rgba(81,76,69,0.4); backdrop-filter: blur(4px);
+  z-index: 55; opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s var(--ease);
+}
+.mobile-menu-scrim.active { opacity: 1; visibility: visible; }
+.mobile-nav { display: flex; flex-direction: column; gap: 4px; margin-bottom: 48px; }
+.mobile-nav a {
+  font-size: 28px; color: var(--ink); text-transform: lowercase; letter-spacing: var(--t-lower);
+  font-weight: 300; padding: 14px 0; border-bottom: 1px solid var(--disabled);
+  transition: color .3s var(--ease), padding-left .3s var(--ease);
+}
+.mobile-nav a:hover { color: var(--charcoal); padding-left: 8px; }
+.mobile-menu-foot {
+  margin-top: auto; display: flex; flex-direction: column; gap: 16px;
+  padding-top: 32px; border-top: 1px solid var(--disabled);
+}
+.mobile-menu-foot a { font-size: 12px; letter-spacing: var(--t-micro); text-transform: uppercase; color: var(--muted); }
+body.menu-open { overflow: hidden; }
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .hamburger { display: inline-flex; justify-self: start; }
+  .header-inner { padding: 18px 24px; }
+}
+
+/* Footer */
+.footer { background: var(--cream); color: var(--ink); padding: 100px 0 40px; border-top: 1px solid var(--disabled); }
+.footer-top {
+  padding-bottom: 80px; margin-bottom: 40px; border-bottom: 1px solid var(--disabled);
+  display: grid; grid-template-columns: 2fr 3fr; gap: 80px;
+}
+.footer-wordmark {
+  font-size: clamp(80px,12vw,180px); line-height: 0.9; color: var(--ink);
+  text-transform: lowercase; font-weight: 300; letter-spacing: -0.03em; margin: 0;
+}
+.footer-tag { margin-top: 24px; color: var(--muted); font-size: 14px; text-transform: lowercase; letter-spacing: var(--t-lower); max-width: 28ch; line-height: 1.6; }
+.footer-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; }
+.footer-col h5 { font-size: 11px; letter-spacing: var(--t-micro); text-transform: uppercase; color: var(--ink); margin: 0 0 20px; font-weight: 500; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.footer-col a { font-size: 13px; color: var(--muted); text-transform: lowercase; letter-spacing: var(--t-lower); transition: color .3s var(--ease); }
+.footer-col a:hover { color: var(--ink); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; font-size: 11px; color: var(--muted); text-transform: lowercase; letter-spacing: var(--t-lower); }
+.footer-bottom-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-bottom-links a:hover { color: var(--ink); }
+.wrap { max-width: var(--content); margin: 0 auto; padding: 0 40px; }
+@media (max-width: 900px) {
+  .footer { padding: 60px 0 32px; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; margin-bottom: 32px; }
+  .footer-nav { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 720px) { .wrap { padding: 0 24px; } }
+
+/* ================================================================
+   #navan-review-page — exact styling for the provided div
+   All class names taken verbatim from the provided HTML.
+   ================================================================ */
+#navan-review-page {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+#navan-review-page .hero {
+  background: var(--taupe);
+  padding: 72px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#navan-review-page .navan-logo {
+    display: inline-block;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3em !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    text-transform: lowercase;
+    margin-bottom: 32px;
+}
+#navan-review-page .hero-eyebrow {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65) !important;
+  margin-bottom: 18px;
+  display: block;
+}
+#navan-review-page .hero h1 {
+  font-size: clamp(28px, 5.5vw, 44px) !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.06em !important;
+    color: var(--white) !important;
+    text-transform: lowercase;
+    line-height: 1.15 !important;
+    margin-bottom: 16px !important;
+}
+#navan-review-page .hero h1 strong {
+    display: block;
+    font-weight: 600 !important;
+}
+#navan-review-page .hero-sub {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.03em !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    max-width: 360px;
+    margin: 0 auto !important;
+    line-height: 1.75 !important;
+}
+
+/* TABS */
+#navan-review-page .tabs-wrap {
+  background: var(--sand-light);
+    padding: 24px 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: none;
+}
+#navan-review-page .tabs-inner {
+    display: flex;
+    gap: 6px;
+    background: var(--white);
+    padding: 5px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 2px 14px rgba(106, 98, 90, 0.06);
+}
+#navan-review-page .tab {
+     flex: 1;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase;
+    color: var(--text-soft) !important;
+    padding: 13px 16px !important;
+    cursor: pointer;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 100px !important;
+    transition: all 0.25s ease;
+    text-align: center;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+#navan-review-page .tab.active { 
+      background: var(--taupe-dark) !important;
+    color: var(--white) !important;
+    box-shadow: 0 2px 8px rgba(106, 98, 90, 0.2);
+ }
+
+#navan-review-page .tab:hover { color: var(--ink); }
+#navan-review-page .tab-icon { 
+  font-size: 13px;
+    line-height: 1;
+ }
+@media (max-width: 720px) {
+  #navan-review-page .tabs-wrap { top: 68px; }
+}
+
+/* CONTAINER */
+#navan-review-page .container {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* PANEL */
+#navan-review-page .panel { display: none;     padding: 44px 0 80px; }
+#navan-review-page .panel.active { display: block; }
+
+/* DIVIDER */
+#navan-review-page .divider {
+  height: 1px;
+  background: var(--disabled);
+  margin: 28px 0;
+}
+
+/* STAR RATING */
+#navan-review-page .rating-wrap {
+ text-align: center;
+    margin-bottom: 36px;
+}
+#navan-review-page .rating-label {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase;
+  color: var(--taupe) !important;
+  margin-bottom: 16px;
+  display: block;
+}
+#navan-review-page .stars {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+#navan-review-page .star {
+    font-size: 36px !important;
+    cursor: pointer;
+    opacity: 0.25;
+    transition: opacity 0.15s, transform 0.15s;
+    user-select: none;
+    line-height: 1 !important;
+    color: var(--taupe-dark) !important;
+}
+#navan-review-page .star.lit, #navan-review-page .star.hover{
+  opacity: 1;
+    transform: scale(1.15);
+}
+.divider{
+  display: none;
+}
+
+/* CHEW GRID */
+#navan-review-page .chew-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 4px;
+}
+#navan-review-page .chew-option {
+    padding: 12px 10px;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--white);
+}
+#navan-review-page .chew-option:hover {     border-color: var(--taupe); background: var(--sand-light); }
+#navan-review-page .chew-option.selected {    border-color: var(--taupe-dark);background: var(--sand);}
+#navan-review-page .chew-emoji {     font-size: 20px !important;
+    display: block;
+    margin-bottom: 5px; }
+#navan-review-page .chew-name {
+  font-size: 9px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase;
+    color: var(--taupe-dark) !important;
+    line-height: 1.4 !important;
+}
+#navan-review-page .chew-option.selected .chew-name { color: var(--ink); }
+@media (max-width: 560px) {
+  #navan-review-page .chew-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* FORM ELEMENTS */
+#navan-review-page .form-group { margin-bottom: 16px; }
+#navan-review-page .form-label {
+    display: block;
+    font-size: 9px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase;
+    color: var(--taupe-dark) !important;
+    margin-bottom: 8px !important;
+}
+#navan-review-page .form-label span {
+    font-weight: 300 !important;
+    color: var(--text-soft) !important;
+    text-transform: none;
+    letter-spacing: 0.02em !important;
+    font-size: 10px !important;
+    margin-left: 6px;
+}
+#navan-review-page .form-input,
+#navan-review-page .form-textarea {
+    width: 100%;
+    background: var(--white) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 14px !important;
+    padding: 14px 18px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    color: var(--charcoal) !important;
+    letter-spacing: 0.02em !important;
+    outline: none !important;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    line-height: 1.5 !important;
+}
+#navan-review-page .form-input:focus,
+#navan-review-page .form-textarea:focus {
+      border-color: var(--taupe) !important;
+}
+#navan-review-page .form-input::placeholder,
+#navan-review-page .form-textarea::placeholder { color: var(--muted); text-transform: lowercase; }
+#navan-review-page .form-textarea { resize: vertical; min-height: 140px; }
+
+/* UPLOAD ZONE */
+#navan-review-page .upload-zone {
+     width: 100%;
+    border: 1.5px dashed var(--taupe);
+    border-radius: 18px;
+    padding: 32px 20px;
+    text-align: center;
+    background: var(--sand-light);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+#navan-review-page .upload-zone:hover { border-color: var(--taupe); background: var(--sand); }
+#navan-review-page .upload-zone input[type="file"] {
+     position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+#navan-review-page .upload-icon {    font-size: 28px !important;
+    display: block;
+    margin-bottom: 10px; }
+#navan-review-page .upload-title {
+      font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.06em !important;
+    color: var(--taupe-dark) !important;
+    margin-bottom: 4px;
+}
+#navan-review-page .upload-sub {
+      font-size: 11px !important;
+    font-weight: 300 !important;
+    color: var(--text-soft) !important;
+    letter-spacing: 0.03em !important;
+}
+#navan-review-page .upload-preview {
+      display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+#navan-review-page .upload-thumb {
+  width: 72px; height: 72px; border-radius: 12px; overflow: hidden;
+  background: var(--sand); border: 1px solid var(--disabled); position: relative; flex-shrink: 0;
+}
+#navan-review-page .upload-thumb img,
+#navan-review-page .upload-thumb video { width: 100%; height: 100%; object-fit: cover; }
+#navan-review-page .thumb-remove {
+  position: absolute; top: 3px; right: 3px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(81,76,69,0.75); color: var(--cream);
+  border: none; cursor: pointer; font-size: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* SUBMIT BUTTON */
+#navan-review-page .btn-submit {
+  width: 100%;
+    background: var(--taupe-dark) !important;
+    color: var(--white) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase;
+    padding: 18px 32px !important;
+    border-radius: 100px !important;
+    border: none !important;
+    cursor: pointer;
+    margin-top: 28px;
+    transition: background 0.2s, transform 0.15s;
+    line-height: 1 !important;
+}
+#navan-review-page .btn-submit:hover {     background: #514C45 !important;
+    transform: scale(1.01); }
+#navan-review-page .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* SUCCESS MESSAGE */
+#navan-review-page .success-msg {
+  display: none;
+  text-align: center;
+  padding: 64px 24px;
+  background: var(--sand-soft);
+  border-radius: 24px;
+  border: 1px solid var(--disabled);
+  margin-top: 16px;
+}
+#navan-review-page .success-msg.show { display: block; }
+#navan-review-page .success-icon { font-size: 52px; display: block; margin-bottom: 20px; }
+#navan-review-page .success-title {
+  font-size: 28px; font-weight: 300; text-transform: lowercase;
+  letter-spacing: -0.01em; color: var(--ink); margin-bottom: 14px;
+}
+#navan-review-page .success-body {
+  color: var(--muted); font-size: 15px; line-height: 1.7;
+  text-transform: lowercase; letter-spacing: var(--t-lower);
+  max-width: 44ch; margin: 0 auto 28px;
+}
+#navan-review-page .btn-back {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: 999px;
+  border: 1.5px solid var(--charcoal);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .3s var(--ease), color .3s var(--ease);
+}
+#navan-review-page .btn-back:hover { background: var(--ink); color: var(--cream); }
+
+/* CONTACT PANEL */
+#navan-review-page .contact-intro {
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  color: var(--text-soft) !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.75 !important;
+  margin-bottom: 32px !important;
+}
+#navan-review-page .contact-info-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 10px;
+  text-decoration: none !important;
+  transition: border-color 0.2s;
+}
+#navan-review-page .contact-info-row:hover {
+  border-color: var(--taupe);
+}
+#navan-review-page .contact-info-icon {
+  font-size: 20px !important;
+  flex-shrink: 0;
+}
+#navan-review-page .contact-info-label {
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  color: var(--taupe) !important;
+  display: block;
+  margin-bottom: 2px;
+}
+#navan-review-page .contact-info-value {
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  color: var(--taupe-dark) !important;
+  letter-spacing: 0.03em !important;
+}
+
+/* PAGE FOOTER (inside the div — the small brand sign-off) */
+#navan-review-page .page-footer {
+  background: var(--sand);
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+  text-align: center;
+}
+#navan-review-page .footer-logo {
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.3em !important;
+  text-transform: lowercase;
+  color: var(--taupe-dark) !important;
+  display: block;
+  margin-bottom: 6px;
+}
+#navan-review-page .page-footer p {
+  font-size: 11px !important;
+  font-weight: 300 !important;
+  color: var(--text-soft) !important;
+  letter-spacing: 0.04em !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT (project standard) -->
+<div class="announce">
+  <div class="announce-track">
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+    <span>free shipping on orders over $60</span>
+    <span>subscribe &amp; save 16%</span>
+    <span>single-ingredient · no glycerin · no fillers</span>
+    <span>the natural toothbrush pets love</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburger" aria-label="open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <a href="#" class="logo"><img src="https://navanpet.com/cdn/shop/files/navan_logo.png?v=1770933252&width=100" alt="Navan Pet Logo"></a>
+    <nav class="nav" aria-label="primary">
+      <a href="navan-collection.html" >SHOP</a>
+      <a href="navan-faq_Version_2.html">FAQ</a>
+      <a href="navan-about.html" >ABOUT</a>
+      <a href="#">Blog</a>
+      <a href="navan-review-contact.html" aria-current="page">Review/Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="navan-cart.html" class="icon-btn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu-scrim" id="menu-scrim" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="mobile navigation">
+  <nav class="mobile-nav" aria-label="mobile primary">
+     <a href="navan-collection.html"  data-menu-close>SHOP</a>
+      <a href="navan-faq_Version_2.html"  data-menu-close>FAQ</a>
+      <a href="navan-about.html"  data-menu-close>ABOUT</a>
+      <a href="#"  data-menu-close>Blog</a>
+      <a href="navan-review-contact.html"  data-menu-close>Review/Contact</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="navan-cart.html" data-menu-close>cart</a>
+    <a href="navan-faq_Version_2.html" data-menu-close>faq</a>
+    <a href="navan-privacy.html" data-menu-close>privacy</a>
+    <a href="navan-terms.html" data-menu-close>terms</a>
+  </div>
+</aside>
+
+<!-- ================================================================
+     EXACT CONTENT FROM navanpet.com/pages/landing-page-blank-apr-21-16-20-22
+     The div below is untouched from the provided source.
+     All styling is scoped to #navan-review-page above.
+     ================================================================ -->
+<main>
+<div id="navan-review-page">
+
+<!-- HERO -->
+<div class="hero">
+  <span class="navan-logo">navan</span>
+  <span class="hero-eyebrow">your experience matters</span>
+  <h1>tell us what<strong>your dog thinks</strong></h1>
+  <p class="hero-sub">leave a review or reach out — we read every single message.</p>
+</div>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs-inner">
+    <button class="tab active" onclick="switchTab('review', this)" type="button">
+      <span class="tab-icon">⭐</span>
+      <span>leave a review</span>
+    </button>
+    <button class="tab" onclick="switchTab('contact', this)" type="button">
+      <span class="tab-icon">💬</span>
+      <span>contact us</span>
+    </button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ══ REVIEW PANEL ══ -->
+  <div id="panel-review" class="panel active">
+
+    <!-- Star Rating -->
+    <div class="rating-wrap">
+      <span class="rating-label">how would you rate your experience?</span>
+      <div class="stars" id="starRow">
+        <span class="star" data-val="1">★</span>
+        <span class="star" data-val="2">★</span>
+        <span class="star" data-val="3">★</span>
+        <span class="star" data-val="4">★</span>
+        <span class="star" data-val="5">★</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <form id="reviewForm" action="https://formspree.io/f/mbdqzoko" method="POST" enctype="multipart/form-data" onsubmit="submitReview(event)">
+
+      <input type="hidden" name="_subject" id="r-subject" value="⭐ New Review — Navan">
+      <input type="hidden" name="rating" id="r-rating" value="">
+      <input type="hidden" name="chews_reviewed" id="r-chews" value="">
+
+      <!-- Which chew -->
+      <div class="form-group">
+        <label class="form-label">which chew are you reviewing? <span>select all that apply</span></label>
+        <div class="chew-grid">
+          <div class="chew-option" data-chew="rabbit ears" onclick="toggleChew(this)">
+            <span class="chew-emoji">🐰</span>
+            <div class="chew-name">rabbit ears</div>
+          </div>
+          <div class="chew-option" data-chew="rabbit stick" onclick="toggleChew(this)">
+            <span class="chew-emoji">🦴</span>
+            <div class="chew-name">rabbit stick</div>
+          </div>
+          <div class="chew-option" data-chew="duck neck" onclick="toggleChew(this)">
+            <span class="chew-emoji">🦆</span>
+            <div class="chew-name">duck neck</div>
+          </div>
+          <div class="chew-option" data-chew="duck wing" onclick="toggleChew(this)">
+            <span class="chew-emoji">🪶</span>
+            <div class="chew-name">duck wing</div>
+          </div>
+          <div class="chew-option" data-chew="beef collagen" onclick="toggleChew(this)">
+            <span class="chew-emoji">🥩</span>
+            <div class="chew-name">beef collagen</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Name + Dog Name -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="r-name">your name</label>
+          <input class="form-input" id="r-name" name="name" type="text" placeholder="e.g. sarah" required="">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="r-dogname">dog's name</label>
+          <input class="form-input" id="r-dogname" name="dog_name" type="text" placeholder="e.g. biscuit" required="">
+        </div>
+      </div>
+      <div style="height:16px; display: none;"></div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label" for="r-email">email <span>we may reach out to share your story</span></label>
+        <input class="form-input" id="r-email" name="email" type="email" placeholder="you@email.com" required="">
+      </div>
+
+      <!-- Review text -->
+      <div class="form-group">
+        <label class="form-label" for="r-message">your review</label>
+        <textarea class="form-textarea" id="r-message" name="review" placeholder="what did your dog think? how have you noticed a difference? we'd love to hear it..." required=""></textarea>
+      </div>
+
+      <!-- Photo / Video Upload -->
+      <div class="form-group">
+        <label class="form-label">photo or video <span>optional — show us your pup in action</span></label>
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="mediaUpload" name="photo_or_video" accept="image/*,video/*" multiple="" onchange="handleUpload(event)">
+          <span class="upload-icon">📸</span>
+          <div class="upload-title">tap to upload a photo or video</div>
+          <div class="upload-sub">jpg, png, mp4, mov — up to 50mb each</div>
+        </div>
+        <div class="upload-preview" id="uploadPreview"></div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="reviewSubmitBtn">submit my review</button>
+    </form>
+
+    <!-- Success -->
+    <div class="success-msg" id="reviewSuccess">
+      <span class="success-icon">🐾</span>
+      <div class="success-title">thank you so much</div>
+      <p class="success-body">we loved reading about your dog's experience. reviews like yours help other conscious pet parents find navan — and they mean the world to us.</p>
+      <button class="btn-back" onclick="resetReview()" type="button">leave another review</button>
+    </div>
+
+  </div>
+
+  <!-- ══ CONTACT PANEL ══ -->
+  <div id="panel-contact" class="panel">
+
+    <p class="contact-intro">have a question, concern, or just want to say hi? we are a small team and we genuinely care. reach out — we will get back to you within 24 hours.</p>
+
+    <!-- Quick contact links -->
+    <a href="mailto:wecare@navanpet.com" class="contact-info-row">
+      <span class="contact-info-icon">✉️</span>
+      <div>
+        <span class="contact-info-label">email us</span>
+        <span class="contact-info-value">wecare@navanpet.com</span>
+      </div>
+    </a>
+    <a href="https://www.tiktok.com/@navan.pet" target="_blank" rel="noopener" class="contact-info-row">
+      <span class="contact-info-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#6A625A"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.53V6.77a4.85 4.85 0 0 1-1.01-.08Z"></path></svg>
+      </span>
+      <div>
+        <span class="contact-info-label">tiktok shop</span>
+        <span class="contact-info-value">message us @navan.pet</span>
+      </div>
+    </a>
+
+    <div style="height:32px;"></div>
+    <div class="divider"></div>
+
+    <form id="contactForm" action="https://formspree.io/f/mjgjawoo" method="POST" enctype="multipart/form-data" onsubmit="submitContact(event)">
+
+      <input type="hidden" name="_subject" value="💬 New Contact Message — Navan">
+
+      <!-- Name + Dog Name -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="c-name">your name</label>
+          <input class="form-input" id="c-name" name="name" type="text" placeholder="e.g. sarah" required="">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="c-dogname">dog's name <span>optional</span></label>
+          <input class="form-input" id="c-dogname" name="dog_name" type="text" placeholder="e.g. biscuit">
+        </div>
+      </div>
+      <div style="height:16px;"></div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label" for="c-email">email</label>
+        <input class="form-input" id="c-email" name="email" type="email" placeholder="you@email.com" required="">
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label class="form-label" for="c-message">message</label>
+        <textarea class="form-textarea" id="c-message" name="message" placeholder="how can we help?" required=""></textarea>
+      </div>
+
+      <!-- Photo / Video Upload -->
+      <div class="form-group">
+        <label class="form-label">photo or video <span>optional — helps us understand your issue faster</span></label>
+        <div class="upload-zone">
+          <input type="file" id="contactUpload" name="photo_or_video" accept="image/*,video/*" multiple="" onchange="handleContactUpload(event)">
+          <span class="upload-icon">📎</span>
+          <div class="upload-title">tap to attach a photo or video</div>
+          <div class="upload-sub">jpg, png, mp4, mov — up to 50mb each</div>
+        </div>
+        <div class="upload-preview" id="contactPreview"></div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="contactSubmitBtn">send message</button>
+    </form>
+
+    <!-- Success -->
+    <div class="success-msg" id="contactSuccess">
+      <span class="success-icon">💌</span>
+      <div class="success-title">message received</div>
+      <p class="success-body">we will get back to you within 24 hours at the email you provided. in the meantime, you can always reach us at wecare@navanpet.com.</p>
+      <button class="btn-back" onclick="resetContact()" type="button">send another message</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER (inside the div — small brand sign-off, from the original) -->
+<div class="page-footer">
+  <span class="footer-logo">navan</span>
+  <p>the natural toothbrush pets love &nbsp;·&nbsp; clean. real. effective.</p>
+</div>
+
+</div><!-- /#navan-review-page -->
+</main>
+
+<!-- PROJECT STANDARD FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 class="footer-wordmark">navan</h2>
+        <p class="footer-tag">clean living for your dog. a natural approach to vitality &amp; nourishment.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>shop</h5>
+          <ul>
+            <li><a href="navan-product.html">core protocol</a></li>
+            <li><a href="navan-bundles.html">endurance protocol</a></li>
+            <li><a href="navan-collection.html">all chews</a></li>
+            <li><a href="#">subscribe &amp; save</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>learn</h5>
+          <ul>
+            <li><a href="navan-homepage_Version_2.html#protocol">the protocol</a></li>
+            <li><a href="#">ingredients</a></li>
+            <li><a href="#">journal</a></li>
+            <li><a href="navan-faq_Version_2.html">faq</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>company</h5>
+          <ul>
+            <li><a href="navan-about.html">about</a></li>
+            <li><a href="#">nation</a></li>
+            <li><a href="#">press</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>support</h5>
+          <ul>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">account</a></li>
+            <li><a href="navan-faq_Version_2.html">help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 navan · the natural toothbrush pets love</div>
+      <div class="footer-bottom-links">
+        <a href="navan-privacy.html">privacy</a>
+        <a href="navan-terms.html">terms</a>
+        <a href="#">accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Tab switching ─────────────────────────────────────────── */
+function switchTab(tab, el) {
+  document.querySelectorAll('#navan-review-page .tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#navan-review-page .panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  const panel = document.getElementById('panel-' + tab);
+  if (panel) panel.classList.add('active');
+}
+
+/* ── Star rating ───────────────────────────────────────────── */
+(function() {
+  const hints = ['','awful — 1 star','poor — 2 stars','okay — 3 stars','great — 4 stars','amazing — 5 stars ✨'];
+  let selected = 0;
+  const stars = document.querySelectorAll('#starRow .star');
+  const ratingInput = document.getElementById('r-rating');
+  const subjectInput = document.getElementById('r-subject');
+
+  function setRating(val) {
+    selected = val;
+    ratingInput.value = val;
+    subjectInput.value = '⭐'.repeat(val) + ' New Review — Navan';
+    stars.forEach(s => s.classList.toggle('lit', +s.dataset.val <= val));
+  }
+
+  stars.forEach(star => {
+    const val = +star.dataset.val;
+    star.addEventListener('mouseenter', () => {
+      stars.forEach(s => { s.classList.remove('lit'); s.classList.toggle('hover', +s.dataset.val <= val); });
+    });
+    star.addEventListener('mouseleave', () => {
+      stars.forEach(s => { s.classList.remove('hover'); s.classList.toggle('lit', +s.dataset.val <= selected); });
+    });
+    star.addEventListener('click', () => setRating(val));
+    star.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setRating(val); } });
+    star.setAttribute('tabindex', '0');
+  });
+})();
+
+/* ── Chew selection ────────────────────────────────────────── */
+const selectedChews = new Set();
+
+function toggleChew(el) {
+  const chew = el.dataset.chew;
+  if (selectedChews.has(chew)) {
+    selectedChews.delete(chew);
+    el.classList.remove('selected');
+  } else {
+    selectedChews.add(chew);
+    el.classList.add('selected');
+  }
+  document.getElementById('r-chews').value = [...selectedChews].join(', ');
+}
+
+/* ── Upload previews ───────────────────────────────────────── */
+function buildPreviews(files, previewEl) {
+  previewEl.innerHTML = '';
+  Array.from(files).forEach(file => {
+    const wrap = document.createElement('div');
+    wrap.className = 'upload-thumb';
+
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'thumb-remove';
+    removeBtn.textContent = '×';
+    removeBtn.type = 'button';
+    removeBtn.onclick = () => wrap.remove();
+
+    if (file.type.startsWith('image/')) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.alt = file.name;
+      wrap.appendChild(img);
+    } else if (file.type.startsWith('video/')) {
+      const vid = document.createElement('video');
+      vid.src = URL.createObjectURL(file);
+      vid.muted = true; vid.playsInline = true;
+      wrap.appendChild(vid);
+    }
+    wrap.appendChild(removeBtn);
+    previewEl.appendChild(wrap);
+  });
+}
+
+function handleUpload(e) {
+  buildPreviews(e.target.files, document.getElementById('uploadPreview'));
+}
+
+function handleContactUpload(e) {
+  buildPreviews(e.target.files, document.getElementById('contactPreview'));
+}
+
+/* ── Form submissions ──────────────────────────────────────── */
+async function submitReview(e) {
+  e.preventDefault();
+  const btn = document.getElementById('reviewSubmitBtn');
+  const form = document.getElementById('reviewForm');
+  btn.textContent = 'submitting…';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('reviewSuccess').classList.add('show');
+    } else { throw new Error(); }
+  } catch {
+    btn.textContent = 'something went wrong — try again';
+    btn.style.background = 'var(--beef)';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = 'submit my review'; btn.style.background = ''; }, 3000);
+  }
+}
+
+async function submitContact(e) {
+  e.preventDefault();
+  const btn = document.getElementById('contactSubmitBtn');
+  const form = document.getElementById('contactForm');
+  btn.textContent = 'sending…';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('contactSuccess').classList.add('show');
+    } else { throw new Error(); }
+  } catch {
+    btn.textContent = 'something went wrong — try again';
+    btn.style.background = 'var(--beef)';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = 'send message'; btn.style.background = ''; }, 3000);
+  }
+}
+
+/* ── Resets ────────────────────────────────────────────────── */
+function resetReview() {
+  const form = document.getElementById('reviewForm');
+  form.reset();
+  form.style.display = '';
+  document.getElementById('reviewSuccess').classList.remove('show');
+  document.getElementById('r-rating').value = '';
+  document.getElementById('r-chews').value = '';
+  document.querySelectorAll('#starRow .star').forEach(s => s.classList.remove('lit','hover'));
+  document.querySelectorAll('.chew-option').forEach(c => c.classList.remove('selected'));
+  selectedChews.clear();
+  document.getElementById('uploadPreview').innerHTML = '';
+  const btn = document.getElementById('reviewSubmitBtn');
+  btn.textContent = 'submit my review'; btn.disabled = false; btn.style.background = '';
+}
+
+function resetContact() {
+  const form = document.getElementById('contactForm');
+  form.reset();
+  form.style.display = '';
+  document.getElementById('contactSuccess').classList.remove('show');
+  document.getElementById('contactPreview').innerHTML = '';
+  const btn = document.getElementById('contactSubmitBtn');
+  btn.textContent = 'send message'; btn.disabled = false; btn.style.background = '';
+}
+
+/* ── Header scroll ─────────────────────────────────────────── */
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 8);
+}, { passive: true });
+
+/* ── Mobile menu ───────────────────────────────────────────── */
+(function() {
+  const btn   = document.getElementById('hamburger');
+  const menu  = document.getElementById('mobile-menu');
+  const scrim = document.getElementById('menu-scrim');
+  if (!btn || !menu || !scrim) return;
+  const setOpen = (open) => {
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+    menu.setAttribute('aria-hidden', String(!open));
+    scrim.setAttribute('aria-hidden', String(!open));
+    scrim.classList.toggle('active', open);
+    document.body.classList.toggle('menu-open', open);
+    if (open) { const f = menu.querySelector('a'); if (f) f.focus(); }
+  };
+  const toggle = () => setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  const close  = () => setOpen(false);
+  btn.addEventListener('click', toggle);
+  scrim.addEventListener('click', close);
+  menu.querySelectorAll('[data-menu-close]').forEach(l => l.addEventListener('click', close));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { close(); btn.focus(); }
+  });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) close(); });
+})();
+</script>
+</body>
+</html>
