@@ -11,7 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 
 <style>
-/* NAVAN — BUNDLES PAGE. Project standard stylesheet. */
+/* NAVAN — BUNDLES PAGE. Project sta
+ndard stylesheet. */
 
 :root {
   --sand:       #EBDECB;
@@ -65,8 +66,9 @@ button { font-family: inherit; }
 /* ---- UTILITIES ---- */
 .eyebrow {
   font-size: 11px;
-  /* text-transform: uppercase; */
-  color: var(--taupe);
+  letter-spacing: var(--t-micro);
+  text-transform: uppercase;
+  color: var(--muted);
   font-weight: 500;
   display: inline-flex;
   align-items: center;
@@ -112,7 +114,7 @@ button { font-family: inherit; }
 }
 .btn-primary   { background: var(--charcoal); color: var(--cream); }
 .btn-primary:hover { background: var(--charcoal-h); }
-.btn-secondary { background: transparent; color: var(--white); border-color: var(--white); }
+.btn-secondary { background: transparent; color: var(--sec); border-color: var(--sec); }
 .btn-secondary:hover { color: var(--sec-h); border-color: var(--sec-h); }
 .btn-ghost {
   background: transparent;
@@ -1041,8 +1043,7 @@ body.menu-open { overflow: hidden; }
 
 /* ---- CTA ---- */
 .bundles-cta {
-  /* background: var(--cream); */
-  background: linear-gradient(#514c45c9, #514c45), url(./img/bundles-cta.png) no-repeat center / cover;
+  background: var(--cream);
   padding: 140px 0;
   text-align: center;
 }
@@ -1053,10 +1054,10 @@ body.menu-open { overflow: hidden; }
 }
 .bundles-cta-eyebrow { justify-content: center; margin-bottom: 24px; }
 .bundles-cta-eyebrow::before { display: none; }
-.bundles-cta-title { margin: 0 0 32px; color: var(--sand); }
+.bundles-cta-title { margin: 0 0 32px; color: var(--ink); }
 .bundles-cta-title em { color: var(--taupe); font-style: italic; }
 .bundles-cta-body {
-  color: var(--taupe);
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.7;
   max-width: 44ch;
@@ -1524,7 +1525,7 @@ body.menu-open { overflow: hidden; }
   <section class="compare" aria-labelledby="compare-h">
     <div class="wrap">
       <div class="compare-head">
-        <span class="eyebrow center">WHICH PROTOCOL FITS</span>
+        <span class="eyebrow center">which protocol fits</span>
         <h2 id="compare-h" class="compare-title display d-lg lower reveal">
           core vs. <em class="italic">endurance.</em>
         </h2>
@@ -1672,7 +1673,7 @@ body.menu-open { overflow: hidden; }
   <section class="bundle-reviews" aria-labelledby="reviews-h">
     <div class="wrap">
       <div class="bundle-reviews-head reveal">
-        <span class="eyebrow" style="justify-content:center;">navan NATION</span>
+        <span class="eyebrow" style="justify-content:center;">navan nation</span>
         <h2 id="reviews-h" class="bundle-reviews-title display d-lg lower" style="margin-top:16px;">
           we are the ones<br/><em>who read the label.</em>
         </h2>
@@ -1721,7 +1722,7 @@ body.menu-open { overflow: hidden; }
   <!-- CTA -->
   <section class="bundles-cta" aria-labelledby="cta-h">
     <div class="bundles-cta-inner">
-      <span class="eyebrow bundles-cta-eyebrow">START THE RITUAL</span>
+      <span class="eyebrow bundles-cta-eyebrow">start the ritual</span>
       <h2 id="cta-h" class="bundles-cta-title display d-lg lower reveal">
         choose your<br/><em class="italic">protocol.</em>
       </h2>
@@ -1736,7 +1737,6 @@ body.menu-open { overflow: hidden; }
   </section>
 
 </main>
-
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
